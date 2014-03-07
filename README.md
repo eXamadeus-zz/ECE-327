@@ -1,4 +1,6 @@
 ECE-327
 =======
 
-Clemson University ECE 327 Project Files
+Please see LICENSE for restrictions.
+
+The license boils down to this: don't use this software to cheat.  If you do you will probably be caught, and you will deserve whatever comes your way.
