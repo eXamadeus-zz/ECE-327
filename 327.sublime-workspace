@@ -343,28 +343,48 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "327.sublime-project",
-			"settings":
-			{
-				"buffer_size": 252,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 222.0,
 		"selected_items":
 		[
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
 			[
 				"pull",
 				"Git: Pull"
 			],
 			[
-				"push",
+				"git remo",
+				"Git: Remote"
+			],
+			[
+				"git sho",
+				"Git: Show"
+			],
+			[
+				"git push",
 				"Git: Push"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"gitstat",
+				"Git: Status"
 			],
 			[
 				"stat",
@@ -377,10 +397,6 @@
 			[
 				"hex",
 				"Hex Viewer: Toggle Hex View"
-			],
-			[
-				"git pull",
-				"Git: Pull"
 			],
 			[
 				"gitad",
@@ -471,14 +487,6 @@
 				"Git: Status"
 			],
 			[
-				"git stat",
-				"Git: Status"
-			],
-			[
-				"git push",
-				"Git: Push"
-			],
-			[
 				"git mer",
 				"Git: Merge"
 			],
@@ -525,10 +533,6 @@
 			[
 				"remove ",
 				"Package Control: Remove Package"
-			],
-			[
-				"gitstat",
-				"Git: Status"
 			],
 			[
 				"cta",
@@ -627,10 +631,6 @@
 				"Git-flow: Hotfix Start From Commit"
 			],
 			[
-				"git remo",
-				"Git: Remote"
-			],
-			[
 				"git sta	",
 				"Git: Stash"
 			],
@@ -689,10 +689,6 @@
 			[
 				"git pu",
 				"Git: Push"
-			],
-			[
-				"git statu",
-				"Git: Status"
 			],
 			[
 				"insta",
@@ -819,10 +815,6 @@
 				"Git: Add Remote"
 			],
 			[
-				"git sho",
-				"Git: Show"
-			],
-			[
 				"init",
 				"Git: Init"
 			],
@@ -878,6 +870,7 @@
 	},
 	"file_history":
 	[
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/327.sublime-project",
 		"/home/rathe/Documents/School/468ECE/Lab1/lab1.c",
 		"/home/rathe/Documents/School/468ECE/Lab1/README",
 		"/home/rathe/Documents/School/468ECE/Lab1/Makefile",
@@ -1004,8 +997,7 @@
 		"/school/468ECE/Lab2/passwddec.txt",
 		"/school/468ECE/Lab2/passwd.txt",
 		"/school/468ECE/Lab2/passwd.txt.rle",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/Schedule.html",
-		"/home/rathe/Documents/School/468ECE/my_headers/ex_dict.h"
+		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/Schedule.html"
 	],
 	"find":
 	{
@@ -1169,38 +1161,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "327.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 252,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								128
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1238,6 +1200,26 @@
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 112.0
+	},
+	"output.git-init":
+	{
+		"height": 112.0
+	},
+	"output.git-pull":
+	{
+		"height": 121.0
+	},
+	"output.git-push":
+	{
+		"height": 136.0
+	},
+	"output.git-remote":
+	{
+		"height": 118.0
 	},
 	"project": "327.sublime-project",
 	"replace":
@@ -1692,7 +1674,11 @@
 		[
 			[
 				"",
-				"~/Documents/School/214 ENGL/214.sublime-project"
+				"~/webserver.sublime-project"
+			],
+			[
+				"327",
+				"~/Documents/School/2014-1 Spring/327ECE/327.sublime-project"
 			],
 			[
 				"sc",
