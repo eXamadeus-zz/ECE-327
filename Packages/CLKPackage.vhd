@@ -1,4 +1,6 @@
 -- Clock package designed by Morten Zilmer (http://stackoverflow.com/questions/17904514/vhdl-how-should-i-create-a-clock-in-a-testbench)
+library ieee;
+use ieee.std_logic_1164.all;
 
 package clk_package is
 	procedure clk_gen(signal clk : out std_logic; constant FREQ : real; PHASE : time := 0 fs; signal run : std_logic);
