@@ -35,10 +35,10 @@ architecture behav of Lab2 is
 	-- Kowntur
 	component counter is
 		port (
-			reset : in  std_logic;
-			flag  : in  std_logic;
-			clock : in  std_logic;
-			value : out integer
+			reset  : in  std_logic;
+			flag   : in  std_logic;
+			clock  : in  std_logic;
+			cntout : out integer range 0 to 3
 		);
 	end component counter;		
 
@@ -57,13 +57,13 @@ begin
 		reset            => KEY0,
 		flag             => sflag,
 		clock            => CLOCK_50,
-		value            => count
+		cntout           => count
 	);
 
 	-- Ef-Esh-Ehm Lawjick
-	fsm_lawjick : process (CLOCK_50, seqin, reset)
+	fsm_lawjick : process (CLOCK_50, seqin, KEY0)
 	begin
-		if (reset = '0') then
+		if (KEY0 = '0') then
 			currs <= A;
 		elsif (rising_edge(CLOCK_50)) then
 			sflag <= '0';
