@@ -6,28 +6,25 @@ library ieee,work;
 use ieee.std_logic_1164.all;
 use work.all;
 
-entity PISO is
-	port(	clk,load : in std_logic;
-			pin      : in std_logic_vector(7 downto 0);
-			sout     : out std_logic);
+entity piso is
+	port(	clk,load : in  std_logic;
+			pin      : in  std_logic_vector(17 downto 0);
+			sout     : out std_logic_vector( 1 downto 0));
 end entity piso;
 
-architecture b_piso of PISO is
-	signal temp : std_logic_vector(7 downto 0);
-	signal t :std_logic;
+architecture b_piso of piso is
+	signal temp : std_logic_vector(17 downto 0);
 
 begin
 	P1 : process (clk,pin,load)
 	begin
 		if (load = '1') then
-			temp(7 downto 0) <= pin(7 downto 0);
+			temp(17 downto 0) <= pin(17 downto 0);
 		elsif (rising_edge(clk)) then
-			t <= temp(7);
-			temp(7 downto 1) <= temp(6 downto 0);
-			temp(0) <= '0';
+			sout( 1 downto 0) <= temp(17 downto 16);
+			temp(17 downto 2) <= temp(15 downto 0);
+			temp( 1 downto 0) <= "00";
 		end if;
 	end process P1;
-
-	sout <= t;
 	
 end architecture b_piso;
