@@ -11,16 +11,16 @@ architecture lab2 of TB2 is
 	-- Clock frequency and signal
 	signal clk  : std_logic;
 	signal load : std_logic := '1';
-	signal data : std_logic_vector(7 downto 0) := "01101010";
-	signal sout : std_logic;
+	signal data : std_logic_vector(17 downto 0) := "101110001010110111";
+	signal sout : std_logic_vector(1 downto 0);
 	signal run 	: std_logic := '1';
 
 	component PISO
 		port (
 			clk  : in std_logic;
 			load : in std_logic;
-			pin  : in std_logic_vector(7 downto 0);
-			sout : out std_logic
+			pin  : in std_logic_vector(17 downto 0);
+			sout : out std_logic_vector(1 downto 0)
 		);
 	end component;
 	
@@ -40,8 +40,6 @@ begin
 	begin
 		wait for 15 ns;
 		load <= '0';
-		wait for 100 ns;
-		run <= '0';
 	end process;
 	  
 end architecture;
