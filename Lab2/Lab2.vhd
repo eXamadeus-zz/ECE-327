@@ -4,11 +4,10 @@ use work.all;
 
 entity Lab2 is
 	port (
-		KEY0     : in  std_logic;
-		KEY1     : in  std_logic;
-		CLOCK_50 : in std_logic;
+		KEY      : in  std_logic_vector(1 downto 0);
+		CLOCK_50 : in  std_logic;
 		SW       : in  std_logic_vector(17 downto 0);
-		LEDR     : out std_logic_vector( 2 downto 0)
+		LEDR     : out std_logic_vector( 2 downto 0) := "000"
 	);
 end entity Lab2;
 
@@ -19,7 +18,6 @@ architecture behav of Lab2 is
 	-- Schignuls
 	signal currs : state;
 	signal sflag : std_logic := '0';
-	signal runny : std_logic := '1';
 	signal seqin : std_logic_vector(1 downto 0);
 	signal count : integer range 0 to 3;
 
@@ -47,41 +45,46 @@ begin
 	-- Peeso Kumpownent
 	peeso : PISO PORT MAP (
 		clk              => CLOCK_50,
-		load             => KEY1,
+		load             => KEY(1),
 		pin(17 downto 0) => SW(17 downto 0),
 		sout             => seqin
 	);
 
 	-- Kowntur Kumpownent
 	kowntur : counter PORT MAP (
-		reset            => KEY0,
+		reset            => KEY(0),
 		flag             => sflag,
 		clock            => CLOCK_50,
 		cntout           => count
 	);
 
 	-- Ef-Esh-Ehm Lawjick
-	fsm_lawjick : process (CLOCK_50, seqin, KEY0)
+	fsm_lawjick : process (CLOCK_50, seqin, KEY(0))
 	begin
-		if (KEY0 = '0') then
+		if (KEY(0) = '0') then
 			currs <= A;
+			sflag <= '0';
 		elsif (rising_edge(CLOCK_50)) then
 			sflag <= '0';
 			case currs is
 				when A =>
 					if (seqin = "01") then currs <= B; end if;
 				when B =>
-					if (seqin = "11" or seqin = "00") then currs <= C;
+					if (seqin = "00") then currs <= C;
+					elsif (seqin = "11") then currs <= D;
+					elsif (seqin = "01") then currs <= B;
 					else currs <= A; end if;
 				when C =>
-					if (seqin = "00") then
+					if (seqin = "00" or seqin = "11") then
 						sflag <= '1';
 						currs <= A;
+					elsif (seqin = "01") then currs <= B;
 					else currs <= A; end if;
 				when D =>
-					if (seqin  = "00" or seqin = "11") then
+					if (seqin  = "00") then
 						sflag <= '1';
 						currs <= A;
+					elsif (seqin = "01") then currs <= B;
 					else currs <= A; end if;
 				when others =>
 					currs <= A;

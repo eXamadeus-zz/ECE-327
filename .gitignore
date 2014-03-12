@@ -3,7 +3,6 @@
 *.blg
 *.fdb_latexmk
 *.synctex.gz
-Lab 1/Report/Lab1.log
 *.xml
 *.qpf
 *.qsf
@@ -16,22 +15,19 @@ Lab 1/Report/Lab1.log
 *.hier_info
 *.hif
 *.ipinfo
-Lab2/TB2/db/TB2.lpc.html
-Lab2/TB2/db/TB2.lpc.txt
 *.qmsg
 *.hdb
 *.ddb
 *.flock
 *.cdb
 *.sci
-Lab2/TB2/db/TB2.smart_action.txt
-Lab2/TB2/db/logic_util_heursitic.dat
 *.rpt
 *.summary
-Lab2/TB2/vsim.wlf
-Lab2/TB2/work/_info
-Lab2/TB2/work/_vmake
 *.dat
 *.dbs
 *.prw
 *.psm
+Lab 1/Report/Lab1.log
+Lab2/db/*
+Lab2/test/db/*
+Lab2/TB2/db*

@@ -12,14 +12,14 @@ entity counter is
 end entity counter;
 
 architecture behav of counter is
-	shared variable count : integer := 0;
+	signal count : integer range 0 to 3 := 0;
 begin
 	process (clock, flag, reset)
 	begin
 		if (reset = '0') then
-			count := 0;
+			count <= 0;
 		elsif (rising_edge(clock) and flag = '1') then
-			count := count + 1;
+			count <= (count + 1);
 		end if;
 	end process;
 
