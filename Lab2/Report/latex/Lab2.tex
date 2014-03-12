@@ -192,7 +192,7 @@
   \label{cha:abstract}
 \vspace{72pt}
 
-Finite state machines (FSMs) are the basic building blocks of complex computing.  They allow for logical implementation of algorithms, which is critical to the engineering of computing systems.  In this lab, a finite state machine is constructed to flag "stop codons" in a sample of DNA code.  The implementation of this finite machine is done though VHDL using behavioral modeling techniques.  Testbench results are provided later in this report to show a working simulation of the FSM when connected to other logical components.  The other logical components built for this lab are a Parallel-to-Serial Output (PISO) register and a counter register.  The inputs to the FSM design will be threefold.  There will be one array of 18 switches which are used to simulate the DNA input.  There will also be a "reset" button and a "load" button.  The reset button will asynchronously reset the counter block, while the load button will be used to push new data into the PISO register. This design showcases the power of finite state machine logic.  It is critical for engineers to grasp the power of logical computation and to see the scalability of such power.  By combining simple FSM logical blocks, one can create a vast and complicated algorithm with ease.
+Finite state machines (FSMs) are the basic building blocks of complex computing.  They allow for logical implementation of algorithms, which is critical to the engineering of computing systems.  In this lab, a finite state machine is constructed to flag "stop codons" in a sample of DNA code.  The implementation of this FSM is done though VHDL using behavioral modeling techniques.  Testbench results are provided later in this report to show a working simulation of the FSM when connected to other logical components.  The other logical components built for this lab are a Parallel-to-Serial Output (PISO) register and a counter register.  The inputs to the FSM design are threefold.  There is one array of 18 switches which is used to simulate the DNA input.  There is also be a "reset" button and a "load" button.  The reset button asynchronously resets the counter block, while the load button pushes new data into the PISO register. This design showcases the power of finite state machine logic.  It is critical for engineers to grasp the power of logical computation and to see the scalability of such power.  By combining simple FSM logical blocks, one can create a vast and complicated algorithm with ease.
 
 \vspace{3.5in}
 
@@ -215,15 +215,15 @@ The purpose of this lab is to sequence DNA bases consisting of "T", "A", "C", an
     \label{fig:bases}
 \end{figure}
 
-Lab two consists of three major logical components (the FSM logic, the counter logic, and the PISO logic) and one minor component (the LED logic).  The counter and PISO components are standalone and can be simulated through ModelSim for testing or used for implementation with other systems with minimal modifications.  The FSM logic is designed to model state transitions of the incoming DNA data from the PISO.  And the minor LED logic simply displays a number of LEDs correspondent to the output of the counter logic.
+Lab 2 consists of three major logical components: the FSM logic, the counter logic, and the PISO logic. There is also one minor component, the LED logic.  The counter and PISO components are standalone and can be simulated through ModelSim for testing or used for implementation with other systems with minimal modifications.  The FSM logic is designed to model state transitions of the incoming DNA data from the PISO.  The minor LED logic simply displays a number of LEDs correspondent to the output of the counter logic.
 
-\section{\scshape FSM System Design} %(0.5 pages)
+\section{\scshape Lab 2 System Design} %(0.5 pages)
 \label{sec:fsm_design}
 
 \subsection{\scshape PISO Logic Design}
 \label{sub:design_piso}
 
-The PISO design for this lab was built specifically to handle 18 bits of input data at a time.  This was a design choice made for the layout of the Altera board, as it only allowed for 18 bits of modifiable input at a time. The PISO logic parses the 18 bits of data by 2 bit intervals.  It then outputs the first two bits of data on the rising edge of the clock.  This output is connected to the FSM input.  The PISO then shifts the data left by two bits and adds a "01" to the right end.  The "01" code was chosen for the shift packing to make sure that when the data is fully read, no extra stop codons are accidentally detected.  Since the code for the "T" base is "01" and no stop codons end with "T" or consist of all "T" bases, this eliminates that possibility.
+The PISO component for this lab was built specifically to handle 18 bits of input data at a time.  This was a design choice made for the layout of the Altera board, as it only allowed for 18 bits of modifiable input at a time. The PISO logic parses the 18 bits of data by 2 bit intervals.  It then outputs the first two bits of data on the rising edge of the clock.  This output is connected to the FSM input.  The PISO then shifts the data left by two bits and adds a "01" to the right end.  The "01" code was chosen for the shift packing to make sure that when the data is fully read, no extra stop codons are accidentally detected.  Since the code for the "T" base is "01" and no stop codons end with "T" or consist of all "T" bases, this eliminates that possibility.
 
 \subsection{\scshape Testing of the PISO}
 \label{sub:test_piso}
@@ -251,7 +251,7 @@ The counter was tested by sending stop flags to the input and periodically sendi
 \vspace{15px}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth,height=4cm,keepaspectratio]{counter.png}
+    \includegraphics[width=0.8\textwidth,height=4cm,keepaspectratio]{counter.png}
     \caption{Counter Simulation Results\cite{Synth}}
     \label{fig:test_counter}
 \end{figure}
@@ -269,19 +269,19 @@ The FSM was designed with 4 logical states: A, B, C, and D.  The first state, A,
     \label{fig:diag_fsm}
 \end{figure}
 
-Once the FSM is in state C or D it looks for specific input signals.  If the signals match a certain condition set (w=00 for C or w=00,11 for D) then the stop flag is triggered and the state resets to A.  The only danger to this model is when the asynchronous reset is called between the C and D input conditional and the stop flag assignment.  If this were to occur the counter could be prematurely incremented on the next cycle.  However, this is incredibly rare as for this to occur requires that the reset must toggle within the fraction of between a comparison and signal assignment.
+Once the FSM is in state C or D it looks for specific input signals.  If the signals match a certain condition set (w=00 for C or w=00,11 for D) then the stop flag is triggered and the state resets to A.  The only danger to this model is when the asynchronous reset is called between the C and D input conditional and the stop flag assignment.  If this were to occur the counter could be prematurely incremented on the next cycle.  However, this is incredibly rare as for this to occur requires that the reset must toggle within the fraction of between a comparison and signal assignment.  This can be controlled by pulsing the reset signal for only the duration required.  If using a human controller, like is done in this lab, the risk is unavoidable with a Mealy design.
 
 \clearpage
 
 \subsection{\scshape Testing of the FSM}
 \label{sub:test_counter}
 
-The FSM was tested by 
+The FSM was tested by inputing the PISO data into the FSM and monitoring the state changes and flag signals that come out.  In Figure \ref{fig:test_fsm} you can see that the state remains in A when the input data is not "01" or a "T".  Once a "T" is found the state transitions to B.  The figure shows the progression for detection of one stop codon with some input data.
 
 \vspace{15px}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth,height=4cm,keepaspectratio]{simulation.png}
+    \includegraphics[width=0.8\textwidth,height=4cm,keepaspectratio]{simulation.png}
     \caption{FSM Simulation Results}
     \label{fig:test_fsm}
 \end{figure}
@@ -289,7 +289,9 @@ The FSM was tested by
 \section{\scshape Conclusions} % (fold)
 \label{sec:conclusions}
 
-This lab is a testament to the modularity, reliability, and scope of FPGA programming with VHDL.  Simple components or systems can be designed and connected to form incredibly complex systems that can perform a wide range of actions.  Originally, the subsystems in the lab seemed unconnected to one another.  However, by the end of the lab it was clear that the systems were building upon each other.  This lab also clearly demonstrated the value of simulations in attempting to analyze complex FPGA systems.
+There are minor changes that could be done to the lab that would increase its power consuption and modularity for use by other projects.  For example, the clock signal could be AND gated with a run signal that would allow complete removal of the clock signal to the logical subsystems.  This would allow for cleaner code inside the PISO module that would in turn make error checking in the FSM much easier.
+
+Overall, this lab goes to show that there two very similar, yet distinct ways to design and model finite state machines.  By using a Mealy model, this lab is able to show that even though there may be inherant risk for data instability, that risk is either minute enough to ignore or can be controlled by outside systems.  This lab also clearly demonstrates the power and versatiliy of FSM logic.
 
 % section scshape_conclusions (end)
 
@@ -301,217 +303,288 @@ This lab is a testament to the modularity, reliability, and scope of FPGA progra
 
 \clearpage
 
-\chapter*{\scshape Appendix A: 5-Seven Segment Decoder}
+\chapter*{\scshape Appendix A: Lab 2 System}
 \label{app:a}
 
-\vspace{45px}
+\vspace{15px}
 \begin{lstlisting}
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-LIBRARY work;
-USE work.all;
+library ieee,work;
+use ieee.std_logic_1164.all;
+use work.all;
 
-ENTITY LAB1d IS
-
-  PORT (
-    SW              : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-    HEX0,HEX1,HEX2,HEX3,HEX4  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+entity Lab2 is
+  port (
+    KEY      : in  std_logic_vector(1 downto 0);
+    CLOCK_50 : in  std_logic;
+    SW       : in  std_logic_vector(17 downto 0);
+    LEDR     : out std_logic_vector( 2 downto 0) := "000"
   );
-      
-END ENTITY LAB1d;
+end entity Lab2;
 
-ARCHITECTURE LAB1d_arch OF LAB1d IS
+architecture behav of Lab2 is
+  -- Thaipsch
+  type state is (A,B,C,D);
 
-  COMPONENT seven_seg_parse
-    PORT (
-      DATA  : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-      OUTPUT  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+  -- Schignuls
+  signal currs : state;
+  signal sflag : std_logic := '0';
+  signal seqin : std_logic_vector(1 downto 0);
+  signal count : integer range 0 to 3;
+
+  -- Pair-El-El to Cereal Owt-Puht
+  component PISO is
+    port (
+      clk,load : in  std_logic;
+      pin      : in  std_logic_vector(17 downto 0);
+      sout     : out std_logic_vector( 1 downto 0)
     );
-  END COMPONENT seven_seg_parse;
+  end component PISO;
 
-  SIGNAL S0,S1,S2,S3,S4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+  -- Kowntur
+  component counter is
+    port (
+      reset  : in  std_logic;
+      flag   : in  std_logic;
+      clock  : in  std_logic;
+      cntout : out integer range 0 to 3
+    );
+  end component counter;    
 
-BEGIN
-    behav : PROCESS (S0,S1,S2,S3,S4)
-    BEGIN
-      CASE SW(17 DOWNTO 15) IS
-        WHEN "000" =>
-          HEX0 <= S0;
-          HEX1 <= S1;
-          HEX2 <= S2;
-          HEX3 <= S3;
-          HEX4 <= S4;
-        WHEN "001" =>
-          HEX0 <= S1;
-          HEX1 <= S2;
-          HEX2 <= S3;
-          HEX3 <= S4;
-          HEX4 <= S0;
-        WHEN "010" =>
-          HEX0 <= S2;
-          HEX1 <= S3;
-          HEX2 <= S4;
-          HEX3 <= S0;
-          HEX4 <= S1;
-        WHEN "011" =>
-          HEX0 <= S3;
-          HEX1 <= S4;
-          HEX2 <= S0;
-          HEX3 <= S1;
-          HEX4 <= S2;
-        WHEN "100" =>
-          HEX0 <= S4;
-          HEX1 <= S0;
-          HEX2 <= S1;
-          HEX3 <= S2;
-          HEX4 <= S3;
-        WHEN others =>
-          HEX0 <= S0;
-          HEX1 <= S1;
-          HEX2 <= S2;
-          HEX3 <= S3;
-          HEX4 <= S4;
-      END CASE;
-    END PROCESS behav;
-    seven_seg_0 : seven_seg_parse PORT MAP(SW(2 DOWNTO 0),S0);
-    seven_seg_1 : seven_seg_parse PORT MAP(SW(5 DOWNTO 3),S1);
-    seven_seg_2 : seven_seg_parse PORT MAP(SW(8 DOWNTO 6),S2);
-    seven_seg_3 : seven_seg_parse PORT MAP(SW(11 DOWNTO 9),S3);
-    seven_seg_4 : seven_seg_parse PORT MAP(SW(14 DOWNTO 12),S4);
-END ARCHITECTURE LAB1d_arch;
-
--------------------------
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-LIBRARY work;
-USE work.all;
-
-ENTITY seven_seg_parse IS 
-  
-  PORT (
-    DATA  : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-    OUTPUT  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+  -- Ark-It-Eck-Sure
+begin
+  -- Peeso Kumpownent
+  peeso : PISO PORT MAP (
+    clk              => CLOCK_50,
+    load             => KEY(1),
+    pin(17 downto 0) => SW(17 downto 0),
+    sout             => seqin
   );
 
-END ENTITY seven_seg_parse;
+  -- Kowntur Kumpownent
+  kowntur : counter PORT MAP (
+    reset            => KEY(0),
+    flag             => sflag,
+    clock            => CLOCK_50,
+    cntout           => count
+  );
 
-ARCHITECTURE basic OF seven_seg_parse IS
+  -- Ef-Esh-Ehm Lawjick
+  fsm_lawjick : process (CLOCK_50, seqin, KEY(0))
+  begin
+    if (KEY(0) = '0') then
+      currs <= A;
+      sflag <= '0';
+    elsif (rising_edge(CLOCK_50)) then
+      sflag <= '0';
+      case currs is
+        when A =>
+          if (seqin = "01") then currs <= B; end if;
+        when B =>
+          if (seqin = "00") then currs <= C;
+          elsif (seqin = "11") then currs <= D;
+          elsif (seqin = "01") then currs <= B;
+          else currs <= A; end if;
+        when C =>
+          if (seqin = "00" or seqin = "11") then
+            sflag <= '1';
+            currs <= A;
+          elsif (seqin = "01") then currs <= B;
+          else currs <= A; end if;
+        when D =>
+          if (seqin  = "00") then
+            sflag <= '1';
+            currs <= A;
+          elsif (seqin = "01") then currs <= B;
+          else currs <= A; end if;
+        when others =>
+          currs <= A;
+      end case;
+    end if;
+  end process fsm_lawjick;
 
-BEGIN
-  behav : PROCESS (DATA)
-  BEGIN
-    CASE DATA IS
-      WHEN "000" => OUTPUT <= "0000111";
-      WHEN "001" => OUTPUT <= "1111001";
-      WHEN "010" => OUTPUT <= "0010000";
-      WHEN "011" => OUTPUT <= "0000110";
-      WHEN "100" => OUTPUT <= "1001100";
-      WHEN others =>  OUTPUT <= "0000000";
-    END CASE;
-  END PROCESS behav;
-END ARCHITECTURE basic;
+  -- Ellie-Dee Lawjick
+  elliedee : process (count)
+  begin
+    case count is
+      when 1 =>
+        LEDR(2) <= '0';
+        LEDR(1) <= '0';
+        LEDR(0) <= '1';
+      when 2 =>
+        LEDR(2) <= '0';
+        LEDR(1) <= '1';
+        LEDR(0) <= '1';
+      when 3 =>
+        LEDR(2) <= '1';
+        LEDR(1) <= '1';
+        LEDR(0) <= '1';
+      when others =>
+        LEDR(2) <= '0';
+        LEDR(1) <= '0';
+        LEDR(0) <= '0';
+    end case;
+  end process elliedee;
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-LIBRARY work;
-USE work.all;
-
-ENTITY mux21 IS 
-
-  PORT (
-    SEL,X,Y : IN STD_LOGIC;
-    M   : OUT STD_LOGIC);
-END ENTITY mux21;
-
-ARCHITECTURE basic OF  mux21 IS
-BEGIN
-  mux21_behavior : PROCESS (SEL,X,Y)
-  BEGIN 
-      if (SEL = '0') then M <= X; else M <= Y; END if;
-  END PROCESS mux21_behavior;
-END ARCHITECTURE basic;
+end architecture behav;
 \end{lstlisting}
 
-\chapter*{\scshape Appendix B: Test Bench (Part 4)}
+\chapter*{\scshape Appendix B: FSM Testbench}
 \label{app:b}
 
-\vspace{45px}
+\vspace{15px}
 \begin{lstlisting}
-LIBRARY ieee;                                               
-USE ieee.std_logic_1164.all;                                
+library ieee,work;
+use ieee.std_logic_1164.all;
+use work.clk_package.all;
+use work.all;
 
-ENTITY TB1d IS
-END TB1d;
+entity test2 is --test-bench
+end entity test2;
 
-ARCHITECTURE TB1d_arch OF TB1d IS
-     
-  -- test signals going into and out of the mux                                                                                            
-  SIGNAL TESTSO1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-  SIGNAL TESTSO2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-  SIGNAL TESTSO3 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-  SIGNAL TESTSO4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-  SIGNAL TESTSO5 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-  SIGNAL TESTSW  : STD_LOGIC_VECTOR(17 DOWNTO 0);
-
-  COMPONENT LAB1d
-    PORT (
-      SW   : IN  STD_LOGIC_VECTOR(17 DOWNTO 0);
-      HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-      HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-      HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-      HEX3 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-      HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0) 
+architecture behav of test2 is
+  component lab2 is
+    port (
+      KEY      : in  std_logic_vector(1 downto 0);
+      CLOCK_50 : in  std_logic;
+      SW       : in  std_logic_vector(17 downto 0);
+      LEDR     : out std_logic_vector( 2 downto 0)
     );
-  END COMPONENT;
+  end component;
 
-  -- map the signals
+  signal keyt   : std_logic_vector( 1 downto 0) := "00";
+  signal clockt : std_logic;
+  signal swst   : std_logic_vector(17 downto 0);
+  signal ledrt  : std_logic_vector( 2 downto 0);
 
-  BEGIN
-  multimux : LAB1d
-  PORT MAP (
-    SW   => TESTSW,
-    HEX0 => TESTSO1,
-    HEX1 => TESTSO2,
-    HEX2 => TESTSO3,
-    HEX3 => TESTSO4,
-    HEX4 => TESTSO5
-  );
+  signal run    : std_logic := '1';
 
-  -- start the test
+begin
 
-  test : PROCESS                                                                                   
-  BEGIN                                                         
-  
-  -- set the initial word to be TIGER and initial position
-  TESTSW(14 DOWNTO 0)  <= "100011010001000";
-  TESTSW(17 DOWNTO 15) <= "000"; WAIT FOR 4 ns;
+  labtest : lab2
+  port map (keyt, clockt, swst, ledrt);
 
-  -- cycle around message
-  TESTSW(17 DOWNTO 15) <= "001"; WAIT FOR 2 ns;
-  TESTSW(17 DOWNTO 15) <= "010"; WAIT FOR 2 ns;
-  TESTSW(17 DOWNTO 15) <= "011"; WAIT FOR 2 ns;
-  TESTSW(17 DOWNTO 15) <= "100"; WAIT FOR 2 ns;
+  clk_gen(clockt, 50.000E6, 0 fs, run);
 
-  -- change message
-  TESTSW(17 DOWNTO 15) <= "000";
-  TESTSW(14 DOWNTO 0)  <= "100001010011000"; WAIT FOR 4 ns;
+  test : process is
+  begin
+    swst  <= "010011000101010001";
+    keyt(0) <= '1'; wait for 25 ns;
+    keyt(1) <= '1'; wait for 127 ns;
+    keyt(0) <= '0'; wait for 3 ns;
+    keyt(0) <= '1'; wait;
 
-  -- cycle randomly message
-  TESTSW(17 DOWNTO 15) <= "011"; WAIT FOR 2 ns;
-  TESTSW(17 DOWNTO 15) <= "010"; WAIT FOR 2 ns;
-  TESTSW(17 DOWNTO 15) <= "001"; WAIT FOR 2 ns;
-  TESTSW(17 DOWNTO 15) <= "100"; WAIT FOR 2 ns;
+  end process;
 
-
-  WAIT;                                                        
-  END PROCESS test;
-                                          
-END TB1d_arch;
+end architecture behav;
 \end{lstlisting}
 
-\chapter*{\scshape Appendix C: Waveform (Part 4)}
-\label{app:c}
+\chapter*{\scshape Appendix C: PISO Testbench}
+\label{app:b}
+
+\vspace{15px}
+\begin{lstlisting}
+library ieee,work;
+use ieee.std_logic_1164.all;
+use work.clk_package.all;
+use work.all;
+
+entity testpiso is --test-bench
+end entity testpiso;
+
+architecture behav of testpiso is
+  -- Pair-El-El to Cereal Owt-Puht
+  component PISO is
+    port (
+      clk,load : in  std_logic;
+      pin      : in  std_logic_vector(17 downto 0);
+      sout     : out std_logic_vector( 1 downto 0)
+    );
+  end component PISO;
+
+  signal clockt : std_logic;
+  signal load   : std_logic;
+  signal swst   : std_logic_vector(17 downto 0);
+  signal outdt  : std_logic_vector( 1 downto 0);
+
+  signal run    : std_logic := '1';
+
+begin
+
+  pisotest : piso
+  port map (clockt,load,swst,outdt);
+
+  clk_gen(clockt, 50.000E6, 0 fs, run);
+
+  test : process is
+  begin
+    swst  <= "010011000101010001";
+    load <= '1'; wait for 1 ns;
+    load <= '0'; wait for 10 ns;
+    load <= '1'; wait;
+
+  end process;
+
+end architecture behav;
+\end{lstlisting}
+
+\chapter*{\scshape Appendix D: Counter Testbench}
+\label{app:b}
+
+\vspace{15px}
+\begin{lstlisting}
+library ieee,work;
+use ieee.std_logic_1164.all;
+use work.clk_package.all;
+use work.all;
+
+% entity testcounter is --test-bench
+end entity testcounter;
+
+architecture behav of testcounter is
+  -- Kowntur
+  component counter is
+    port (
+      reset  : in  std_logic;
+      flag   : in  std_logic;
+      clock  : in  std_logic;
+      cntout : out integer range 0 to 3
+    );
+  end component counter;
+
+  signal clock  : std_logic;
+  signal reset  : std_logic := '1';
+  signal flag   : std_logic := '0';
+  signal cntout : integer range 0 to 3;
+
+  signal run    : std_logic := '1';
+
+begin
+
+  countertest : counter
+  port map (reset,flag,clock,cntout);
+
+  clk_gen(clock, 50.000E6, 0 fs, run);
+
+  test : process is
+  begin
+    wait for 20 ns;
+    flag  <= '1'; wait for 5 ns;
+    flag  <= '0'; wait for 15 ns;
+    flag  <= '1'; wait for 5 ns;
+    flag  <= '0'; wait for 15 ns;
+    flag  <= '1'; wait for 5 ns;
+    flag  <= '0'; wait for 10 ns;
+    reset <= '0'; wait for 1 ns;
+    reset <= '1'; wait for 24 ns;
+    flag  <= '1'; wait for 5 ns;
+    flag  <= '0'; wait for 15 ns;
+    flag  <= '1'; wait for 5 ns;
+    flag  <= '0'; wait;
+
+  end process;
+
+end architecture behav;
+\end{lstlisting}
 
 %% END EDITS HERE %%
 

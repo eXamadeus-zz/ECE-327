@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  12 MAR 2014 07:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  12 MAR 2014 08:20
 entering extended mode
  %&-line parsing enabled.
 **Lab2.tex
@@ -674,6 +674,12 @@ LaTeX Warning: Label `sub:design_counter' multiply defined.
 
 LaTeX Warning: Label `sub:test_counter' multiply defined.
 
+
+LaTeX Warning: Label `app:b' multiply defined.
+
+
+LaTeX Warning: Label `app:b' multiply defined.
+
 )
 \openout1 = `Lab2.aux'.
 
@@ -784,8 +790,8 @@ File: counter.png Graphic file (type png)
  <use counter.png> [2 <./piso.png (PNG copy)> <./counter.png (PNG copy)>]
 <fsm.png, id=20, 2617.78pt x 1923.185pt>
 File: fsm.png Graphic file (type png)
- <use fsm.png> [3 <./fsm.png (PNG copy)>] <simulation.png, id=24, 573.64313pt x
- 77.53969pt>
+ <use fsm.png> [3 <./fsm.png (PNG copy)>] <simulation.png, id=24, 334.24875pt x
+ 63.98906pt>
 File: simulation.png Graphic file (type png)
  <use simulation.png>
 [4
@@ -844,27 +850,29 @@ n/10.95 http : / / stackoverflow . com / questions / 17904514 /
 
 ] [7] [8] [9] [10
 
-] [11] [12] [13
+] [11] [12
 
-] (./Lab2.aux)
+] [13] [14
+
+] [15] (./Lab2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6061 strings out of 495061
- 76692 string characters out of 1182621
- 193834 words of memory out of 3000000
- 9109 multiletter control sequences out of 15000+50000
+ 6069 strings out of 495061
+ 76754 string characters out of 1182621
+ 190834 words of memory out of 3000000
+ 9117 multiletter control sequences out of 15000+50000
  59744 words of font info for 65 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,12n,43p,1267b,1923s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,12n,43p,1226b,1925s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/r
 athe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/share/texmf-te
 xlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/
 share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Lab2.pdf (15 pages, 1736881 bytes).
+Output written on Lab2.pdf (17 pages, 1737244 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
