@@ -33,9 +33,10 @@ begin
 	test : process is
 	begin
 		swst  <= "010011000101010001";
-		keyt(0) <= '1';
-		wait for 25 ns;
-		keyt(1) <= '1';
+		keyt(0) <= '1'; wait for 25 ns;
+		keyt(1) <= '1'; wait for 127 ns;
+		keyt(0) <= '0'; wait for 3 ns;
+		keyt(0) <= '1'; wait;
 
 	end process;
 
