@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  12 MAR 2014 03:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  12 MAR 2014 05:35
 entering extended mode
  %&-line parsing enabled.
 **Lab2.tex
@@ -760,219 +760,93 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 200.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 200.
+
+<bases.png, id=9, 1513.655pt x 476.78125pt>
+File: bases.png Graphic file (type png)
+ <use bases.png>
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 208.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 218.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 208.
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 218.
+ [2
 
+ <./bases.png (PNG copy)>] <simulation.png, id=14, 612.03656pt x 135.50626pt>
+File: simulation.png Graphic file (type png)
 
-! LaTeX Error: File `2to1Code' not found.
+<use simulation.png> [3 <./simulation.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 28
+2.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.216 ...degraphics[width=0.5\textwidth]{2to1Code}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 217.
-
-LaTeX Warning: Citation `Synth' on page 2 undefined on input line 217.
-
-
-! LaTeX Error: File `2to1Multi' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.223 ...egraphics[width=0.5\textwidth]{2to1Multi}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[2
-
-]
-
-! LaTeX Error: File `5to1Code' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.246 ...degraphics[width=0.6\textwidth]{5to1Code}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `TB1b' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...\includegraphics[width=1\textwidth]{TB1b}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `ssd' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.273 ...includegraphics[width=0.3\textwidth]{ssd}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[3]
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 27
-8.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 27
-8.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 28
+2.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 27
-8.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 28
+2.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 27
-8.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 28
+2.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 278.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 282.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 278.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 282.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 278.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 282.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 278.
-
-
-! LaTeX Error: File `timing_ssd' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 ...degraphics[width=1\textwidth]{timing_ssd}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `5_ssd_truth' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.303 ...egraphics[width=1\textwidth]{5_ssd_truth}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[4]
-
-! LaTeX Error: File `5_ssd_logic' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.313 ...aphics[width=0.65\textwidth]{5_ssd_logic}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[5]
-No file Lab2.bbl.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 345.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 282.
+ [4] [5] [6] (./Lab2.bbl
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 5.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [6
+)
+Underfull \hbox (badness 1668) in paragraph at lines 4--6
+[]\T1/ptm/m/n/10.95 J. Lewis, ``Vhdl quick ref-er-ence.'' In-ter-net: $\T1/cmtt
+/m/n/10.95 http : / / www . synthworks . com / downloads / vhdl _
+ []
+
+) [7
+
+] [8
 
 
+] [9] [10] [11] [12
 
-] [7] [8] [9] [10
+] [13] [14] [15
 
-]
-[11] [12]
-
-! LaTeX Error: File `timing_5_ssd' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.555 ...graphics[width=1\textwidth]{timing_5_ssd}
-                                                  
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[13
-
-] (./Lab2.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./Lab2.aux) ) 
 Here is how much of TeX's memory you used:
- 6066 strings out of 495061
- 76609 string characters out of 1182621
- 193844 words of memory out of 3000000
- 9099 multiletter control sequences out of 15000+50000
- 61423 words of font info for 68 fonts, out of 3000000 for 9000
+ 6054 strings out of 495061
+ 76606 string characters out of 1182621
+ 193834 words of memory out of 3000000
+ 9103 multiletter control sequences out of 15000+50000
+ 58934 words of font info for 67 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,12n,43p,942b,1925s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk>{/usr/sha
-re/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/ty
-pe1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a
-.pfb>
-Output written on Lab2.pdf (14 pages, 70733 bytes).
+ 27i,12n,43p,1267b,1937s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.6
+00pk> </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/
+share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts
+/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utm
+r8a.pfb>
+Output written on Lab2.pdf (16 pages, 120464 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 166 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

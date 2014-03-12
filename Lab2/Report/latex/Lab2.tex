@@ -3,7 +3,7 @@
 
 %% CHANGE REPORT TITLE HERE
 \newcommand{\reporttitle}{
- Finite State Machine Design
+ FSM System Design
 }
 
 %% HEADER/PREAMBLE INFORMATION
@@ -144,7 +144,7 @@
 {
 \Large
 \begin{center}
-  Lab Report 1 for ECE327 \\
+  Lab Report 2 for ECE327 \\
   Digital Systems Design
 \end{center}
 }
@@ -175,7 +175,7 @@
 {
 \Large
 \begin{center}
-  February 5, 2013
+  March 12, 2014
 \end{center}
 }
 
@@ -193,37 +193,56 @@
   \label{cha:abstract}
 \vspace{72pt}
 
-Digital system design is the process of creating a complex digital system by building and integrating various fundamental components.  In this lab, multiplexers and decoders are implemented to familiarize students with the operation of an FPGA device and the Altera development environment.  Testbenches are used to demonstrate the power and usefulness of simulations.  The simple elements designed in this lab can be used as basic components in much larger, more complicated designs.  It is critical to grasp the scope and scalability of this technology.  This lab also focuses on connecting smaller components to make larger more complicated processes simpler.  The final part of this lab, the 5 piece seven-segment decoder is the culmination of these principles.
+Finite state machines (FSMs) are the basic building blocks of complex computing.  They allow for logical implementation of algorithms, which is critical to the engineering of computing systems.  In this lab, a finite state machine is constructed to flag "stop codons" in a sample of DNA code.  The implementation of this finite machine is done though VHDL using behavioral modeling techniques.  Testbench results are provided later in this report to show a working simulation of the FSM when connected to other logical components.  The other logical components built for this lab are a Parallel-to-Serial Output (PISO) register and a counter register.  The inputs to the FSM design will be threefold.  There will be one array of 18 switches which are used to simulate the DNA input.  There will also be a "reset" button and a "load" button.  The reset button will asynchronously reset the counter block, while the load button will be used to push new data into the PISO register. This design showcases the power of finite state machine logic.  It is critical for engineers to grasp the power of logical computation and to see the scalability of such power.  By combining simple FSM logical blocks, one can create a vast and complicated algorithm with ease.
 
 \clearpage
 
 \section*{\scshape Introduction} %(0.5 pages)
 \label{cha:introduction}
 
-Lab one is broken into four distinct subsystems.  Each system is standalone and can be simulated through ModelSim for testing and also implemented on the Altera DE 2 FPGA board.  The first system is a 2-to-1 multiplexer with an 8-bit input/output.  The second system is a modification of the first.  It expands the multiplexer to a 5-to-1 but decreases the input/output channel size to 3 bits.  The third system is a seven segment display implementation do display the letters 'T', 'I', 'G', 'E', and 'R'.  The fourth and final system is a combination of the previous two.  The design uses a 5-to-1 multiplexer with 5 seven segment displays.  The seven segment displays are capable of showing a rotating string based upon input values defined by the engineer.  Each of these systems is comparable to real-world counterparts.  They are an analogy to other systems in which complex designs are built from smaller, simpler components.
+The purpose of this lab is to sequence DNA bases consisting of T, A, C, and G and look for stop codons.  Stop codons are series of three bases that trigger the end of a DNA sequence.  The stop codons we look for in this lab are TAA, TGA, and TAG.  In order to differentiate the bases, we use a binary representation for the bases (Figure \ref{fig:bases}).  The bases are then fed into the FSM, the number of stop codons are counted, and then the count is displayed on the Altera board.
 
-\section{\scshape 2-to-1 Multiplexer} %(0.5 pages)
-\label{sec:2to1}
+\vspace{15px}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth,keepaspectratio]{bases}
+    \caption{DNA Base Representation}
+    \label{fig:bases}
+\end{figure}
 
-\subsection{\scshape Design of the 2-to-1 Multiplexer}
-\label{sub:design_2to1}
+Lab two consists of three major logical components (the FSM logic, the counter logic, and the PISO logic) and one mior component (the LED logic).  The counter and PISO components are standalone and can be simulated through ModelSim for testing or used for implementation with other systems with minimal modifications.  The FSM logic is designed to model state transitions of the incoming DNA data from the PISO.  And the minor LED logic simply displays a number of LEDs correspondent to the output of the counter logic.
 
-Building the 2-to-1 multiplexer system in VHDL requires 3 signals: a select signal, an 8-bit input channel, and an 8-bit output channel.  Once those are defined the engineer has multiple options on how to implement the functionality. Figure \ref{fig:logic_2to1} shows the digital logic implementation of the first system.  By using the powerful non-linearity of VHDL the entire behavior of the multiplexer can be implemented in one simple if-then-else block (Figure \ref{fig:code_2to1}).
+\section{\scshape FSM System Design} %(0.5 pages)
+\label{sec:fsm_design}
+
+\subsection{\scshape PISO Logic Design}
+\label{sub:design_piso}
+
+The PISO design for this lab was built specifically to handle 18 bits of input data at a time.  This was a design choice made for the layout of the Altera board, as it only allowed for 18 bits of modifiable input at a time. The PISO logic parses the 18 bits of data by 2 bit intervals.  It then outputs the first two bits of data on the rising edge of the clock.  This output is connected to the FSM input.  The PISO then shifts the data left by two bits and adds a "01" to the right end.  The "01" code was chosen for the shift packing to make sure that when the data is fully read, no extra stop codons are accidentally detected.  Since the code for the T base is "01" and no stop codons end with T or consist of all T's, this eliminates that possibility.
+
+\subsection{\scshape Testing of the PISO}
+\label{sub:test_piso}
+
+To test the PISO, a teshbench was created that would send in different strings of data to the PISO and monitor the output on the rising edge of the following clock cycles.
+
+\subsection{\scshape Counter Logic Design}
+\label{sub:design_counter}
+
+The counter is modeled behaviorally and simply counts the number of stop flags from the FSM it encounters.  The maximum count used for this project is three, but can be modified to much larger ranges with only a few lines of code.  The counter outputs its value on an integer signal that is sent to the LED logic.
+
+\subsection{\scshape Testing of the Counter}
+\label{sub:test_counter}
+
+The counter was tested by sending stop flags to the input and periodically sending a reset signal.  The counter performed without issue even when using large integer values.  The maximum count size tested was 255, but since the maximum number of stop codones possible from the board were three, the counter integer limit was set to 3.
 
 \vspace{30px}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{2to1Code}
-    \caption{2-to-1 Multiplexer Code\cite{Synth}}
-    \label{fig:code_2to1}
+    \includegraphics[width=1.0\textwidth,height=4cm]{simulation}
+    \caption{Simulation Results\cite{Synth}}
+    \label{fig:testbench}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{2to1Multi}
-    \caption{2-to-1 Multiplexer Logic}
-    \label{fig:logic_2to1}
-\end{figure}
 
 \subsection{\scshape Testing of the 2-to-1 Multiplexer}
 \label{sec:test_2to1}
@@ -238,28 +257,13 @@ Once the testbench was completed, the code was compiled inside of Quartus II and
 \subsection{\scshape Designing the 5-to-1 Multiplexer} % (fold)
 \label{sub:design_5to1}
 
-The second system was a 5-to-1 multiplexer design.  This design is very similar to the previous system.  The addition of three more channels will require a more complex decoding algorithm.  This can complicate the design greatly; however, smart implementation techniques can limit the overhead of the computation.  As shown in Figure \ref{fig:5to1code} a simple case block was sufficient to perform the select signal decoding for the 3 bit select line.  This method is inefficient with larger select lines as they exponentially increase the number of required cases per select channel bit.
-
-\vspace{30px}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{5to1Code}
-    \caption{5-to-1 Decoder}
-    \label{fig:5to1code}
-\end{figure}
+The second system was a 5-to-1 multiplexer design.  This design is very similar to the previous system.  The addition of three more channels will require a more complex decoding algorithm.  This can complicate the design greatly; however, smart implementation techniques can limit the overhead of the computation.  As shown in Figure a simple case block was sufficient to perform the select signal decoding for the 3 bit select line.  This method is inefficient with larger select lines as they exponentially increase the number of required cases per select channel bit.
 
 \subsection{\scshape Testing the 5-to-1 Multiplexer} % (fold)
 \label{sub:test_5to1}
 
-The testing of the 5-to-1 multiplexer was almost exactly the same as the test for the 2-to-1.  Figure \ref{fig:timing_1b} shows the timing diagram of the signals.  The diagram shows the transition from the output signal (TESTM) as the select signal (TESTS) is modified.  The first 5 changes for TESTS show the value of the output matching the selected input.  The second to last change shows that non-selected input does not affect the output.  The final change to TESTW when it is selected shows that the output changes immediately with the selected signal.
+The testing of the 5-to-1 multiplexer was almost exactly the same as the test for the 2-to-1.  Figure shows the timing diagram of the signals.  The diagram shows the transition from the output signal (TESTM) as the select signal (TESTS) is modified.  The first 5 changes for TESTS show the value of the output matching the selected input.  The second to last change shows that non-selected input does not affect the output.  The final change to TESTW when it is selected shows that the output changes immediately with the selected signal.
 
-\vspace{30px}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{TB1b}
-    \caption{5-to-1 Decoder}
-    \label{fig:timing_1b}
-\end{figure}
 
 \section{\scshape Seven Segment Decoder}
 \label{sec:seven_segment_decoder}
@@ -267,27 +271,20 @@ The testing of the 5-to-1 multiplexer was almost exactly the same as the test fo
 \subsection{\scshape Designing the Seven Segment Decoder} % (fold)
 \label{sub:design_ssd}
 
-\vspace{30px}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.3\textwidth]{ssd}
-    \caption{Seven Segment Display Logic}
-    \label{fig:ssd}
-\end{figure}
+% \vspace{30px}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.3\textwidth]{ssd}
+%     \caption{Seven Segment Display Logic}
+%     \label{fig:ssd}
+% \end{figure}
 
-The basic truth table and signal layout for the seven segment decoder (SSD) are shown in Figure \ref{fig:ssd}.  The SSD is supposed to take a 3-bit input and display a letter corresponding to the values in the truth table.  This means that a maximum of $2^3$  Each segment in the decoder is set by a bit.  So the input channel must be 7 bits wide to accommodate the SSD.
+The basic truth table and signal layout for the seven segment decoder (SSD) are shown in Figure (ref here).  The SSD is supposed to take a 3-bit input and display a letter corresponding to the values in the truth table.  This means that a maximum of $2^3$  Each segment in the decoder is set by a bit.  So the input channel must be 7 bits wide to accommodate the SSD.
 
 \subsection{\scshape Testing the Seven Segment Decoder} % (fold)
 \label{sub:test_ssd}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{timing_ssd}
-    \caption{Seven Segment Timing Waveform}
-    \label{fig:timing_ssd}
-\end{figure}
-
-Testing of the SSD is more efficient on the Cyclone IV due to the nature of the visual display.  For a human eye the waveform simulation was unfortunately hard to follow.  Although the waveform allowed for proper logical adjustments, it was unknown that the SSD required a low bit to activate a segment and all of the letters were inverted.  Figure \ref{fig:timing_ssd} shows the timing waveform.
+Testing of the SSD is more efficient on the Cyclone IV due to the nature of the visual display.  For a human eye the waveform simulation was unfortunately hard to follow.  Although the waveform allowed for proper logical adjustments, it was unknown that the SSD required a low bit to activate a segment and all of the letters were inverted.  Figure shows the timing waveform.
 
 \section{\scshape 5-Seven Segment Display}
 \label{sec:5_ssd}
@@ -297,24 +294,7 @@ Testing of the SSD is more efficient on the Cyclone IV due to the nature of the 
 
 The final system of Lab 1 is a 5-count SSD that can display a word.  The word must be able to be shifted by a 3-bit select channel and each letter must be modifiable by another 3-bit select channel.  Each of the previous subsystems is included for the final design.  There are 5 5-to-1 multiplexers which are connected to SSDs.   
 
-\vspace{30px}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5_ssd_truth}
-    \caption{5 Seven Segment Truth Table}
-    \label{fig:5_ssd_truth}
-\end{figure}
-
-Figure \ref{fig:5_ssd_truth} shows the truth table for the select line input.  This table is assuming that the SSD letter codes are not changing when the select line does.  Each SSD also has a 3-bit select line that will tell the multiplexer what values to send to the decoder.  The diagram for the signals is shown in Figure \ref{fig:5_ssd_logic}.
-
-\vspace{30px}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\textwidth]{5_ssd_logic}
-    \caption{5 Seven Segment Logic}
-    \label{fig:5_ssd_logic}
-\end{figure}
-\vspace{15px}
+Figure shows the truth table for the select line input.  This table is assuming that the SSD letter codes are not changing when the select line does.  Each SSD also has a 3-bit select line that will tell the multiplexer what values to send to the decoder.  The diagram for the signals is shown in Figure .
 
 \subsection{\scshape Testing the 5-Seven Segment Display}
 \label{sub:test_5_ssd}
@@ -549,10 +529,6 @@ END TB1d_arch;
 
 \chapter*{\scshape Appendix C: Waveform (Part 4)}
 \label{app:c}
-
-\vspace{45px}
-\centering
-\includegraphics[width=1\textwidth]{timing_5_ssd}
 
 %% END EDITS HERE %%
 
