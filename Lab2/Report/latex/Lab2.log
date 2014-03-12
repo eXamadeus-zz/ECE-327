@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  12 MAR 2014 05:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  12 MAR 2014 07:37
 entering extended mode
  %&-line parsing enabled.
 **Lab2.tex
@@ -667,7 +667,14 @@ Package color Info: Driver file: pdftex.def on input line 130.
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (./Lab2.aux)
+) (./Lab2.aux
+
+LaTeX Warning: Label `sub:design_counter' multiply defined.
+
+
+LaTeX Warning: Label `sub:test_counter' multiply defined.
+
+)
 \openout1 = `Lab2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
@@ -685,8 +692,7 @@ LaTeX Font Info:    ... okay on input line 120.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 120.
 
-
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 120.
@@ -752,101 +758,115 @@ driver: pdftex
 \c@lstlisting=\count124
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 200.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 205.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 200.
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 205.
 
-<bases.png, id=9, 1513.655pt x 476.78125pt>
+<bases.png, id=10, 1513.655pt x 476.78125pt>
 File: bases.png Graphic file (type png)
  <use bases.png>
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 218.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 223.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 218.
- [2
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 223.
+ [1
 
- <./bases.png (PNG copy)>] <simulation.png, id=14, 612.03656pt x 135.50626pt>
+ <./bases.png (PNG copy)>] <piso.png, id=15, 436.63126pt x 52.69687pt>
+File: piso.png Graphic file (type png)
+ <use piso.png>
+<counter.png, id=16, 339.51843pt x 52.69687pt>
+File: counter.png Graphic file (type png)
+ <use counter.png> [2 <./piso.png (PNG copy)> <./counter.png (PNG copy)>]
+<fsm.png, id=20, 2617.78pt x 1923.185pt>
+File: fsm.png Graphic file (type png)
+ <use fsm.png> [3 <./fsm.png (PNG copy)>] <simulation.png, id=24, 573.64313pt x
+ 77.53969pt>
 File: simulation.png Graphic file (type png)
+ <use simulation.png>
+[4
 
-<use simulation.png> [3 <./simulation.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 28
-2.
+ <./simulation.png (PNG copy)>] (./Lab2.bbl
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 6.
+
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 28
-2.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 6.
+
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 28
-2.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 6.
+
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 28
-2.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 6.
+
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 282.
-
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 6.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 282.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 282.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 282.
- [4] [5] [6] (./Lab2.bbl
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 5.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 
-(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Underfull \hbox (badness 1668) in paragraph at lines 4--6
-[]\T1/ptm/m/n/10.95 J. Lewis, ``Vhdl quick ref-er-ence.'' In-ter-net: $\T1/cmtt
-/m/n/10.95 http : / / www . synthworks . com / downloads / vhdl _
+Underfull \hbox (badness 1527) in paragraph at lines 4--7
+[]\T1/ptm/m/n/10.95 M. Zilmer, ``Clock Gen-er-a-tor.'' In-ter-net: $\T1/cmtt/m/
+n/10.95 http : / / stackoverflow . com / questions / 17904514 /
  []
 
-) [7
+) [5
 
-] [8
+] [6
 
 
-] [9] [10] [11] [12
+] [7] [8] [9] [10
 
-] [13] [14] [15
+] [11] [12] [13
 
-] (./Lab2.aux) ) 
+] (./Lab2.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6054 strings out of 495061
- 76606 string characters out of 1182621
+ 6061 strings out of 495061
+ 76692 string characters out of 1182621
  193834 words of memory out of 3000000
- 9103 multiletter control sequences out of 15000+50000
- 58934 words of font info for 67 fonts, out of 3000000 for 9000
+ 9109 multiletter control sequences out of 15000+50000
+ 59744 words of font info for 65 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,12n,43p,1267b,1937s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.6
-00pk> </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/
-share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts
-/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utm
-r8a.pfb>
-Output written on Lab2.pdf (16 pages, 120464 bytes).
+ 27i,12n,43p,1267b,1923s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/r
+athe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/share/texmf-te
+xlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/urw/tim
+es/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/
+share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Lab2.pdf (15 pages, 1736881 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
+ 176 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
