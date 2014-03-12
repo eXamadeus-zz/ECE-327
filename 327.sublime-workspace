@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"ar",
+				"architecture"
+			],
+			[
+				"ent",
+				"entity"
+			],
+			[
+				"pro",
+				"process"
+			],
+			[
+				"clk",
+				"clk_gen"
+			],
+			[
+				"clk_",
+				"clk_package"
+			],
+			[
+				"pa",
+				"package"
+			],
+			[
 				"St",
 				"stringLen"
 			],
@@ -343,28 +367,73 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Lab2/TB2/PISO.vhd",
+			"settings":
+			{
+				"buffer_size": 709,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Lab2/Lab2.vhd",
+			"settings":
+			{
+				"buffer_size": 2433,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Lab2/counter.vhd",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Unix",
+				"name": "library ieee,work;"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 222.0,
+		"height": 285.0,
 		"selected_items":
 		[
 			[
-				"git stat",
-				"Git: Status"
+				"pull",
+				"Git: Pull"
 			],
 			[
 				"push",
 				"Git: Push"
 			],
 			[
-				"git statu",
+				"stat",
 				"Git: Status"
 			],
 			[
-				"pull",
+				"statu",
+				"Git: Status"
+			],
+			[
+				"git pull",
 				"Git: Pull"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git statu",
+				"Git: Status"
 			],
 			[
 				"git remo",
@@ -379,15 +448,7 @@
 				"Git: Push"
 			],
 			[
-				"git pull",
-				"Git: Pull"
-			],
-			[
 				"gitstat",
-				"Git: Status"
-			],
-			[
-				"stat",
 				"Git: Status"
 			],
 			[
@@ -427,10 +488,6 @@
 				"Git: Status"
 			],
 			[
-				"statu",
-				"Git: Status"
-			],
-			[
 				"sta",
 				"Git: Status"
 			],
@@ -463,10 +520,6 @@
 				"Git: Push"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"install ",
 				"Package Control: Install Package"
 			],
@@ -489,10 +542,6 @@
 			[
 				"git mer",
 				"Git: Merge"
-			],
-			[
-				"git status",
-				"Git: Status"
 			],
 			[
 				"git sta",
@@ -870,7 +919,34 @@
 	},
 	"file_history":
 	[
+		"/tmp/Lab3.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1b/LAB1b.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1c/LAB1c.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1d/LAB1d.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/TB2.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1a/LAB1a.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1d/TB1d.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1c/TB1c.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1b/TB1b.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1a/TB1a.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/Lab1.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/enumitem.sty",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/TBclk.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/CLKPackage.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/citationsfile.bib",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/README.md",
+		"/tmp/Lab2c.vhdl",
+		"/tmp/dflipflop.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/PISO.vhd",
+		"/tmp/TB3.vhdl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/327.sublime-project",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/crap.html",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/Lab2.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/LICENSE",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/.gitignore",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/Lab2TB.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Lab2TB.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/TB1a/LAB1a.vhd",
 		"/home/rathe/Documents/School/468ECE/Lab1/lab1.c",
 		"/home/rathe/Documents/School/468ECE/Lab1/README",
 		"/home/rathe/Documents/School/468ECE/Lab1/Makefile",
@@ -970,38 +1046,11 @@
 		"/home/rathe/Documents/School/214 ENGL/.~lock.study guide.docx#",
 		"/home/rathe/Documents/School/214 ENGL/LitCrits/LitCrit_Poe_JulianCoy.tex",
 		"/home/rathe/Documents/School/214 ENGL/LitCrits/citationsfile.bib",
-		"/home/rathe/Documents/School/214 ENGL/LitCrits/",
-		"/usr/share/texmf-texlive/tex/generic/babel/babel.sty",
-		"/home/rathe/Documents/School/214 ENGL/214_2syllabus.doc",
-		"/home/rathe/Documents/School/214 ENGL/litcrit_molineux.odt",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/enumitem.sty",
-		"/home/rathe/Documents/School/496ECE/README.md",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/ECE496-TeamSR03-Preliminary Report.aux",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/ECE496-TeamSR03-Preliminary Report.bbl",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/ECE496-TeamSR03-Preliminary Report.blg",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/ECE496-TeamSR03-Preliminary Report.tex",
-		"/home/rathe/Documents/School/496ECE/LICENSE",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/citationsfile.bib",
-		"/home/rathe/Documents/School/496ECE/TI Tiva/Tools/stellaris_icdi_drivers/stellaris_icdi_com.inf",
-		"/home/rathe/Documents/School/496ECE/496.sublime-project",
-		"/home/rathe/Documents/School/496ECE/TI Tiva/Tools/LMFlashProgrammer.msi",
-		"/home/rathe/Documents/School/468ECE/README",
-		"/home/rathe/Documents/School/468ECE/Untitled Document",
-		"/home/rathe/Documents/School/496ECE/.gitignore",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/.gitignore",
-		"/home/rathe/Documents/School/468ECE/Lab2/passwd.bak",
-		"/school/468ECE/Lab2/lorem.txt",
-		"/school/468ECE/Lab2/lorem.txt.lzw",
-		"/school/468ECE/Lab2/loremdec.txt",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/ECE496-TeamSR03-Preliminary Report.fdb_latexmk",
-		"/school/468ECE/Lab2/passwddec.txt",
-		"/school/468ECE/Lab2/passwd.txt",
-		"/school/468ECE/Lab2/passwd.txt.rle",
-		"/home/rathe/Documents/School/496ECE/LaTeX Reports/Preliminary Report/Schedule.html"
+		"/home/rathe/Documents/School/214 ENGL/LitCrits/"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -1015,6 +1064,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"clawk",
+			"clk",
+			"PISO",
+			"TB2",
+			"so",
+			"pi",
 			"char",
 			"printf",
 			"char",
@@ -1136,13 +1191,7 @@
 			"int",
 			"ptr",
 			"elem",
-			"../headers/ex_bintree.c",
-			"../images/golfcore.ppm",
-			"testbed",
-			"../headers/ex_bintree.c",
-			"lab3.bin",
-			"../images/golfcore.ppm",
-			"base"
+			"../headers/ex_bintree.c"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1161,14 +1210,414 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Lab2/TB2/PISO.vhd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								709,
+								709
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Lab2/Lab2.vhd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2433,
+								2433
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Lab2/counter.vhd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								260,
+								260
+							]
+						],
+						"settings":
+						{
+							"auto_name": "library ieee,work;",
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -1211,7 +1660,7 @@
 	},
 	"output.git-pull":
 	{
-		"height": 121.0
+		"height": 197.0
 	},
 	"output.git-push":
 	{
@@ -1224,7 +1673,7 @@
 	"project": "327.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1232,6 +1681,58 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"tb",
+				"Lab 1/TB1b/LAB1b.vhd"
+			],
+			[
+				"piso",
+				"Lab2/TB2/PISO.vhd"
+			],
+			[
+				"lab1",
+				"Lab 1/TB1d/LAB1d.vhd"
+			],
+			[
+				"lab2",
+				"Lab2/Lab2.vhd"
+			],
+			[
+				"pis",
+				"Lab2/TB2/PISO.vhd"
+			],
+			[
+				"vhd",
+				"Lab 1/TB1a/LAB1a.vhd"
+			],
+			[
+				"tbd",
+				"Lab 1/TB1a/TB1a.vhd"
+			],
+			[
+				"",
+				"Lab2/TB2/PISO.vhd"
+			],
+			[
+				"lab",
+				"Lab2/TB2/Lab2.vhd"
+			],
+			[
+				"lab1d",
+				"Lab 1/TB1d/LAB1d.vhd"
+			],
+			[
+				"tb1",
+				"Lab 1/TB1d/TB1d.vhd"
+			],
+			[
+				"tb2",
+				"Lab2/TB2/TB2.vhd"
+			],
+			[
+				"git",
+				".gitignore"
+			],
 			[
 				"pro",
 				"327.sublime-project"
@@ -1261,10 +1762,6 @@
 				"headers/ex_rle.c"
 			],
 			[
-				"",
-				"headers/ex_lzw.h"
-			],
-			[
 				"dictc",
 				"headers/ex_dict.c"
 			],
@@ -1285,14 +1782,6 @@
 				"headers/ex_dict.h"
 			],
 			[
-				"lab2",
-				"Lab2/lab2.c"
-			],
-			[
-				"lab",
-				"Lab3/lab3.c"
-			],
-			[
 				"make",
 				"Lab2/Makefile"
 			],
@@ -1307,10 +1796,6 @@
 			[
 				"exdic",
 				"headers/ex_dict.c"
-			],
-			[
-				"git",
-				".gitignore"
 			],
 			[
 				"stta",
@@ -1611,10 +2096,6 @@
 			[
 				"lab1.h",
 				"468ECE/Lab1/lab1.vhd"
-			],
-			[
-				"lab1",
-				"468ECE/Lab1/lab1.c"
 			],
 			[
 				"git.",
