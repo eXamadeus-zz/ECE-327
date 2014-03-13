@@ -368,10 +368,45 @@
 	"buffers":
 	[
 		{
-			"file": "Lab2/TB2/PISO.vhd",
+			"file": "Lab2/Report/latex/citationsfile.bib",
 			"settings":
 			{
-				"buffer_size": 709,
+				"buffer_size": 238,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Packages/CLKPackage.vhd",
+			"settings":
+			{
+				"buffer_size": 1748,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Lab2/Report/latex/Lab2.tex",
+			"settings":
+			{
+				"buffer_size": 20633,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Remote:   origin @ git@github.com:examadeus/ECE-327.git\nLocal:    master ~/Documents/School/2014-1 Spring/327ECE\nHead:     d4195f5 Finished report\n\n\nNothing to commit (working directory clean)\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash from worktree\n#    backspace = discard stash",
+			"settings":
+			{
+				"buffer_size": 924,
+				"line_ending": "Unix",
+				"name": "*git-status*: 327ECE",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "Lab2/TB2/testpiso.vhd",
+			"settings":
+			{
+				"buffer_size": 862,
 				"line_ending": "Unix"
 			}
 		},
@@ -379,30 +414,33 @@
 			"file": "Lab2/Lab2.vhd",
 			"settings":
 			{
-				"buffer_size": 2433,
+				"buffer_size": 2581,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Lab2/counter.vhd",
+			"file": "Lab2/TB2/test.vhd",
 			"settings":
 			{
-				"buffer_size": 522,
-				"line_ending": "Unix",
-				"name": "library ieee,work;"
+				"buffer_size": 936,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Lab2/TB2/testcount.vhd",
+			"settings":
+			{
+				"buffer_size": 1109,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 285.0,
+		"height": 138.0,
 		"selected_items":
 		[
-			[
-				"pull",
-				"Git: Pull"
-			],
 			[
 				"push",
 				"Git: Push"
@@ -412,7 +450,15 @@
 				"Git: Status"
 			],
 			[
+				"pull",
+				"Git: Pull"
+			],
+			[
 				"statu",
+				"Git: Status"
+			],
+			[
+				"status",
 				"Git: Status"
 			],
 			[
@@ -502,10 +548,6 @@
 			[
 				"lis",
 				"Permute Lines: Shuffle"
-			],
-			[
-				"status",
-				"Git: Status"
 			],
 			[
 				"gistat",
@@ -919,12 +961,30 @@
 	},
 	"file_history":
 	[
-		"/tmp/Lab3.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/testcount.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1a/TB1a.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1a/LAB1a.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1b/LAB1b.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1c/LAB1c.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1d/LAB1d.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/Lab2.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/CLKPackage.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/test.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/counter.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/PISO.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Lab2.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/327.sublime-project",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/.gitignore",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/Lab2.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/PISO.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1b/LAB1b.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/latex/Lab1.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/latex/enumitem.sty",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1a/LAB1a.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1c/LAB1c.vhdl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1d/LAB1d.vhd",
+		"/tmp/Lab3.vhdl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/TB2.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1a/LAB1a.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1d/TB1d.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1c/TB1c.vhdl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1b/TB1b.vhdl",
@@ -932,18 +992,14 @@
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/Lab1.tex",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/enumitem.sty",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/TBclk.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/CLKPackage.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/Report/citationsfile.bib",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/README.md",
 		"/tmp/Lab2c.vhdl",
 		"/tmp/dflipflop.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/PISO.vhd",
 		"/tmp/TB3.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/327.sublime-project",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/crap.html",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/Lab2.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/LICENSE",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/.gitignore",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/Lab2TB.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Lab2TB.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/TB1a/LAB1a.vhd",
@@ -1032,21 +1088,7 @@
 		"/home/rathe/Documents/School/468ECE/images/golfcoredec.ppm",
 		"/home/rathe/Documents/School/468ECE/images/golfcore.ppm.rle",
 		"/home/rathe/Documents/School/468ECE/images/bridge.ppm",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/citationsfile.bib",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/Lab1.tex",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/Lab1.synctex.gz",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/Lab1.log",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/Lab1.fdb_latexmk",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/Lab1.blg",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/Lab1.bbl",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/Lab1.aux",
-		"/home/rathe/Documents/School/327ECE/.gitignore",
-		"/home/rathe/Documents/School/327ECE/327.sublime-project",
-		"/home/rathe/Documents/School/school.sublime-project",
-		"/home/rathe/Documents/School/214 ENGL/.~lock.study guide.docx#",
-		"/home/rathe/Documents/School/214 ENGL/LitCrits/LitCrit_Poe_JulianCoy.tex",
-		"/home/rathe/Documents/School/214 ENGL/LitCrits/citationsfile.bib",
-		"/home/rathe/Documents/School/214 ENGL/LitCrits/"
+		"/home/rathe/Documents/School/327ECE/Lab 1/Report/citationsfile.bib"
 	],
 	"find":
 	{
@@ -1064,6 +1106,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"\\vspace{45px}",
+			"clock",
+			"design_piso",
+			"temp",
 			"clawk",
 			"clk",
 			"PISO",
@@ -1187,11 +1233,7 @@
 			"freq",
 			"testbed",
 			"../headers/ex_bintree.c",
-			"testbed",
-			"int",
-			"ptr",
-			"elem",
-			"../headers/ex_bintree.c"
+			"testbed"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1210,24 +1252,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Lab2/TB2/PISO.vhd",
+					"file": "Lab2/Report/latex/citationsfile.bib",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 709,
+						"buffer_size": 238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								709,
-								709
+								75,
+								75
 							]
 						],
 						"settings":
@@ -1336,6 +1378,363 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Packages/CLKPackage.vhd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Lab2/Report/latex/Lab2.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19590,
+								19590
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 13239.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								148,
+								148
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"draw_white_space": "none",
+							"git_repo": "/home/rathe/Documents/School/2014-1 Spring/327ECE",
+							"git_status": true,
+							"git_view": "status",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/SublimeGit/syntax/SublimeGit Status.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Lab2/TB2/testpiso.vhd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								862,
+								862
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Lab2/Lab2.vhd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2581,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2581,
+								2581
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1347,261 +1746,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "Lab2/Lab2.vhd",
+					"buffer": 6,
+					"file": "Lab2/TB2/test.vhd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2433,
+						"buffer_size": 936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2433,
-								2433
+								936,
+								936
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Lab2/counter.vhd",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 522,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								260,
-								260
-							]
-						],
-						"settings":
-						{
-							"auto_name": "library ieee,work;",
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
 							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1609,7 +1771,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Lab2/TB2/testcount.vhd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1109,
+								1109
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1646,6 +1837,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 142.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -1682,20 +1877,52 @@
 		"selected_items":
 		[
 			[
-				"tb",
-				"Lab 1/TB1b/LAB1b.vhd"
+				"test",
+				"Lab2/TB2/testcount.vhd"
 			],
 			[
-				"piso",
-				"Lab2/TB2/PISO.vhd"
+				"te",
+				"Lab2/TB2/testpiso.vhd"
 			],
 			[
-				"lab1",
-				"Lab 1/TB1d/LAB1d.vhd"
+				"lab",
+				"Lab2/Lab2.vhd"
 			],
 			[
 				"lab2",
-				"Lab2/Lab2.vhd"
+				"Lab2/Report/latex/Lab2.tex"
+			],
+			[
+				"clk",
+				"Packages/CLKPackage.vhd"
+			],
+			[
+				"cita",
+				"Lab1/Report/latex/citationsfile.bib"
+			],
+			[
+				"proj",
+				"327.sublime-project"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"piso",
+				"Lab2/PISO.vhd"
+			],
+			[
+				"giti",
+				".gitignore"
+			],
+			[
+				"lab1",
+				"Lab 1/Report/Lab1.tex"
+			],
+			[
+				"tb",
+				"Lab 1/TB1b/LAB1b.vhd"
 			],
 			[
 				"pis",
@@ -1714,10 +1941,6 @@
 				"Lab2/TB2/PISO.vhd"
 			],
 			[
-				"lab",
-				"Lab2/TB2/Lab2.vhd"
-			],
-			[
 				"lab1d",
 				"Lab 1/TB1d/LAB1d.vhd"
 			],
@@ -1728,10 +1951,6 @@
 			[
 				"tb2",
 				"Lab2/TB2/TB2.vhd"
-			],
-			[
-				"git",
-				".gitignore"
 			],
 			[
 				"pro",
@@ -1768,14 +1987,6 @@
 			[
 				"dich",
 				"headers/ex_dict.h"
-			],
-			[
-				"te",
-				"Lab2/test.txt"
-			],
-			[
-				"test",
-				"Lab2/test.txt"
 			],
 			[
 				"dict",
@@ -1844,10 +2055,6 @@
 			[
 				"huf",
 				"Lab3/testbed.huf"
-			],
-			[
-				"proj",
-				"468.sublime-project"
 			],
 			[
 				"headec",
@@ -1976,10 +2183,6 @@
 			[
 				"lab3",
 				"Lab3/lab3.c"
-			],
-			[
-				"giti",
-				".gitignore"
 			],
 			[
 				"lab2.",
