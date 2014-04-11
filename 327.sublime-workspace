@@ -384,22 +384,33 @@
 			}
 		},
 		{
-			"file": "Lab2/Report/latex/Lab2.tex",
+			"contents": "g% LaTeX template for Lab Reports\n% Copyright (C) 2014 Julian Coy\n\n%% CHANGE REPORT TITLE HERE\n\\newcommand{\\reporttitle}{\n Design of Basic Gates and I/O\n}\n\n%% HEADER/PREAMBLE INFORMATION\n\n% \"The font should be 11pt Times New Roman\"\n\\documentclass[11pt]{report}\n\\usepackage[T1]{fontenc}\n\\usepackage[utf8]{inputenc}\n\n\\usepackage{mathptmx}               \n\n% \"The body of the paper should use 1\" margins on all sides.\"\n\\usepackage[margin=1in]{geometry}\n\n% \"Pages must be numbered, starting with 1 on the first page in the body of the report.\n% The cover page should not be numbered. \n% Page numbers should be in the bottom-right corner of the page.\"\n\\usepackage{fancyhdr}\n\\pagestyle{fancy}\n\\fancyhead{}\n\\fancyfoot{}\n\\renewcommand{\\headrulewidth}{0pt}\n\\fancyfoot[R]{\\thepage}\n\n% Set up customized spacing\n\\usepackage{setspace}\n\n% Allows for Trademark Symbols\n\\usepackage{textcomp}\n\n% Remove spacing between items in lists\n\\usepackage{enumitem}\n\n% Remove extra spacing between titles of sections and subsections\n\\usepackage{titlesec}\n\\titlespacing\\section{0pt}{10pt}{10pt}\n\\titlespacing\\subsection{0pt}{10pt}{10pt}\n\\titlespacing\\subsubsection{0pt}{0pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}\n\n% Setup the specialized chapter section for the Abstract\n\\titlespacing\\chapter{0pt}{0pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}\n\\titleformat{\\chapter}[block]{\\centering\\Huge}{}{}{}{}\n\n% Set up BibTeX integration using IEEE citation format\n\\usepackage{cite}\n\\bibliographystyle{ieeetr}\n\\usepackage{url}\n\n% Set bibliography to have a section header rather than chapter header\n\\makeatletter\n\\renewenvironment{thebibliography}[1]\n     {\\section*{\\scshape Works Cited}% <-- this line was changed from \\chapter* to \\section*\n      \\@mkboth{\\MakeUppercase\\bibname}{\\MakeUppercase\\bibname}%\n      \\list{\\@biblabel{\\@arabic\\c@enumiv}}%\n           {\\settowidth\\labelwidth{\\@biblabel{#1}}%\n            \\leftmargin\\labelwidth\n            \\advance\\leftmargin\\labelsep\n            \\@openbib@code\n            \\usecounter{enumiv}%\n            \\let\\p@enumiv\\@empty\n            \\renewcommand\\theenumiv{\\@arabic\\c@enumiv}}%\n      \\sloppy\n      \\clubpenalty4000\n      \\@clubpenalty \\clubpenalty\n      \\widowpenalty4000%\n      \\sfcode`\\.\\@m}\n     {\\def\\@noitemerr\n       {\\@latex@warning{Empty `thebibliography' environment}}%\n      \\endlist}\n\\makeatother\n\n% Set up math\n\\usepackage{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\n% Set up graphics\n\\usepackage{graphicx}\n\\usepackage{float}\n\n% Set up tables\n\\usepackage{tabularx}\n\\usepackage{booktabs}\n\n% Set up code blocks\n% or not...\n\n\\usepackage{listings}\n\\usepackage{color}\n\n\\definecolor{dkgreen}{rgb}{0,0.6,0}\n\\definecolor{gray}{rgb}{0.5,0.5,0.5}\n\\definecolor{mauve}{rgb}{0.58,0,0.82}\n\n\\lstset{frame=tb,\n  language=VHDL,\n  aboveskip=3mm,\n  belowskip=3mm,\n  showstringspaces=false,\n  columns=flexible,\n  basicstyle={\\small\\ttfamily},\n  numbers=none,\n  numberstyle=\\tiny\\color{gray},\n  keywordstyle=\\color{blue},\n  commentstyle=\\color{dkgreen},\n  stringstyle=\\color{mauve},\n  breaklines=true,\n  breakatwhitespace=true\n  tabsize=3\n}\n\n%% START OF DOCUMENT\n\n\\begin{document}\n\n% \"The main body of text should use 1.5 spacing\"\n\\begin{spacing}{1.5}\n\n% Suppress page numbering on first page\n\\thispagestyle{empty}\n\n\\begin{scshape}\n\n% Title\n% \"The title should be centered and written in approximately 22pt font.\"\n\\vspace*{30pt}\n{\n\\Huge\n\\begin{center}\n    \\reporttitle\n\\end{center}\n}\n\\vspace{30pt}\n\n% Team Number\n% \"The Team number should be centered and written several lines below the title and should use a\n% similar size font as the title.\"\n{\n\\Large\n\\begin{center}\n  Lab Report 1 for ECE327 \\\\\n  Digital Systems Design\n\\end{center}\n}\n\\vspace{30pt}\n% Team Members\n% \"Directly below the team identifier, team members should be listed alphabetically by last name, one\n% per line, in approximately 14pt font. The column of names should be approximately centered on\n% the page, but the names within the column should be left justified (so they all start at the same\n% horizontal position).\"\n{\n\\Large \n\\begin{center}\n  Submitted by \\\\\n  Julian Coy\n\\end{center}\n}\n\\vspace{120pt}\n\n{\n\\Large\n\\begin{center}\n  Undergraduate of Electrical \\& Computer Engineering \\\\\n  Clemson University\n\\end{center}\n}\n\\vspace{30pt}\n\n{\n\\Large\n\\begin{center}\n  February 5, 2013\n\\end{center}\n}\n\n\\end{scshape}\n\n% New page and reset page numbering\n\\clearpage\n\\setcounter{page}{1}\n\n%% START EDITS BELOW %%\n\n\\vspace{15pt}\n  \\setcounter{chapter}{1}\n  \\chapter*{Abstract}\n  \\label{cha:abstract}\n\\vspace{72pt}\n\nDigital system design is the process of creating a complex digital system by building and integrating various fundamental components.  In this lab, multiplexers and decoders are implemented to familiarize students with the operation of an FPGA device and the Altera development environment.  Testbenches are used to demonstrate the power and usefulness of simulations.  The simple elements designed in this lab can be used as basic components in much larger, more complicated designs.  It is critical to grasp the scope and scalability of this technology.  This lab also focuses on connecting smaller components to make larger more complicated processes simpler.  The final part of this lab, the 5 piece seven-segment decoder is the culmination of these principles.\n\n\\clearpage\n\n\\section*{\\scshape Introduction} %(0.5 pages)\n\\label{cha:introduction}\n\nLab one is broken into four distinct subsystems.  Each system is standalone and can be simulated through ModelSim for testing and also implemented on the Altera DE 2 FPGA board.  The first system is a 2-to-1 multiplexer with an 8-bit input/output.  The second system is a modification of the first.  It expands the multiplexer to a 5-to-1 but decreases the input/output channel size to 3 bits.  The third system is a seven segment display implementation do display the letters 'T', 'I', 'G', 'E', and 'R'.  The fourth and final system is a combination of the previous two.  The design uses a 5-to-1 multiplexer with 5 seven segment displays.  The seven segment displays are capable of showing a rotating string based upon input values defined by the engineer.  Each of these systems is comparable to real-world counterparts.  They are an analogy to other systems in which complex designs are built from smaller, simpler components.\n\n\\section{\\scshape 2-to-1 Multiplexer} %(0.5 pages)\n\\label{sec:2to1}\n\n\\subsection{\\scshape Design of the 2-to-1 Multiplexer}\n\\label{sub:design_2to1}\n\nBuilding the 2-to-1 multiplexer system in VHDL requires 3 signals: a select signal, an 8-bit input channel, and an 8-bit output channel.  Once those are defined the engineer has multiple options on how to implement the functionality. Figure \\ref{fig:logic_2to1} shows the digital logic implementation of the first system.  By using the powerful non-linearity of VHDL the entire behavior of the multiplexer can be implemented in one simple if-then-else block (Figure \\ref{fig:code_2to1}).\n\n\\vspace{30px}\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=0.5\\textwidth]{2to1Code}\n    \\caption{2-to-1 Multiplexer Code\\cite{Synth}}\n    \\label{fig:code_2to1}\n\\end{figure}\n\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=0.5\\textwidth]{2to1Multi}\n    \\caption{2-to-1 Multiplexer Logic}\n    \\label{fig:logic_2to1}\n\\end{figure}\n\n\\subsection{\\scshape Testing of the 2-to-1 Multiplexer}\n\\label{sec:test_2to1}\n\nTesting of the multiplexer was done with a testbench through ModelSim.  Inside the test bench the input signals were initialized and set to different values.  Next, the channels were cycled through using the select signal.  Once cycled, the signal that was selected was changed and the change was verified through the Wave view in ModelSim.  Finally, the signal that was not selected was changed and monitored to make sure the output did not change.\n\nOnce the testbench was completed, the code was compiled inside of Quartus II and flashed onto the Cyclone IV FPGA.  Once the code was loaded onto the FPGA the switches and LEDS were used to verify the operation of the code.  For this multiplexer design, the switches 15 to 8 were used for the Y channel and switched 7 to 0 were used for X.  Switch 16 was used as the select signal and the red LEDs were connected to the output channel.  By toggling through the earlier mentioned states, the program was verified in hardware.\n\n\\section{\\scshape 5-to-1 Multiplexer} % (fold)\n\\label{sec:5to1}\n\n\\subsection{\\scshape Designing the 5-to-1 Multiplexer} % (fold)\n\\label{sub:design_5to1}\n\nThe second system was a 5-to-1 multiplexer design.  This design is very similar to the previous system.  The addition of three more channels will require a more complex decoding algorithm.  This can complicate the design greatly; however, smart implementation techniques can limit the overhead of the computation.  As shown in Figure \\ref{fig:5to1code} a simple case block was sufficient to perform the select signal decoding for the 3 bit select line.  This method is inefficient with larger select lines as they exponentially increase the number of required cases per select channel bit.\n\n\\vspace{30px}\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=0.6\\textwidth]{5to1Code}\n    \\caption{5-to-1 Decoder}\n    \\label{fig:5to1code}\n\\end{figure}\n\n\\subsection{\\scshape Testing the 5-to-1 Multiplexer} % (fold)\n\\label{sub:test_5to1}\n\nThe testing of the 5-to-1 multiplexer was almost exactly the same as the test for the 2-to-1.  Figure \\ref{fig:timing_1b} shows the timing diagram of the signals.  The diagram shows the transition from the output signal (TESTM) as the select signal (TESTS) is modified.  The first 5 changes for TESTS show the value of the output matching the selected input.  The second to last change shows that non-selected input does not affect the output.  The final change to TESTW when it is selected shows that the output changes immediately with the selected signal.\n\n\\vspace{30px}\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=1\\textwidth]{TB1b}\n    \\caption{5-to-1 Decoder}\n    \\label{fig:timing_1b}\n\\end{figure}\n\n\\section{\\scshape Seven Segment Decoder}\n\\label{sec:seven_segment_decoder}\n\n\\subsection{\\scshape Designing the Seven Segment Decoder} % (fold)\n\\label{sub:design_ssd}\n\n\\vspace{30px}\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=0.3\\textwidth]{ssd}\n    \\caption{Seven Segment Display Logic}\n    \\label{fig:ssd}\n\\end{figure}\n\nThe basic truth table and signal layout for the seven segment decoder (SSD) are shown in Figure \\ref{fig:ssd}.  The SSD is supposed to take a 3-bit input and display a letter corresponding to the values in the truth table.  This means that a maximum of $2^3$  Each segment in the decoder is set by a bit.  So the input channel must be 7 bits wide to accommodate the SSD.\n\n\\subsection{\\scshape Testing the Seven Segment Decoder} % (fold)\n\\label{sub:test_ssd}\n\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=1\\textwidth]{timing_ssd}\n    \\caption{Seven Segment Timing Waveform}\n    \\label{fig:timing_ssd}\n\\end{figure}\n\nTesting of the SSD is more efficient on the Cyclone IV due to the nature of the visual display.  For a human eye the waveform simulation was unfortunately hard to follow.  Although the waveform allowed for proper logical adjustments, it was unknown that the SSD required a low bit to activate a segment and all of the letters were inverted.  Figure \\ref{fig:timing_ssd} shows the timing waveform.\n\n\\section{\\scshape 5-Seven Segment Display}\n\\label{sec:5_ssd}\n\n\\subsection{\\scshape Designing the 5-Seven Segment Display} % (fold)\n\\label{sub:design_5_ssd}\n\nThe final system of Lab 1 is a 5-count SSD that can display a word.  The word must be able to be shifted by a 3-bit select channel and each letter must be modifiable by another 3-bit select channel.  Each of the previous subsystems is included for the final design.  There are 5 5-to-1 multiplexers which are connected to SSDs.   \n\n\\vspace{30px}\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=1\\textwidth]{5_ssd_truth}\n    \\caption{5 Seven Segment Truth Table}\n    \\label{fig:5_ssd_truth}\n\\end{figure}\n\nFigure \\ref{fig:5_ssd_truth} shows the truth table for the select line input.  This table is assuming that the SSD letter codes are not changing when the select line does.  Each SSD also has a 3-bit select line that will tell the multiplexer what values to send to the decoder.  The diagram for the signals is shown in Figure \\ref{fig:5_ssd_logic}.\n\n\\vspace{30px}\n\\begin{figure}[H]\n    \\centering\n    \\includegraphics[width=0.65\\textwidth]{5_ssd_logic}\n    \\caption{5 Seven Segment Logic}\n    \\label{fig:5_ssd_logic}\n\\end{figure}\n\\vspace{15px}\n\n\\subsection{\\scshape Testing the 5-Seven Segment Display}\n\\label{sub:test_5_ssd}\n\nAs the complexity of a system grows, so does the complexity of its verification.  The final system in lab 1 required multiple tests between components and tests of the components themselves to verify functionality.  For the test, the SSD were initialized to display \"TIGER\".  Then the letters were permuted through the TESTSW signal.  Once that was verified, the letters were randomized and then permuted randomly through the SSDs.  In the code the \"default\" value for the SSD was set to display the number \"8\" for easy debugging.\n\nThe code for the testbench can be seen in Appendix B.  The waveform simulation can be found in Appendix C.\n\n\\section{\\scshape Conclusions} % (fold)\n\\label{sec:conclusions}\n\nThis lab is a testament to the modularity, reliability, and scope of FPGA programming with VHDL.  Simple components or systems can be designed and connected to form incredibly complex systems that can perform a wide range of actions.  Originally, the subsystems in the lab seemed unconnected to one another.  However, by the end of the lab it was clear that the systems were building upon each other.  This lab also clearly demonstrated the value of simulations in attempting to analyze complex FPGA systems.\n\n% section scshape_conclusions (end)\n\n% Bibliography\n\n\\clearpage\n\n\\bibliography{citationsfile}{}\n\n\\clearpage\n\n\\chapter*{\\scshape Appendix A: 5-Seven Segment Decoder}\n\\label{app:a}\n\n\\vspace{45px}\n\\begin{lstlisting}\nLIBRARY ieee;\nUSE ieee.std_logic_1164.all;\nLIBRARY work;\nUSE work.all;\n\nENTITY LAB1d IS\n\n  PORT (\n    SW              : IN STD_LOGIC_VECTOR(17 DOWNTO 0);\n    HEX0,HEX1,HEX2,HEX3,HEX4  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)\n  );\n      \nEND ENTITY LAB1d;\n\nARCHITECTURE LAB1d_arch OF LAB1d IS\n\n  COMPONENT seven_seg_parse\n    PORT (\n      DATA  : IN STD_LOGIC_VECTOR(2 DOWNTO 0);\n      OUTPUT  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)\n    );\n  END COMPONENT seven_seg_parse;\n\n  SIGNAL S0,S1,S2,S3,S4 : STD_LOGIC_VECTOR(6 DOWNTO 0);\n\nBEGIN\n    behav : PROCESS (S0,S1,S2,S3,S4)\n    BEGIN\n      CASE SW(17 DOWNTO 15) IS\n        WHEN \"000\" =>\n          HEX0 <= S0;\n          HEX1 <= S1;\n          HEX2 <= S2;\n          HEX3 <= S3;\n          HEX4 <= S4;\n        WHEN \"001\" =>\n          HEX0 <= S1;\n          HEX1 <= S2;\n          HEX2 <= S3;\n          HEX3 <= S4;\n          HEX4 <= S0;\n        WHEN \"010\" =>\n          HEX0 <= S2;\n          HEX1 <= S3;\n          HEX2 <= S4;\n          HEX3 <= S0;\n          HEX4 <= S1;\n        WHEN \"011\" =>\n          HEX0 <= S3;\n          HEX1 <= S4;\n          HEX2 <= S0;\n          HEX3 <= S1;\n          HEX4 <= S2;\n        WHEN \"100\" =>\n          HEX0 <= S4;\n          HEX1 <= S0;\n          HEX2 <= S1;\n          HEX3 <= S2;\n          HEX4 <= S3;\n        WHEN others =>\n          HEX0 <= S0;\n          HEX1 <= S1;\n          HEX2 <= S2;\n          HEX3 <= S3;\n          HEX4 <= S4;\n      END CASE;\n    END PROCESS behav;\n    seven_seg_0 : seven_seg_parse PORT MAP(SW(2 DOWNTO 0),S0);\n    seven_seg_1 : seven_seg_parse PORT MAP(SW(5 DOWNTO 3),S1);\n    seven_seg_2 : seven_seg_parse PORT MAP(SW(8 DOWNTO 6),S2);\n    seven_seg_3 : seven_seg_parse PORT MAP(SW(11 DOWNTO 9),S3);\n    seven_seg_4 : seven_seg_parse PORT MAP(SW(14 DOWNTO 12),S4);\nEND ARCHITECTURE LAB1d_arch;\n\n-------------------------\n\nLIBRARY ieee;\nUSE ieee.std_logic_1164.all;\nLIBRARY work;\nUSE work.all;\n\nENTITY seven_seg_parse IS \n  \n  PORT (\n    DATA  : IN STD_LOGIC_VECTOR(2 DOWNTO 0);\n    OUTPUT  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)\n  );\n\nEND ENTITY seven_seg_parse;\n\nARCHITECTURE basic OF seven_seg_parse IS\n\nBEGIN\n  behav : PROCESS (DATA)\n  BEGIN\n    CASE DATA IS\n      WHEN \"000\" => OUTPUT <= \"0000111\";\n      WHEN \"001\" => OUTPUT <= \"1111001\";\n      WHEN \"010\" => OUTPUT <= \"0010000\";\n      WHEN \"011\" => OUTPUT <= \"0000110\";\n      WHEN \"100\" => OUTPUT <= \"1001100\";\n      WHEN others =>  OUTPUT <= \"0000000\";\n    END CASE;\n  END PROCESS behav;\nEND ARCHITECTURE basic;\n\nLIBRARY ieee;\nUSE ieee.std_logic_1164.all;\nLIBRARY work;\nUSE work.all;\n\nENTITY mux21 IS \n\n  PORT (\n    SEL,X,Y : IN STD_LOGIC;\n    M   : OUT STD_LOGIC);\nEND ENTITY mux21;\n\nARCHITECTURE basic OF  mux21 IS\nBEGIN\n  mux21_behavior : PROCESS (SEL,X,Y)\n  BEGIN \n      if (SEL = '0') then M <= X; else M <= Y; END if;\n  END PROCESS mux21_behavior;\nEND ARCHITECTURE basic;\n\\end{lstlisting}\n\n\\chapter*{\\scshape Appendix B: Test Bench (Part 4)}\n\\label{app:b}\n\n\\vspace{45px}\n\\begin{lstlisting}\nLIBRARY ieee;                                               \nUSE ieee.std_logic_1164.all;                                \n\nENTITY TB1d IS\nEND TB1d;\n\nARCHITECTURE TB1d_arch OF TB1d IS\n     \n  -- test signals going into and out of the mux                                                                                            \n  SIGNAL TESTSO1 : STD_LOGIC_VECTOR(6 DOWNTO 0);\n  SIGNAL TESTSO2 : STD_LOGIC_VECTOR(6 DOWNTO 0);\n  SIGNAL TESTSO3 : STD_LOGIC_VECTOR(6 DOWNTO 0);\n  SIGNAL TESTSO4 : STD_LOGIC_VECTOR(6 DOWNTO 0);\n  SIGNAL TESTSO5 : STD_LOGIC_VECTOR(6 DOWNTO 0);\n  SIGNAL TESTSW  : STD_LOGIC_VECTOR(17 DOWNTO 0);\n\n  COMPONENT LAB1d\n    PORT (\n      SW   : IN  STD_LOGIC_VECTOR(17 DOWNTO 0);\n      HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);\n      HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);\n      HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);\n      HEX3 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);\n      HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0) \n    );\n  END COMPONENT;\n\n  -- map the signals\n\n  BEGIN\n  multimux : LAB1d\n  PORT MAP (\n    SW   => TESTSW,\n    HEX0 => TESTSO1,\n    HEX1 => TESTSO2,\n    HEX2 => TESTSO3,\n    HEX3 => TESTSO4,\n    HEX4 => TESTSO5\n  );\n\n  -- start the test\n\n  test : PROCESS                                                                                   \n  BEGIN                                                         \n  \n  -- set the initial word to be TIGER and initial position\n  TESTSW(14 DOWNTO 0)  <= \"100011010001000\";\n  TESTSW(17 DOWNTO 15) <= \"000\"; WAIT FOR 4 ns;\n\n  -- cycle around message\n  TESTSW(17 DOWNTO 15) <= \"001\"; WAIT FOR 2 ns;\n  TESTSW(17 DOWNTO 15) <= \"010\"; WAIT FOR 2 ns;\n  TESTSW(17 DOWNTO 15) <= \"011\"; WAIT FOR 2 ns;\n  TESTSW(17 DOWNTO 15) <= \"100\"; WAIT FOR 2 ns;\n\n  -- change message\n  TESTSW(17 DOWNTO 15) <= \"000\";\n  TESTSW(14 DOWNTO 0)  <= \"100001010011000\"; WAIT FOR 4 ns;\n\n  -- cycle randomly message\n  TESTSW(17 DOWNTO 15) <= \"011\"; WAIT FOR 2 ns;\n  TESTSW(17 DOWNTO 15) <= \"010\"; WAIT FOR 2 ns;\n  TESTSW(17 DOWNTO 15) <= \"001\"; WAIT FOR 2 ns;\n  TESTSW(17 DOWNTO 15) <= \"100\"; WAIT FOR 2 ns;\n\n\n  WAIT;                                                        \n  END PROCESS test;\n                                          \nEND TB1d_arch;\n\\end{lstlisting}\n\n\\chapter*{\\scshape Appendix C: Waveform (Part 4)}\n\\label{app:c}\n\n\\vspace{45px}\n\\centering\n\\includegraphics[width=1\\textwidth]{timing_5_ssd}\n\n%% END EDITS HERE %%\n\n\\end{spacing}\n\n\\end{document}\n\n%%%%%%%%%%%% Extra stuff for use later\n\n% \\begin{itemize}[noitemsep,nolistsep]\n%     \\item \\emph{Choose off-the-shelf parts} rather than self-made parts whenever possible.\n%     \\item \\emph{Reuse and expand on open-source software libraries} to avoid spending time writing code that duplicates functionality that already exists elsewhere (and is likely more robust).\n%     \\item \\emph{Keep the hardware simple} by using the least amount of hardware necessary for operation to avoid additional potential points of failure.\n%     \\item \\emph{Modularize systems and components}. Each component should do one thing and do it well.\n% \\end{itemize}\n% Figure \\ref{BlockDiagram} shows a block diagram of the subsystems used in our design.\n\n% \\begin{figure}[H]\n%     \\centering\n%     \\caption{Block Diagram of Subsystems}\n%     \\label{BlockDiagram}\n% \\end{figure}\n%     {\n%     \\centering\n%       \\includegraphics[width=\\textwidth]{CostAccounting}\n%     }",
+			"file": "Lab1/Report/latex/Lab1.tex",
+			"file_size": 20430,
+			"file_write_time": 130390854615998768,
 			"settings":
 			{
-				"buffer_size": 20633,
+				"buffer_size": 20431,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Remote:   origin @ git@github.com:examadeus/ECE-327.git\nLocal:    master ~/Documents/School/2014-1 Spring/327ECE\nHead:     d4195f5 Finished report\n\n\nNothing to commit (working directory clean)\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash from worktree\n#    backspace = discard stash",
+			"contents": "Remote:   origin @ git@github.com:examadeus/ECE-327.git\nLocal:    master ~/Documents/School/2014-1 Spring/327ECE\nHead:     cf30505 dunno\n\n\nChanges:\n	Modified   327.sublime-workspace\n\n\n# Movement:\n#    r = refresh status\n#    1-5 = jump to section\n#    n = next item, N = next section\n#    p = previous item, P = previous section\n#\n# Staging:\n#    s = stage file/section, S = stage all unstaged files\n#    ctrl+shift+s = stage all unstaged and untracked files\n#    u = unstage file/section, U = unstage all files\n#    backspace = discard file/section, shift+backspace = discard everything\n#\n# Commit:\n#    c = commit, C = commit -a (add unstaged)\n#    ctrl+shift+c = commit --amend (amend previous commit)\n#\n# Other:\n#    i = ignore file, I = ignore pattern\n#    enter = open file\n#    d = view diff\n#\n# Stashes:\n#    a = apply stash, A = pop stash\n#    z = create stash from worktree\n#    backspace = discard stash",
 			"settings":
 			{
-				"buffer_size": 924,
+				"buffer_size": 914,
 				"line_ending": "Unix",
 				"name": "*git-status*: 327ECE",
 				"read_only": true,
 				"scratch": true
+			}
+		},
+		{
+			"file": "327.sublime-project",
+			"settings":
+			{
+				"buffer_size": 239,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -446,16 +457,16 @@
 				"Git: Push"
 			],
 			[
+				"statu",
+				"Git: Status"
+			],
+			[
 				"stat",
 				"Git: Status"
 			],
 			[
 				"pull",
 				"Git: Pull"
-			],
-			[
-				"statu",
-				"Git: Status"
 			],
 			[
 				"status",
@@ -961,20 +972,21 @@
 	},
 	"file_history":
 	[
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/Lab2.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/.gitignore",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/Report/latex/Lab1.tex",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/testcount.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1a/TB1a.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1a/LAB1a.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1b/LAB1b.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1c/LAB1c.vhdl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1d/LAB1d.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/Lab2.tex",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/CLKPackage.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/test.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/counter.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/PISO.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Lab2.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/327.sublime-project",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/.gitignore",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/Lab2.tex",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/PISO.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab 1/TB1b/LAB1b.vhd",
@@ -1087,8 +1099,7 @@
 		"/home/rathe/Documents/School/468ECE/images/targets.ppm",
 		"/home/rathe/Documents/School/468ECE/images/golfcoredec.ppm",
 		"/home/rathe/Documents/School/468ECE/images/golfcore.ppm.rle",
-		"/home/rathe/Documents/School/468ECE/images/bridge.ppm",
-		"/home/rathe/Documents/School/327ECE/Lab 1/Report/citationsfile.bib"
+		"/home/rathe/Documents/School/468ECE/images/bridge.ppm"
 	],
 	"find":
 	{
@@ -1252,7 +1263,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1384,7 +1395,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1413,24 +1424,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "Lab2/Report/latex/Lab2.tex",
+					"file": "Lab1/Report/latex/Lab1.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20633,
+						"buffer_size": 20431,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19590,
-								19590
+								14141,
+								14109
 							]
 						],
 						"settings":
@@ -1544,10 +1555,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 13239.0,
+						"translation.y": 9160.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1555,15 +1566,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 924,
+						"buffer_size": 914,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								148,
-								148
+								139,
+								139
 							]
 						],
 						"settings":
@@ -1684,11 +1695,40 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "327.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 239,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								214,
+								49
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "Lab2/TB2/testpiso.vhd",
 					"semi_transient": false,
 					"settings":
@@ -1713,11 +1753,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "Lab2/Lab2.vhd",
 					"semi_transient": false,
 					"settings":
@@ -1742,11 +1782,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "Lab2/TB2/test.vhd",
 					"semi_transient": false,
 					"settings":
@@ -1771,11 +1811,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "Lab2/TB2/testcount.vhd",
 					"semi_transient": false,
 					"settings":
@@ -1800,7 +1840,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1877,6 +1917,18 @@
 		"selected_items":
 		[
 			[
+				"tex",
+				"Lab1/Report/latex/Lab1.tex"
+			],
+			[
+				"gitignor",
+				".gitignore"
+			],
+			[
+				"pro",
+				"327.sublime-project"
+			],
+			[
 				"test",
 				"Lab2/TB2/testcount.vhd"
 			],
@@ -1951,10 +2003,6 @@
 			[
 				"tb2",
 				"Lab2/TB2/TB2.vhd"
-			],
-			[
-				"pro",
-				"327.sublime-project"
 			],
 			[
 				"lzw",
@@ -2209,10 +2257,6 @@
 				".gitignore"
 			],
 			[
-				"tex",
-				"327ECE/Lab 1/Report/Lab1.tex"
-			],
-			[
 				"lab1tex",
 				"327ECE/Lab 1/Report/Lab1.tex"
 			],
@@ -2358,7 +2402,7 @@
 		[
 			[
 				"",
-				"~/webserver.sublime-project"
+				"~/Documents/School/2014-1 Spring/214ENGL/214.sublime-project"
 			],
 			[
 				"327",
