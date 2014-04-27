@@ -14,26 +14,25 @@ architecture b_test_16 of test_16 is
 				output	: out	std_ulogic_vector(15 downto 0));
 	end component;
 
-	signal clockt	: std_logic;
-	signal bus_16	: std_logic_vector(15 downto 0);
-
-	signal run		: std_logic := '1';
+	signal run			: std_logic;
+	signal load_test	: std_ulogic;
+	signal clockt		: std_ulogic;
+	signal bus_16		: std_ulogic_vector(15 downto 0);
+	signal out_test		: std_ulogic_vector(15 downto 0);
 
 begin
 
-	labtest : lab2
-	port map (keyt, clockt, swst, ledrt);
+	labtest : reg_16
+	port map (load_test, clockt, bus_16, out_test);
 
 	clk_gen(clockt, 50.000E6, 0 fs, run);
 
 	test : process is
 	begin
-		swst  <= "010011000101010001";
-		keyt(0) <= '1'; wait for 25 ns;
-		keyt(1) <= '1'; wait for 127 ns;
-		keyt(0) <= '0'; wait for 3 ns;
-		keyt(0) <= '1'; wait;
-
+		run <= '1';
+		input <= "1111000011110000"; wait for 40 ns;
+		load <= '1'; wait for 10 ns;
+		load <= '0'; wait for 60 ns;
 	end process;
 
 end architecture b_test_16;
