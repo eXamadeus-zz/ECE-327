@@ -1,3 +1,7 @@
+-----------------------
+--  Lab 4 Main Code  --
+-----------------------
+
 library ieee,work;
 use ieee.std_logic_1164.all;
 use work.all;
@@ -26,42 +30,44 @@ architecture behav of Lab4 is
 	signal regc_out : std_logic_vector(31 downto 0);
 	signal addr_out : std_logic_vector(31 downto 0);
 	signal twom_out : std_logic_vector(31 downto 0);
-	signal regd_out : std_logic_vector( 4 downto 0);
+	signal regd_out : std_logic;
 
 	component reg_a is
-		port(	load	: in	std_logic;
-				plicand	: in	std_logic_vector(31 downto 0);
-				code	: in	std_logic_vector( 2 downto 0);
-				output	: out	std_logic_vector(31 downto 0));
+		port(	load	: in		std_logic;
+				plicand	: in		std_logic_vector(31 downto 0);
+				code	: in 		std_logic_vector( 2 downto 0);
+				output	: buffer	std_logic_vector(31 downto 0));
 	end component reg_a;
 
 	component reg_b is
-		port(	load	: in	std_logic;
-				shift	: in	std_logic;
-				fromc	: in	std_logic_vector( 1 downto 0);
-				plier	: in	std_logic_vector(31 downto 0);
-				code	: out	std_logic_vector( 2 downto 0);
-				output	: out	std_logic_vector(31 downto 0));
+		port(	load	: in		std_logic;
+				shift	: in		std_logic;
+				fromc	: in		std_logic_vector( 1 downto 0);
+				plier	: in		std_logic_vector(31 downto 0);
+				code	: out		std_logic_vector( 2 downto 0);
+				output	: buffer	std_logic_vector(31 downto 0));
 	end component reg_b;		
 
 	component reg_c is
-		port(	load	: in	std_logic;
-				shift	: in	std_logic;
-				add		: in	std_logic;
-				input	: in	std_logic_vector(31 downto 0);
-				output	: out	std_logic_vector(31 downto 0);
-				fromc	: out	std_logic_vector( 1 downto 0));
+		port(	clock	: in		std_logic;
+				load	: in		std_logic;
+				shift	: in		std_logic;
+				add		: in		std_logic;
+				input	: in		std_logic_vector(31 downto 0);
+				output	: buffer	std_logic_vector(31 downto 0);
+				fromc	: out		std_logic_vector( 1 downto 0));
 	end component reg_c;
 
 	component reg_d is
 		port(	load	: in	std_logic;
 				count	: in	std_logic;
 				input	: in	std_logic_vector(4 downto 0);
-				output	: out	std_logic_vector(4 downto 0));
+				output	: out	std_logic);
 	end component reg_d;
 
 	component two_mux is
-		port (	load	: in	std_logic;
+		port (	clock	: in	std_logic;
+				load	: in	std_logic;
 				input	: in	std_logic_vector(31 downto 0);
 				output	: out	std_logic_vector(31 downto 0));
 	end component two_mux;
@@ -74,8 +80,8 @@ architecture behav of Lab4 is
 	end component add_32;
 
 	component control is
-		port(	input	: in	std_logic_vector(4 downto 0);
-				code	: in	std_logic_vector(2 downto 1);
+		port(	input	: in	std_logic;
+				code	: in	std_logic_vector(2 downto 0);
 				clock	: in 	std_logic;
 				start	: in	std_logic;
 				load	: out	std_logic;
@@ -106,6 +112,7 @@ begin
 	);
 
 	RegC : reg_c PORT MAP (
+		clock	=> CLOCK,
 		load	=> loadreg,
 		shift	=> shiftreg,
 		add		=> addreg,
@@ -122,6 +129,7 @@ begin
 	);
 
 	TwoMux : two_mux PORT MAP (
+		clock	=> CLOCK,
 		load	=> loadreg,
 		input	=> addr_out,
 		output	=> twom_out

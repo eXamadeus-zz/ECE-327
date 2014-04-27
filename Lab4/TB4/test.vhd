@@ -1,3 +1,7 @@
+--------------------------------
+--  TEST BENCH CODE FOR LAB 4 --
+--------------------------------
+
 library ieee,work;
 use ieee.std_logic_1164.all;
 use work.clk_package.all;
@@ -35,9 +39,9 @@ begin
 
 	test : process is
 	begin
-		plicand	<= X"0000000A";
-		plier	<= X"00000002";
-		start	<= '1'; wait for 3 ns;
+		plicand	<= X"00000001";
+		plier	<= X"00000002"; wait for 5 ns;
+		start	<= '1'; wait for 50 ns;
 		start	<= '0'; wait;
 	end process;
 

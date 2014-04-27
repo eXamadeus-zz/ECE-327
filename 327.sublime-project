@@ -4,7 +4,8 @@
 		{
 			"follow_symlinks": true,
 			"folder_exclude_patterns": [
-				"Jou*"
+				"Jou*",
+				"Kevin"
 			],
 			"file_exclude_patterns": [
 				"*.aux",

@@ -7,15 +7,15 @@ use ieee.std_logic_1164.all;
 use work.all;
 
 entity control is
-	port(	input	: in	std_logic_vector(4 downto 0);
-			code	: in	std_logic_vector(2 downto 1);
+	port(	input	: in	std_logic;
+			code	: in	std_logic_vector(2 downto 0);
 			clock	: in 	std_logic;
 			start	: in	std_logic;
-			load	: out	std_logic;
-			shift	: out	std_logic;
-			count	: out	std_logic;
-			add		: out	std_logic;
-			busy	: out	std_logic);
+			load	: out	std_logic := '0';
+			shift	: out	std_logic := '0';
+			count	: out	std_logic := '0';
+			add		: out	std_logic := '0';
+			busy	: out	std_logic := '0');
 end entity control;
 
 architecture b_control of control is
@@ -23,51 +23,47 @@ architecture b_control of control is
 	type state is (A,B,C,D,E); -- Schtates
 
 	-- Schignuls
-	signal currs	: state := A;
+	signal currs	: state;
 	signal am_busy	: std_logic := '0';
 
 	-- 
 begin
 	busy <= am_busy; -- so everyone else can know
 
-	start : process (start)
+	starter : process (start, input)
 	begin
-		if (am_busy = '1') then
-			-- do nuffin
-		elsif (start = '1') then
-			am_busy <= '1'; -- now im busy
-			currs <= B;
+		if (am_busy = '1' and input = '1') then
+			am_busy <= '0';
 		end if;
-	end process start;
+		if (am_busy = '0' and start = '1') then
+			am_busy <= '1'; -- now im busy
+		end if;
+	end process starter;
 
 	handle_it : process (clock)
 	begin
-		if (rising_edge(clock))
-			-- reshet the flags
-			load	<= '0';
-			shift	<= '0';
-			add		<= '0';
-			count	<= '0';
-
-			if (input = "00000") then
-				currs	<= A;
-				am_busy	<= '0';
-			end if;
-
+		if (rising_edge(clock) and am_busy = '1') then
 			-- shtait mahsheen
 			case currs is
 				when A =>
-					-- do nuffin
+					load <= '1';
+					currs <= B;
 				when B =>
-					load = '1';
-					currs <= C;
+					currs <= C; -- done our wait
 				when C =>
-					if (code = "000" or code = "111") -- 0xM
+					-- reset flags
+					load <= '0';
+					shift <= '0';
+					count <= '0';
+					add <= '0';
+					-- change state
+					if (code = "000" or code = "111") then -- 0xM
 						currs <= D;
 					else
 						currs <= E;
 					end if;
 				when D => -- shift
+					add <= '0';
 					shift <= '1';	-- shift RegC and RegB
 					count <= '1';	-- decrement RegD
 					currs <= C;

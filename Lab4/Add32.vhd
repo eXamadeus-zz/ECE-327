@@ -20,12 +20,14 @@ entity add_32 is
 end entity add_32;
 
 architecture b_add_32 of add_32 is
+	signal buff : std_logic_vector(31 downto 0);
 begin
-	add : process (add)
+	adder : process (add)
 	begin
 		if (add = '1') then
-			output <= std_logic_vector(unsigned(left)
+			buff <= std_logic_vector(unsigned(left)
 					+ unsigned(right));
 		end if;
-	end process add;
+		output <= buff;
+	end process adder;
 end architecture b_add_32;
