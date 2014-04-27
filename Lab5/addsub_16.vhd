@@ -22,7 +22,7 @@ architecture b_addsub_16 of addsub_16 is
 	signal internal_carry : std_ulogic_vector(N   downto 0);
 	signal adjusted_value : std_ulogic_vector(N-1 downto 0);
 begin
-	internal_carry(0) <= '1' when (subcont) else '0';
+	internal_carry(0) <= '1' when (subcont = '1') else '0';
 	carryo <= internal_carry(N);
 
 	adder : for i in 0 to N-1 generate
