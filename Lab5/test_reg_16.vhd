@@ -30,9 +30,11 @@ begin
 	test : process is
 	begin
 		run <= '1';
-		input <= "1111000011110000"; wait for 40 ns;
-		load <= '1'; wait for 10 ns;
-		load <= '0'; wait for 60 ns;
+		bus_16 <= "1111000011110000"; wait for 20 ns;
+		load_test <= '1'; wait for 5 ns;
+		bus_16 <= X"0000"; wait for 5 ns;
+		load_test <= '0'; wait for 20 ns;
+		load_test <= '1'; wait;
 	end process;
 
 end architecture b_test_16;
