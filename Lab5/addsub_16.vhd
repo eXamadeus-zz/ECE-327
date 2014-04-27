@@ -25,16 +25,16 @@ begin
 	internal_carry(0) <= '1' when (subcont = '1') else '0';
 	carryo <= internal_carry(N);
 
-	adder : for i in 0 to N-1 generate
-		adjusted_value(I) <= inputa(I) xor subcont;
+	adder : for I in 0 to N-1 generate
+		adjusted_value(I) <= inputb(I) xor subcont;
 		output(I) <= '1'
-			when ((adjusted_value(I) = '1') xor (inputb(I) = '1'))
+			when ((inputa(I) = '1') xor (adjusted_value(I) = '1'))
 				xor (internal_carry(I) = '1')
 			else '0';
 		internal_carry(I+1) <= '1'
-			when ((adjusted_value(I) = '1') xor (inputb(I) = '1'))
+			when ((inputa(I) = '1') xor (adjusted_value(I) = '1'))
 				or ((internal_carry(I) = '1')
-					and ((adjusted_value(I) = '1') xor (inputb(I) = '1')))
+					and ((inputa(I) = '1') xor (adjusted_value(I) = '1')))
 		else '0';
 	end generate;
 end architecture b_addsub_16;
