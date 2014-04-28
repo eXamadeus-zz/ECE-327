@@ -30,8 +30,8 @@ begin
 		-- calculate value
 		output(I) <= '1' when (
 			inputa(I) = '1'
-			xor adjusted_value(I) = '1'
-			xor internal_carry(I) = '1')
+			xor internal_carry(I) = '1'
+			xor adjusted_value(I) = '1')
 		else '0';
 		-- calculate carry
 		internal_carry(I+1) <= '1' when (
