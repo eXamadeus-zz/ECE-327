@@ -81,8 +81,6 @@ begin
 	begin
 		if RESET = '0'
 			then current <= A;
-			-- loadreg <= "0000000000"; -- clear all register load lines
-			-- load_ir <= '0';
 		elsif rising_edge(CLOCK)
 			then current <= future;
 		end if;
@@ -103,20 +101,6 @@ begin
 
 	fsm_control : process (current, RUN)
 	begin
-		-- uggh what a nasty way to clear the registers, i'll try to clean this up...
-		-- loadreg0 <= '0';
-		-- loadreg1 <= '0';
-		-- loadreg2 <= '0';
-		-- loadreg3 <= '0';
-		-- loadreg4 <= '0';
-		-- loadreg5 <= '0';
-		-- loadreg6 <= '0';
-		-- loadreg7 <= '0';
-		-- loadregA <= '0';
-		-- loadregG <= '0';
-		-- loadreg <= "0000000000"; -- clear all register load lines
-		-- load_ir <= '0';
-		-- ...but i'll probably forget and leave it like this
 		case current is
 		-- oh god, here we go
 			when A => -- static state
@@ -124,15 +108,15 @@ begin
 					future <= A;
 				else
 					future <= B;
+					load_ir <= '1';
 					loadreg <= "0000000000"; -- clear all register load lines
 				end if;
 				DONE	<= '1';
 			when B => -- load instruction
-				load_ir <= '1';
-				future	<= C;
 				DONE	<= '0';
-			when C => -- finish load
 				load_ir	<= '0';
+				future	<= D;
+			when C => -- finish load
 				future	<= D;
 			when D =>
 				case ir_out(8 downto 6) is -- figure out what type of inst
@@ -154,24 +138,6 @@ begin
 					-- mv or mvi
 					when "00" => -- store bus into register XXX and finish
 						loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1'; -- please work
-						-- case ir_out(5 downto 3) is
-						-- 	when "000" =>
-						-- 		loadreg0 <= 1;
-						-- 	when "001" =>
-						-- 		loadreg1 <= 1;
-						-- 	when "010" =>
-						-- 		loadreg2 <= 1;
-						-- 	when "011" =>
-						-- 		loadreg3 <= 1;
-						-- 	when "100" =>
-						-- 		loadreg4 <= 1;
-						-- 	when "101" =>
-						-- 		loadreg5 <= 1;
-						-- 	when "110" =>
-						-- 		loadreg6 <= 1;
-						-- 	when others =>
-						-- 		loadreg7 <= 1;
-						-- end case;
 						future <= A;
 						DONE <= '1';
 					-- add or sub
@@ -180,9 +146,7 @@ begin
 						future <= F;
 				end case;
 			when F => -- clear all flags so we don't double load
-				-- OMG I DID IT AGAIN!
 				loadreg <= "0000000000";
-				-- i really need to make this cleaner
 				future <= G;
 			when G =>
 				-- since we know we're in a math inst,
