@@ -48,7 +48,7 @@ begin
 			runt		<= '0'; -- toggle run to start the instruction
 
 			clockm_r	<= '0'; -- stop the memory clock
-			wait until DONE_B = '1';
+			wait until donet = '1';
 			clockm_r	<= '1'; -- start the memory clock
 
 		end loop;
