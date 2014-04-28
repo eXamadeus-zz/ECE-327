@@ -36,7 +36,7 @@ begin
 		-- stop the run and reset everything
 
 		runt		<= '0';
-		clockm_r	<= '0';
+		clockm_r	<= '1';
 		resett  	<= '1'; wait for 5 ns;
 		resett		<= '0'; wait until rising_edge(clkpt);
 		resett		<= '1'; wait until rising_edge(clkpt);
@@ -45,7 +45,6 @@ begin
 
 		for I in 1 to 5 loop
 
-			clockm_r	<= '1'; -- start the memory clock
 			runt		<= '1'; wait until rising_edge(clkpt);
 			runt		<= '0'; -- toggle run to start the instruction
 
