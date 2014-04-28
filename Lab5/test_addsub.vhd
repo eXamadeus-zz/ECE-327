@@ -30,6 +30,7 @@ begin
 
 	test : process is
 	begin
+		addsub <= '0';
 		busa_16 <= X"0F0F"; wait for 10 ns;
 		busb_16 <= X"00F0"; wait for 10 ns;
 		busb_16 <= X"000F"; wait for 10 ns;
