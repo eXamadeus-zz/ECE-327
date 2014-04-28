@@ -21,7 +21,7 @@ architecture behav of tb_lab5 is
 	signal runt		: std_ulogic := '0';
 	signal resett	: std_ulogic;
 	signal dint		: std_ulogic_vector(15 downto 0);
-	signal dbust	: std_ulogic_vector(15 downto 0);
+	signal dbust	: std_logic_vector(15 downto 0);
 	signal donet	: std_ulogic;
 
 begin

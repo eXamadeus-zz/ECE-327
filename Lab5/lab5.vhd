@@ -52,7 +52,7 @@ architecture behav of lab5 is
 	signal mul_sel	: std_ulogic_vector( 3 downto 0);
 
 	-- setup the states and state signals
-	type fsm is (A,B.C,D,E,F,G,H,I,J,K,L);
+	type fsm is (A,B,C,D,E,F,G,H,I,J,K,L);
 	signal current, future : fsm;
 
 	component reg_16 is
