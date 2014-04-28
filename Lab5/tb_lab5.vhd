@@ -29,7 +29,7 @@ begin
 	labtest : lab5
 	port map (clockt, runt, resett, dint, dbust, donet);
 
-	clk_gen(clockt, 500.000E6, 0 fs, run);
+	clk_gen(clockt, 500.000E6, 0 fs, clk_r);
 
 	test : process is
 	begin
@@ -70,7 +70,7 @@ begin
 		dint	<= "0110111110000000";
 		runt	<= '1'; wait for 2 ns;
 
-		runt	<= '0';
+		runt	<= '0'; wait;
 
 	end process;
 
