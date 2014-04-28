@@ -37,7 +37,7 @@ begin
 
 		runt		<= '0';
 		clockm_r	<= '0';
-		resett  	<= '1'; wait until rising_edge(clkpt);
+		resett  	<= '1'; wait for 1 ns;
 		resett		<= '0'; wait until rising_edge(clkpt);
 		resett		<= '1'; wait until rising_edge(clkpt);
 
