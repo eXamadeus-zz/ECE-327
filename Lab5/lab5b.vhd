@@ -7,242 +7,44 @@ use ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 use work.all;
 
-entity lab5 is
-	port (	CLOCK		: in std_logic;
-			RUN			: in std_logic;
-			RESET		: in std_logic;
-			DIN			: in std_logic_vector(15 downto 0);
-			DBUS		: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
-			DONE		: out std_logic := '0');
-end entity lab5;
+entity lab5b is port (
+	MCLOCK, PCLOCK	: in std_logic;
+	RESET_B, RUN_B	: in std_logic;
+	DBUS_B			: out std_logic_vector(15 downto 0);
+	DONE_B			: out std_logic);
+end entity lab5b;
+
 
 architecture behav of lab5 is
 	-- Schignuls
-	signal loadreg0	: std_logic;
-	signal loadreg1	: std_logic;
-	signal loadreg2	: std_logic;
-	signal loadreg3	: std_logic;
-	signal loadreg4	: std_logic;
-	signal loadreg5	: std_logic;
-	signal loadreg6	: std_logic;
-	signal loadreg7	: std_logic;
-	signal loadregA	: std_logic;
-	signal loadregG	: std_logic;
-	
-	signal loadreg	: std_logic_vector( 9 downto 0);
+	signal bus_5b	: std_logic_vector( 4 downto 0);
+	signal bus_16b	: std_logic_vector(15 downto 0);
 
-	signal regA_out : std_logic_vector(15 downto 0);
-	signal regG_out : std_logic_vector(15 downto 0);
-	signal reg0_out : std_logic_vector(15 downto 0);
-	signal reg1_out : std_logic_vector(15 downto 0);
-	signal reg2_out : std_logic_vector(15 downto 0);
-	signal reg3_out : std_logic_vector(15 downto 0);
-	signal reg4_out : std_logic_vector(15 downto 0);
-	signal reg5_out : std_logic_vector(15 downto 0);
-	signal reg6_out : std_logic_vector(15 downto 0);
-	signal reg7_out : std_logic_vector(15 downto 0);
+	component lab5 is port (
+		clock	: in std_logic;
+		run		: in std_logic;
+		reset	: in std_logic;
+		din		: in std_logic_vector(15 downto 0);
+		dbus	: buffer std_logic_vector (15 downto 0) := X"0000";	
+		done	: out std_logic := '0');
+	end component lab5;
 
-	signal load_ir	: std_logic;
-	signal ir_out	: std_logic_vector( 8 downto 0);
+	component memory is port (
+		address	: in std_logic_vector(4 downto 0);
+		clock	: in std_logic;
+		q		: out std_logic_vector(15 downto 0));
+	end component memory;
 
-	signal sub_sig	: std_logic;
-	signal overflow	: std_logic; -- unused, but part of the adder design
-	signal addsub_o	: std_logic_vector(15 downto 0);
-
-	signal mux_sel	: std_logic_vector( 3 downto 0);
-
-	-- setup the states and state signals
-	type fsm is (A,B,C,D,E,F,G,H,I);
-	signal current, future : fsm;
-
-	component reg_16 is
-	port(	load	: in	std_logic;
-			input	: in	std_logic_vector(15 downto 0);
-			output	: out	std_logic_vector(15 downto 0));
-	end component reg_16;
-
-	component reg_ir is
-	port(	load	: in	std_logic;
-			input	: in	std_logic_vector(15 downto 0);
-			output	: out	std_logic_vector( 8 downto 0));
-	end component reg_ir;
-
-	component addsub_16 is
-	port (	subcont	: in	std_logic;
-			carryo	: out	std_logic;
-			inputa	: in	std_logic_vector(15 downto 0);
-			inputb	: in	std_logic_vector(15 downto 0);
-			output	: out	std_logic_vector(15 downto 0));
-	end component addsub_16;
+	component counter is port (
+		reset  : in  std_logic;
+		clock  : in  std_logic;
+		cntout : out std_logic_vector(4 downto 0));
+	end component counter;
 
 begin
-	-- either continue operation or reset async-ly on active low
-	cont_reset : process (RESET, CLOCK)
-	begin
-		if RESET = '0'
-			then current <= A;
-		elsif rising_edge(CLOCK)
-			then current <= future;
-		end if;
-	end process cont_reset;
-
-	-- build the mux using simple WITH-SELECT logic
-	with mux_sel select DBUS <=
-		reg0_out when "0000",
-		reg1_out when "0001",
-		reg2_out when "0010",
-		reg3_out when "0011",
-		reg4_out when "0100",
-		reg5_out when "0101",
-		reg6_out when "0110",
-		reg7_out when "0111",
-		regG_out when "1000",
-		DIN when others;
-
-	fsm_control : process (current, RUN)
-	begin
-		case current is
-		-- oh god, here we go
-			when A => -- static state
-				if run = '0' then
-					future <= A;
-					loadreg <= "0000000000"; -- clear all register load lines
-					load_ir <= '0';
-					sub_sig <= '0';
-				else
-					future <= B;
-					load_ir <= '1';
-				end if;
-				DONE	<= '1';
-			when B => -- load instruction
-				DONE	<= '0';
-				load_ir	<= '0';
-				future	<= C;
-			when C =>
-				case ir_out(8 downto 6) is -- figure out what type of inst
-					-- mv, add, or sub
-					when "000"|"010"|"011" => -- select YYY from ir, store on bus
-						mux_sel(3) <= '0';
-						if ir_out(7) = '1' then
-							mux_sel(2 downto 0) <= ir_out(5 downto 3);
-						else
-							mux_sel(2 downto 0) <= ir_out(2 downto 0);
-						end if;
-					-- mvi
-					when others => -- select DIN, store on bus
-						mux_sel <= "1111";
-				end case;
-				future	<= D;
-			when D =>
-				case ir_out(8 downto 7) is
-					-- mv or mvi
-					when "00" => -- store bus into register XXX and finish
-						loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1'; -- please work
-						future <= A;
-					-- add or sub
-					when others => -- otherwise store DBUS on A and continue
-						loadreg(8) <= '1'; -- load regA
-						future <= E;
-				end case;
-			when E => -- clear all flags so we don't double load
-				loadreg <= "0000000000";
-				future <= F;
-			when F => -- since we know we're in a math inst,
-				if ir_out(6) = '1' then -- we know were subtracting
-					sub_sig <= '1';
-				else -- or adding
-					sub_sig <= '0';
-				end if;
-				mux_sel(3) <= '0'; -- now load YYY onto DBUS
-				mux_sel(2 downto 0) <= ir_out(2 downto 0);
-				future <= G;
-			when G => -- store result in G
-				loadreg(9) <= '1';
-				future <= H;
-			when H => -- load G on DBUS
-				loadreg(9) <= '0';
-				mux_sel <= "1000";
-				future <= I;
-			when I => -- save DBUS to XXX
-				loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1';
-				future <= A;
-			when others =>
-				future <= A;				
-		end case;
-	end process;
-
-	RegA : reg_16 PORT MAP (
-		load	=> loadreg(8),
-		input	=> DBUS,
-		output	=> regA_out
-	);
-
-	RegG : reg_16 PORT MAP (
-		load	=> loadreg(9),
-		input	=> addsub_o,
-		output	=> regG_out
-	);
-
-	Reg0 : reg_16 PORT MAP (
-		load	=> loadreg(0),
-		input	=> DBUS,
-		output	=> reg0_out
-	);
-
-	Reg1 : reg_16 PORT MAP (
-		load	=> loadreg(1),
-		input	=> DBUS,
-		output	=> reg1_out
-	);
-
-	Reg2 : reg_16 PORT MAP (
-		load	=> loadreg(2),
-		input	=> DBUS,
-		output	=> reg2_out
-	);
-
-	Reg3 : reg_16 PORT MAP (
-		load	=> loadreg(3),
-		input	=> DBUS,
-		output	=> reg3_out
-	);
-
-	Reg4 : reg_16 PORT MAP (
-		load	=> loadreg(4),
-		input	=> DBUS,
-		output	=> reg4_out
-	);
-
-	Reg5 : reg_16 PORT MAP (
-		load	=> loadreg(5),
-		input	=> DBUS,
-		output	=> reg5_out
-	);
-
-	Reg6 : reg_16 PORT MAP (
-		load	=> loadreg(6),
-		input	=> DBUS,
-		output	=> reg6_out
-	);
-
-	Reg7 : reg_16 PORT MAP (
-		load	=> loadreg(7),
-		input	=> DBUS,
-		output	=> reg7_out
-	);
-
-	IR : reg_ir PORT MAP (
-		load	=> load_ir,
-		input	=> DIN,
-		output	=> ir_out
-	);
-
-	AddSub : addsub_16 PORT MAP (
-		subcont	=> sub_sig,
-		carryo	=> overflow,
-		inputa	=> regA_out,
-		inputb	=> DBUS,
-		output	=> addsub_o
-	);
+	
+	counter_block 	: counter port map (RESET_B,MCLOCK,bus_5b);
+	memory_block 	: memory port map (bus_5b,MCLOCK,bus_16b);
+	processor_block	: lab5 port map (PCLOCK,RUN_B,RESET_B,bus_16b,DBUS_B,DONE_B);
 
 end architecture behav;

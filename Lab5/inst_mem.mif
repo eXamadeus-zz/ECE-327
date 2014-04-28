@@ -1,0 +1,61 @@
+DEPTH = 32;               -- The size of data in bits
+WIDTH = 16;               -- The size of memory in words
+ADDRESS_RADIX = HEX;      -- The radix for address values
+DATA_RADIX = BIN;         -- The radix for data values
+CONTENT                   -- start of (address : data pairs)
+BEGIN
+
+00 : 0010000000000000;    -- mvi reg0, 4
+01 : 0000000000000100;
+
+02 : 0010100000000000;    -- mvi reg2, 5
+03 : 0000000000000101;
+
+04 : 0001010000000000;    -- mv reg5, reg0 (4)
+
+05 : 0101010100000000;    -- add reg5, reg2 (reg5 = 4 + 5)
+
+06 : 0111010000000000;    -- sub reg5, reg0 (reg5 = 9 - 4)
+
+07 : 0010110000000000;    -- mvi reg3, 1 
+08 : 0000000000000001;
+
+09 : 0111010110000000;    -- sub reg5, reg3 (reg5 = 9 - 1)
+
+0A : 0001101010000000;    -- mv reg6, reg5
+
+0B : 0111100100000000;    -- sub reg6, reg2 (reg6 = 8 - 5)
+
+0C : 0011000000000000;    -- mvi reg4, 2
+0D : 0000000000000010;
+
+0E : 0010010000000000;    -- mvi reg1, 0xFFFF
+0F : 1111111111111111;
+
+10 : 0011110000000000;    -- mvi reg7, 0x000F
+11 : 0000000000001111;
+
+12 : 0110011110000000;    -- sub reg1, reg7 (reg1 = 0xFFFF - 0xF)
+
+13 : 0011110000000000;    -- mvi reg7, 0xF0
+14 : 0000000011110000;
+
+15 : 0110011110000000;    -- sub reg1, reg7 (reg1 = 0xFFF0 - 0xF0)
+
+16 : 0011110000000000;    -- mvi reg7, 0xF00
+17 : 0000111100000000;
+
+18 : 0110011110000000;    -- sub reg1, reg7 (reg1 = 0xFF00 - 0xF00)
+
+19 : 0011110000000000;    -- mvi reg7, 0xF000
+1A : 1111000000000000;
+
+1B : 0110011110000000;    -- sub reg1, reg7 (reg1 = 0xF000 - 0xF000)
+
+1C : 0011110000000000;    -- mvi reg7, 0xF
+1D : 0000000000001111;
+
+1E : 0110011110000000;    -- sub reg1, reg7 (reg1 = 0 - 0xF)
+1F : 0110011110000000;    -- sub reg1, reg7 (reg1 = -0xF - 0xF)
+
+END;

@@ -12,7 +12,7 @@ entity lab5 is port (
 	RUN		: in std_logic;
 	RESET	: in std_logic;
 	DIN		: in std_logic_vector(15 downto 0);
-	DBUS	: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
+	DBUS	: buffer std_logic_vector (15 downto 0) := X"0000";	
 	DONE	: out std_logic := '0');
 end entity lab5;
 
