@@ -31,11 +31,11 @@ begin
 	test : process is
 	begin
 		addsub <= '0';
-		busa_16 <= X"0F0F"; wait for 10 ns;
-		busb_16 <= X"00F0"; wait for 10 ns;
-		busb_16 <= X"000F"; wait for 10 ns;
-		addsub <= '1'; wait for 10 ns;
-		busb_16 <= X"0000"; wait for 10 ns;
+		busa_16 <= X"0F0F"; wait for 4 ns;
+		busb_16 <= X"00F0"; wait for 4 ns;
+		busb_16 <= X"000F"; wait for 4 ns;
+		addsub <= '1'; wait for 4 ns;
+		busb_16 <= X"0000"; wait for 4 ns;
 	end process;
 
 end architecture b_test_addsub_16;
