@@ -27,13 +27,13 @@ begin
 
 	adder : for I in 0 to N-1 generate
 		adjusted_value(I) <= inputb(I) xor subcont;
-		-- calculate value
+		-- calculate value (sum = a xor b xor carry)
 		output(I) <= '1' when (
 			inputa(I) = '1'
 			xor internal_carry(I) = '1'
 			xor adjusted_value(I) = '1')
 		else '0';
-		-- calculate carry
+		-- calculate next carry (next = (a and b) or (b and carry) or (carry and a))
 		internal_carry(I+1) <= '1' when (
 			(inputa(I) = '1' and adjusted_value(I) = '1')
 			or (adjusted_value(I) = '1' and internal_carry(I) = '1')
