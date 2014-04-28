@@ -68,14 +68,14 @@ begin
 
 		wait until rising_edge(donet);
 
-		--add 0x0001 and 0x000F (register 7 and register 3)
+		--add 0x0001 and 0x000F (reg 7 + reg 3 = reg 3)
 		dint	<= "0100111110000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 
 		wait until rising_edge(donet);
 
-		--subtract 0x0001 from 0x0010 (register 7 and register 3)
+		--subtract 0x0001 from 0x0010 (reg 7 - reg 3 = reg 3)
 		dint	<= "0110111110000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0'; wait;
