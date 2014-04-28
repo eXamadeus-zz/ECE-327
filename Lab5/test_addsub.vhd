@@ -34,9 +34,9 @@ begin
 		busa_16 <= X"FFFF"; wait for 4 ns;
 		busb_16 <= X"0001"; wait for 4 ns;
 		busa_16 <= X"FFF0"; wait for 4 ns;
-		busa_16 <= X"FFFF";
+		busa_16 <= X"FF00";
 		addsub <= '1'; wait for 4 ns;
-		busb_16 <= X"FFFF"; wait;
+		busb_16 <= X"FF01"; wait;
 	end process;
 
 end architecture b_test_addsub_16;
