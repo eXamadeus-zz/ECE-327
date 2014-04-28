@@ -81,6 +81,7 @@ begin
 	begin
 		if RESET = '0'
 			then current <= A;
+			sub_sig <= '0';
 		elsif rising_edge(CLOCK)
 			then current <= future;
 		end if;
