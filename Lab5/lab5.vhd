@@ -114,8 +114,8 @@ begin
 		-- loadreg7 <= '0';
 		-- loadregA <= '0';
 		-- loadregG <= '0';
-		loadreg <= "0000000000"; -- clear all register load lines
-		load_ir <= '0';
+		-- loadreg <= "0000000000"; -- clear all register load lines
+		-- load_ir <= '0';
 		-- ...but i'll probably forget and leave it like this
 		case current is
 		-- oh god, here we go
@@ -124,6 +124,7 @@ begin
 					future <= A;
 				else
 					future <= B;
+					loadreg <= "0000000000"; -- clear all register load lines
 				end if;
 				DONE	<= '1';
 			when B => -- load instruction
@@ -131,7 +132,7 @@ begin
 				future	<= C;
 				DONE	<= '0';
 			when C => -- finish load
-				-- load_ir	<= '0';
+				load_ir	<= '0';
 				future	<= D;
 			when D =>
 				case ir_out(8 downto 6) is -- figure out what type of inst
@@ -187,7 +188,7 @@ begin
 				-- since we know we're in a math inst,
 				if ir_out(6) = '1' then -- we know were subtracting
 					sub_sig <= '1';
-				else
+				else -- or adding
 					sub_sig <= '0';
 				end if;
 				-- now load YYY onto DBUS
@@ -198,7 +199,7 @@ begin
 				loadreg(9) <= '1';
 				future <= I;
 			when I => -- load G on DBUS
-				-- loadreg(9) <= '0';
+				loadreg(9) <= '0';
 				mux_sel <= "1000";
 				future <= J;
 			when J => -- save DBUS to XXX
@@ -206,6 +207,7 @@ begin
 				future <= A;
 				DONE <= '1';
 			when others =>
+				loadreg <= "0000000000"; -- clear all register load lines
 				future <= A;
 				DONE <= '1';				
 		end case;
