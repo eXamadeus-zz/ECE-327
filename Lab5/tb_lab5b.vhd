@@ -45,7 +45,7 @@ begin
 		runt		<= '1'; wait until rising_edge(clkpt);
 		runt		<= '0'; -- toggle run to start the instruction
 
-		wait until rising_edge(clkpt); wait for 1 ns;
+		wait until rising_edge(clkpt);
 		-- wait until rising_edge(clkpt); wait for 1 ns;
 
 		clockm_r	<= '0'; -- stop the memory clock
@@ -55,7 +55,7 @@ begin
 		runt		<= '1'; wait until rising_edge(clkpt);
 		runt		<= '0'; -- toggle run to start the instruction
 
-		wait until rising_edge(clkpt); wait for 1 ns;
+		wait until rising_edge(clkpt);
 		-- wait until rising_edge(clkpt); wait for 1 ns;
 
 		clockm_r	<= '0'; -- stop the memory clock
