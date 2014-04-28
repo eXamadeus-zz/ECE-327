@@ -14,8 +14,7 @@ entity lab5b is port (
 	DONE_B			: out std_logic);
 end entity lab5b;
 
-
-architecture behav of lab5 is
+architecture behav of lab5b is
 	-- Schignuls
 	signal bus_5b	: std_logic_vector( 4 downto 0);
 	signal bus_16b	: std_logic_vector(15 downto 0);
