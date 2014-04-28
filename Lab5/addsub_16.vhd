@@ -7,15 +7,12 @@ use ieee.std_logic_1164.all;
 use work.all;
 
 entity addsub_16 is
-	generic (constant N: integer := 16);
-	port (
-		subcont	: in	std_ulogic;
-		-- clock	: in	std_ulogic;
-		carryo	: out	std_ulogic;
-		inputa	: in	std_ulogic_vector(N-1 downto 0);
-		inputb	: in	std_ulogic_vector(N-1 downto 0);
-		output	: out	std_ulogic_vector(N-1 downto 0)
-	);
+	generic(constant N: integer := 16);
+	port(	subcont	: in	std_ulogic;
+			carryo	: out	std_ulogic;
+			inputa	: in	std_ulogic_vector(N-1 downto 0);
+			inputb	: in	std_ulogic_vector(N-1 downto 0);
+			output	: out	std_ulogic_vector(N-1 downto 0));
 end entity addsub_16;
 
 architecture b_addsub_16 of addsub_16 is
