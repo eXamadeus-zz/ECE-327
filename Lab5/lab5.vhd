@@ -52,7 +52,7 @@ architecture behav of lab5 is
 	signal mux_sel	: std_logic_vector( 3 downto 0);
 
 	-- setup the states and state signals
-	type fsm is (A,B,C,D,E,F,G,H,I,J,K,L);
+	type fsm is (A,B,C,D,E,F,G,H,I);
 	signal current, future : fsm;
 
 	component reg_16 is
@@ -116,10 +116,8 @@ begin
 			when B => -- load instruction
 				DONE	<= '0';
 				load_ir	<= '0';
-				future	<= D;
-			when C => -- finish load
-				future	<= D;
-			when D =>
+				future	<= C;
+			when C =>
 				case ir_out(8 downto 6) is -- figure out what type of inst
 					-- mv, add, or sub
 					when "000"|"010"|"011" => -- select YYY from ir, store on bus
@@ -133,41 +131,38 @@ begin
 					when others => -- select DIN, store on bus
 						mux_sel <= "1111";
 				end case;
-				future	<= E;
-			when E =>
+				future	<= D;
+			when D =>
 				case ir_out(8 downto 7) is
 					-- mv or mvi
 					when "00" => -- store bus into register XXX and finish
 						loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1'; -- please work
 						future <= A;
-						-- DONE <= '1';
 					-- add or sub
 					when others => -- otherwise store DBUS on A and continue
 						loadreg(8) <= '1'; -- load regA
-						future <= F;
+						future <= E;
 				end case;
-			when F => -- clear all flags so we don't double load
+			when E => -- clear all flags so we don't double load
 				loadreg <= "0000000000";
-				future <= G;
-			when G =>
-				-- since we know we're in a math inst,
+				future <= F;
+			when F => -- since we know we're in a math inst,
 				if ir_out(6) = '1' then -- we know were subtracting
 					sub_sig <= '1';
 				else -- or adding
 					sub_sig <= '0';
 				end if;
-				-- now load YYY onto DBUS
-				mux_sel(3) <= '0';
+				mux_sel(3) <= '0'; -- now load YYY onto DBUS
 				mux_sel(2 downto 0) <= ir_out(2 downto 0);
-				future <= H;
-			when H => -- store result in G
+				future <= G;
+			when G => -- store result in G
 				loadreg(9) <= '1';
-				future <= I;
-			when I => -- load G on DBUS
+				future <= H;
+			when H => -- load G on DBUS
 				loadreg(9) <= '0';
 				mux_sel <= "1000";
-				future <= J;
-			when J => -- save DBUS to XXX
+				future <= I;
+			when I => -- save DBUS to XXX
 				loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1';
 				future <= A;
 			when others =>
