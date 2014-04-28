@@ -4,40 +4,96 @@
 		"selected_items":
 		[
 			[
-				"crr",
-				"corrected_val"
+				"clock",
+				"clockm_r"
+			],
+			[
+				"clk",
+				"clkmt"
+			],
+			[
+				"cloc",
+				"clockt_r"
 			],
 			[
 				"std",
+				"std_logic_vector"
+			],
+			[
+				"bus",
+				"bus_16b"
+			],
+			[
+				"st",
+				"std_logic_vector"
+			],
+			[
+				"std_lo",
+				"std_logic"
+			],
+			[
+				"lab",
+				"lab5b"
+			],
+			[
+				"clo",
+				"clockt"
+			],
+			[
+				"ir",
+				"ir_out"
+			],
+			[
+				"load",
+				"loadreg"
+			],
+			[
+				"mu",
+				"mux_sel"
+			],
+			[
+				"std_ulo",
 				"std_ulogic_vector"
+			],
+			[
+				"l",
+				"loadregA"
+			],
+			[
+				"lo",
+				"load_ir"
+			],
+			[
+				"reg1_",
+				"reg1_out"
+			],
+			[
+				"regg",
+				"regG_out"
+			],
+			[
+				"add",
+				"addsub_o"
+			],
+			[
+				"sub",
+				"sub_sig"
+			],
+			[
+				"std_",
+				"std_ulogic_vector"
+			],
+			[
+				"crr",
+				"corrected_val"
 			],
 			[
 				"store",
 				"store_input"
 			],
 			[
-				"lo",
-				"load_input"
-			],
-			[
 				"sto",
 				"store_val"
-			],
-			[
-				"clo",
-				"CLOCK"
-			],
-			[
-				"load",
-				"load_or_add"
-			],
-			[
-				"std_",
-				"std_logic_vector"
-			],
-			[
-				"add",
-				"addreg"
 			],
 			[
 				"regd",
@@ -106,10 +162,6 @@
 			[
 				"pro",
 				"process"
-			],
-			[
-				"clk",
-				"clk_gen"
 			],
 			[
 				"clk_",
@@ -460,29 +512,18 @@
 	"buffers":
 	[
 		{
-			"file": "Lab5/test_addsub.vhd",
+			"file": "Lab5/report/latex/Lab5.tex",
 			"settings":
 			{
-				"buffer_size": 1049,
+				"buffer_size": 24020,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "",
+			"file": "Lab5/report/latex/citationsfile.bib",
 			"settings":
 			{
-				"buffer_size": 0,
-				"line_ending": "Unix",
-				"name": "*git-status*: 327ECE",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "Lab5/addsub_16",
-			"settings":
-			{
-				"buffer_size": 1071,
+				"buffer_size": 238,
 				"line_ending": "Unix"
 			}
 		}
@@ -490,15 +531,63 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 96.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"git status",
+				"push",
+				"Git: Push"
+			],
+			[
+				"status",
 				"Git: Status"
 			],
 			[
+				"pull",
+				"Git: Pull"
+			],
+			[
+				"psuh",
+				"Git: Push"
+			],
+			[
+				"statu",
+				"Git: Status"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"stats",
+				"Git: Status"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"sta",
+				"Git: Status"
+			],
+			[
+				"sstat",
+				"Set Syntax: SublimeGit Status"
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
+			[
+				"git statt",
+				"Git-flow: Hotfix Start From Commit"
+			],
+			[
 				"git stat",
+				"Set Syntax: SublimeGit Status"
+			],
+			[
+				"git status",
 				"Git: Status"
 			],
 			[
@@ -514,35 +603,7 @@
 				"Colorsublime: Install Theme"
 			],
 			[
-				"push",
-				"Git: Push"
-			],
-			[
-				"pull",
-				"Git: Pull"
-			],
-			[
 				"gitstat",
-				"Git: Status"
-			],
-			[
-				"statu",
-				"Git: Status"
-			],
-			[
-				"stat",
-				"Git: Status"
-			],
-			[
-				"status",
-				"Git: Status"
-			],
-			[
-				"git pull",
-				"Git: Pull"
-			],
-			[
-				"git statu",
 				"Git: Status"
 			],
 			[
@@ -591,10 +652,6 @@
 			],
 			[
 				"gitsta",
-				"Git: Status"
-			],
-			[
-				"sta",
 				"Git: Status"
 			],
 			[
@@ -1021,55 +1078,74 @@
 	},
 	"file_history":
 	[
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/reg_16.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/test.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/testpiso.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/TB5a.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/Lab5a.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/FullAddSub.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/test_reg_16.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/citationsfile.bib",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/Report/latex/citationsfile.bib",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/inst_mem.mif",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegB.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/Lab2.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/Report/latex/Lab1.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/tb_lab5b.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/lab5b.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/counter.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/lab5.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/TB5b.vhdl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/Lab5b.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Lab2.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Add32.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/Lab4/Lab4.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1c/TB1c.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1c/LAB1c.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1b/TB1b.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/memory.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/tb_lab5.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/Lab5a.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/TB5a.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/test.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/memory.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/memory.bsf",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/memory.cmp",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/memory.qip",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/2mux.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/counter.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/Counter.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/CLKPackage.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/tb_addsub.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/tb_reg_16.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/reg_16.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/reg_ir.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/addsub_16.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/testpiso.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/testcount.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/test_addsub.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/FullAddSub.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/.gitignore",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab5/test_reg_16.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/TB4/testpiso.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/TB4/testcount.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/TB4/test.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegD.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegC.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegB.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegA.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/TB2/testcount.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1d/TB1d.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1d/LAB1d.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1c/LAB1c.vhdl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1b/LAB1b.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1a/TB1a.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1a/LAB1a.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/TB5b.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/Counter.vhdl",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Packages/CLKPackage.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1d/TB1d.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1c/TB1c.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1b/TB1b.vhdl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/TB1a/TB1a.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegD.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Lab4.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Control.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/2mux.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/counter.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/PISO.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/memory.vhd",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/Report/latex/Lab1.tex",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Report/latex/citationsfile.bib",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Report/latex/Lab4.bbl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Report/latex/Lab4.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Add32.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Control.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Report/latex/citationsfile.bib",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/Lab2.bbl",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/327.sublime-project",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/James/inst_mem.mif",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/.gitignore",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/Lab2.tex",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Lab2.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/Lab4/Lab4.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegC.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/RegA.vhd",
+		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/PISO.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/Add32/Add32.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/BPMult/BPMult.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/README.md",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/RegB/RegB.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/RegA/RegA.vhd",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4/Report/Lab4.tex",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/327.sublime-project",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/ASM/db/ASM.smp_dump.txt",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/Add32/db/Add32.sld_design_entry.sci",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/ASM/db/ASM.sld_design_entry_dsc.sci",
@@ -1086,10 +1162,7 @@
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Kevin/Report/ASM Chart - New Page.png",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab3.zip",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab4.zip",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/citationsfile.bib",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/Lab2.bbl",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/Report/latex/enumitem.sty",
-		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab1/Report/latex/citationsfile.bib",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/Report/latex/bases.xcf",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/LICENSE",
 		"/home/rathe/Documents/School/2014-1 Spring/327ECE/Lab2/test.vhd",
@@ -1132,27 +1205,11 @@
 		"/home/rathe/Documents/School/468ECE/Lab2/Makefile",
 		"/home/rathe/Documents/School/468ECE/Lab2/lab2.c",
 		"/home/rathe/Documents/School/468ECE/Lab2/test.c",
-		"/home/rathe/Documents/School/468ECE/headers/ex_lzw.c",
-		"/home/rathe/Desktop/World of Warcraft/WTF/Account/SKOOSHFLYT/Arthas/Goldhold/AddOns.txt",
-		"/home/rathe/Desktop/ex_lzw.c",
-		"/home/rathe/Documents/School/468ECE/headers/ex_lzw.cdec",
-		"/home/rathe/Documents/School/468ECE/Lab2/test.txt",
-		"/home/rathe/Documents/School/468ECE/Lab2/echo",
-		"/home/rathe/Documents/School/468ECE/Lab2/echo.x.lzw",
-		"/home/rathe/Documents/School/468ECE/files/echo",
-		"/home/rathe/Documents/School/468ECE/Lab2/ecdec",
-		"/home/rathe/Documents/School/468ECE/headers/ex_huffenc.c",
-		"/home/rathe/Documents/School/468ECE/headers/ex_lzw.h.lzw",
-		"/home/rathe/Documents/School/468ECE/headers/ex_huffdec.c",
-		"/home/rathe/Documents/School/468ECE/headers/ex_rle.c",
-		"/home/rathe/Documents/School/468ECE/Lab3/README",
-		"/home/rathe/Documents/School/468ECE/Lab2/test.txt.lzw",
-		"/home/rathe/Documents/School/468ECE/scripts/timelab",
-		"/home/rathe/Documents/School/468ECE/Lab3/scripts/timelab"
+		"/home/rathe/Documents/School/468ECE/headers/ex_lzw.c"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -1166,6 +1223,48 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"il donet",
+			"for",
+			"entity",
+			"tb_lab5",
+			"0000000000000101",
+			"-- ",
+			"entity",
+			"addsub",
+			"std_ulogic",
+			"0101110110000000",
+			"DONE",
+			"wait for rising_edge",
+			"rising_edge",
+			"2 ns",
+			"std_ulogic",
+			"natural",
+			"std_ulogic",
+			"mul_sel",
+			"2ns",
+			"WAIT FOR",
+			"testdin",
+			"testrun",
+			"testresetlow",
+			"   t",
+			"   testclk      <= '1'; WAIT FOR 2ns;\n   testclk      <= '0'; WAIT FOR 2ns;",
+			"entity",
+			"test2",
+			"signal",
+			" w",
+			"addsub",
+			"std_logic",
+			"loadrega",
+			"std_logic_vector",
+			"entity",
+			"reg_16",
+			"31",
+			"entity",
+			"overflowflag",
+			"DOWNTO",
+			"Lab4",
+			"inputb(I)",
+			"adjusted_value(I)",
 			"addsub",
 			"reg_16",
 			"test_16",
@@ -1251,49 +1350,7 @@
 			", ",
 			",",
 			"STRING",
-			", ",
-			"sizeof(NCODE)",
-			", sizeof",
-			"UInt",
-			"unsigned short int",
-			");\n",
-			"unsigned int",
-			"ned int",
-			"long",
-			"ed long in",
-			"sizeof(char), 1",
-			"signed short i",
-			"short",
-			"prevLen",
-			"short int",
-			"strlen(STRING)",
-			"../headers/ex_lzw.c",
-			"w.h",
-			"test",
-			"txt",
-			"test.txt",
-			"';\n",
-			"],",
-			"CT_ADD_STRING",
-			"]++)",
-			"output",
-			"pnc",
-			" -",
-			"mask",
-			"pop",
-			"filesize",
-			"IMGDIR",
-			"./difflab3",
-			")dec | g",
-			"dec ||",
-			"-d ||",
-			"rundt:",
-			"runt:",
-			"rund:",
-			"rundt",
-			"runt:",
-			"rund:",
-			"run:"
+			", "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1312,24 +1369,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Lab5/test_addsub.vhd",
+					"file": "Lab5/report/latex/Lab5.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1049,
+						"buffer_size": 24020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								154,
-								154
+								11524,
+								11541
 							]
 						],
 						"settings":
@@ -1438,169 +1495,32 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"__vi_external_disable": true,
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"draw_white_space": "none",
-							"git_repo": "/home/rathe/Documents/School/2014-1 Spring/327ECE",
-							"git_status": true,
-							"git_view": "status",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/SublimeGit/syntax/SublimeGit Status.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5612.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "Lab5/addsub_16",
+					"buffer": 1,
+					"file": "Lab5/report/latex/citationsfile.bib",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1071,
+						"buffer_size": 238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								304,
-								304
+								238,
+								238
 							]
 						],
 						"settings":
@@ -1709,14 +1629,13 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/sublime-vhdl/Syntaxes/VHDL.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1793,16 +1712,128 @@
 		"selected_items":
 		[
 			[
+				"bibl",
+				"Lab4/Report/latex/citationsfile.bib"
+			],
+			[
+				".tex",
+				"Lab4/Report/latex/Lab4.tex"
+			],
+			[
+				"tblabb",
+				"Lab5/tb_lab5b.vhd"
+			],
+			[
+				"lab5",
+				"Lab5/lab5.vhd"
+			],
+			[
+				"tblab5",
+				"Lab5/tb_lab5.vhd"
+			],
+			[
+				"tb",
+				"Lab5/tb_lab5.vhd"
+			],
+			[
+				"memory",
+				"James/memory.vhd"
+			],
+			[
+				"tblab",
+				"Lab5/tb_lab5.vhd"
+			],
+			[
+				"ins",
+				"James/inst_mem.mif"
+			],
+			[
+				"counter",
+				"Lab5/counter.vhd"
+			],
+			[
+				"lab5vhd",
+				"Lab5/lab5.vhd"
+			],
+			[
+				"reg",
+				"Lab5/reg_16.vhd"
+			],
+			[
+				"tb5b",
+				"James/TB5b.vhdl"
+			],
+			[
+				"lab5b",
+				"James/Lab5b.vhdl"
+			],
+			[
+				"tbreg",
+				"Lab5/tb_reg_16.vhd"
+			],
+			[
+				"tbadd",
+				"Lab5/tb_addsub.vhd"
+			],
+			[
+				"tb_lab",
+				"Lab5/tb_lab5.vhd"
+			],
+			[
+				"test",
+				"Lab5/test_addsub.vhd"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"coun",
+				"James/Counter.vhdl"
+			],
+			[
+				"fulla",
+				"James/FullAddSub.vhdl"
+			],
+			[
+				"addsub",
+				"Lab5/addsub_16.vhd"
+			],
+			[
+				"testadd",
+				"Lab5/test_addsub.vhd"
+			],
+			[
+				"lab4",
+				"Lab4/Lab4.vhd"
+			],
+			[
+				"memo",
+				"James/memory.vhd"
+			],
+			[
+				"tb5",
+				"James/TB5a.vhdl"
+			],
+			[
+				"ush",
+				"James/FullAddSub.vhdl"
+			],
+			[
+				"giti",
+				".gitignore"
+			],
+			[
+				"testreg1",
+				"Lab5/test_reg_16.vhd"
+			],
+			[
 				"test_",
 				"Lab5/test_reg_16.vhd"
 			],
 			[
 				"full",
 				"James/FullAddSub.vhdl"
-			],
-			[
-				"lab5",
-				"James/Lab5a.vhdl"
 			],
 			[
 				"lab",
@@ -1815,18 +1846,6 @@
 			[
 				"clk",
 				"Packages/CLKPackage.vhd"
-			],
-			[
-				"test",
-				"Lab2/TB2/test.vhd"
-			],
-			[
-				"reg",
-				"Lab4/RegD.vhd"
-			],
-			[
-				".tex",
-				"Lab1/Report/latex/Lab1.tex"
 			],
 			[
 				"tex",
@@ -1869,10 +1888,6 @@
 				"Lab4/RegD.vhd"
 			],
 			[
-				"lab4",
-				"Lab4/Report/latex/Lab4.tex"
-			],
-			[
 				"control",
 				"Lab4/Control.vhd"
 			],
@@ -1909,24 +1924,12 @@
 				"Lab1/Report/latex/citationsfile.bib"
 			],
 			[
-				"git",
-				".gitignore"
-			],
-			[
 				"piso",
 				"Lab2/PISO.vhd"
 			],
 			[
-				"giti",
-				".gitignore"
-			],
-			[
 				"lab1",
 				"Lab 1/Report/Lab1.tex"
-			],
-			[
-				"tb",
-				"Lab 1/TB1b/LAB1b.vhd"
 			],
 			[
 				"pis",
@@ -2219,90 +2222,6 @@
 			[
 				"ream",
 				"496ECE/README.md"
-			],
-			[
-				"read",
-				"468ECE/Lab1/README"
-			],
-			[
-				"rlec",
-				"468ECE/headers/ex_rle.c"
-			],
-			[
-				"pasrle",
-				"468ECE/Lab2/passwd.rle"
-			],
-			[
-				"pas",
-				"468ECE/Lab2/passwd"
-			],
-			[
-				"pass",
-				"468ECE/Lab2/passwd"
-			],
-			[
-				"parle",
-				"468ECE/Lab2/passwd.rle"
-			],
-			[
-				"rle.c",
-				"468ECE/headers/ex_rle.c"
-			],
-			[
-				"rlc",
-				"468ECE/headers/ex_rle.c"
-			],
-			[
-				"rleh",
-				"468ECE/headers/ex_rle.h"
-			],
-			[
-				"lzc",
-				"468ECE/headers/ex_lzw.c"
-			],
-			[
-				"x11",
-				"468ECE/Lab1/x11.c"
-			],
-			[
-				"dih",
-				"468ECE/headers/ex_dict.h"
-			],
-			[
-				"rle.h",
-				"468ECE/headers/ex_rle.h"
-			],
-			[
-				"dict.c",
-				"468ECE/headers/ex_dict.c"
-			],
-			[
-				".h",
-				"468ECE/headers/ex_dict.h"
-			],
-			[
-				"dict.",
-				"468ECE/headers/ex_dict.c"
-			],
-			[
-				"468",
-				"468ECE/Lab1/x11.c"
-			],
-			[
-				"lab1.h",
-				"468ECE/Lab1/lab1.vhd"
-			],
-			[
-				"git.",
-				"468ECE/git.log"
-			],
-			[
-				"subpro",
-				"468ECE/468.sublime-project"
-			],
-			[
-				"sublimeproject",
-				"school.sublime-project"
 			]
 		],
 		"width": 0.0
@@ -2314,7 +2233,7 @@
 		[
 			[
 				"",
-				"~/Documents/School/2014-1 Spring/468ECE/468.sublime-project"
+				"~/Documents/School/2014-1 Spring/440ECE/440.sublime-project"
 			],
 			[
 				"327",

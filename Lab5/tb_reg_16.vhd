@@ -8,17 +8,16 @@ end entity test_16;
 
 architecture b_test_16 of test_16 is
 	component reg_16 is
-		port (	load	: in	std_ulogic;
-				clock	: in	std_ulogic;
-				input	: in	std_ulogic_vector(15 downto 0);
-				output	: out	std_ulogic_vector(15 downto 0));
+		port (	load	: in	std_logic;
+				input	: in	std_logic_vector(15 downto 0);
+				output	: out	std_logic_vector(15 downto 0));
 	end component;
 
 	signal run			: std_logic;
-	signal load_test	: std_ulogic;
-	signal clockt		: std_ulogic;
-	signal bus_16		: std_ulogic_vector(15 downto 0);
-	signal out_test		: std_ulogic_vector(15 downto 0);
+	signal load_test	: std_logic;
+	signal clockt		: std_logic;
+	signal bus_16		: std_logic_vector(15 downto 0);
+	signal out_test		: std_logic_vector(15 downto 0);
 
 begin
 
