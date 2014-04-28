@@ -36,39 +36,42 @@ begin
 
 		resett	<= '1';
 		runt	<= '0';
-		dint	<= "0000000000000000"; wait for 2 ns;
-		resett	<= '0'; wait for 2 ns;
-		resett	<= '1'; wait for 2 ns;
+		dint	<= "0000000000000000"; wait for rising_edge(clockt);
+		resett	<= '0'; wait for rising_edge(clockt);
+		resett	<= '1';
 
 		--move 0x0001 into register 0
 		dint	<= "0010000000000000";
-		runt	<= '1'; wait for 2 ns;
-
-		runt	<= '0'; wait for 2 ns;
+		runt	<= '1'; wait for rising_edge(clockt);
+		runt	<= '0';
 		dint	<= "0000000000000001";
+		-- wait for 5 cycles
+		for i in 1 to 5 loop
+        	wait for rising_edge(clockt);
+    	end loop;
 
 		--move 0x000F into register 3
 		dint	<= "0010110000000000";
-		runt	<= '1'; wait for 2 ns;
+		runt	<= '1'; wait for rising_edge(clockt);
 
 		runt	<= '0';
 		dint	<= "0000000000001111";
 		
 		--move 0x0001 from register 0 to register 7
 		dint	<= "0001110000000000";
-		runt	<= '1'; wait for 2 ns;
+		runt	<= '1'; wait for rising_edge(clockt);
 		
 		runt	<= '0';
 
 		--add 0x0001 and 0x000F (register 7 and register 3)
 		dint	<= "0100111110000000";
-		runt	<= '1'; wait for 2 ns;
+		runt	<= '1'; wait for rising_edge(clockt);
 
 		runt	<= '0';
 
 		--subtract 0x0001 from 0x0010 (register 7 and register 3)
 		dint	<= "0110111110000000";
-		runt	<= '1'; wait for 2 ns;
+		runt	<= '1'; wait for rising_edge(clockt);
 
 		runt	<= '0'; wait;
 
