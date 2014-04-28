@@ -8,21 +8,21 @@ end entity tb_lab5;
 
 architecture behav of tb_lab5 is
 	component lab5 is
-		port (	CLOCK		: in std_ulogic;
-				RUN			: in std_ulogic;
-				RESET		: in std_ulogic;
-				DIN			: in std_ulogic_vector(15 downto 0);
+		port (	CLOCK		: in std_logic;
+				RUN			: in std_logic;
+				RESET		: in std_logic;
+				DIN			: in std_logic_vector(15 downto 0);
 				DBUS		: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
-				DONE		: out std_ulogic := '0');
+				DONE		: out std_logic := '0');
 	end component lab5;
 
-	signal clockt	: std_ulogic;
-	signal clk_r	: std_ulogic := '1';
-	signal runt		: std_ulogic := '0';
-	signal resett	: std_ulogic;
-	signal dint		: std_ulogic_vector(15 downto 0);
+	signal clockt	: std_logic;
+	signal clk_r	: std_logic := '1';
+	signal runt		: std_logic := '0';
+	signal resett	: std_logic;
+	signal dint		: std_logic_vector(15 downto 0);
 	signal dbust	: std_logic_vector(15 downto 0);
-	signal donet	: std_ulogic;
+	signal donet	: std_logic;
 
 begin
 

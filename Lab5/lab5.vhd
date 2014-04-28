@@ -8,71 +8,71 @@ USE ieee.numeric_std.all;
 use work.all;
 
 entity lab5 is
-	port (	CLOCK		: in std_ulogic;
-			RUN			: in std_ulogic;
-			RESET		: in std_ulogic;
-			DIN			: in std_ulogic_vector(15 downto 0);
+	port (	CLOCK		: in std_logic;
+			RUN			: in std_logic;
+			RESET		: in std_logic;
+			DIN			: in std_logic_vector(15 downto 0);
 			DBUS		: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
-			DONE		: out std_ulogic := '0');
+			DONE		: out std_logic := '0');
 end entity lab5;
 
 architecture behav of lab5 is
 	-- Schignuls
-	signal loadreg0	: std_ulogic;
-	signal loadreg1	: std_ulogic;
-	signal loadreg2	: std_ulogic;
-	signal loadreg3	: std_ulogic;
-	signal loadreg4	: std_ulogic;
-	signal loadreg5	: std_ulogic;
-	signal loadreg6	: std_ulogic;
-	signal loadreg7	: std_ulogic;
-	signal loadregA	: std_ulogic;
-	signal loadregG	: std_ulogic;
+	signal loadreg0	: std_logic;
+	signal loadreg1	: std_logic;
+	signal loadreg2	: std_logic;
+	signal loadreg3	: std_logic;
+	signal loadreg4	: std_logic;
+	signal loadreg5	: std_logic;
+	signal loadreg6	: std_logic;
+	signal loadreg7	: std_logic;
+	signal loadregA	: std_logic;
+	signal loadregG	: std_logic;
 	
-	signal loadreg	: std_ulogic_vector( 9 downto 0);
+	signal loadreg	: std_logic_vector( 9 downto 0);
 
-	signal regA_out : std_ulogic_vector(15 downto 0);
-	signal regG_out : std_ulogic_vector(15 downto 0);
-	signal reg0_out : std_ulogic_vector(15 downto 0);
-	signal reg1_out : std_ulogic_vector(15 downto 0);
-	signal reg2_out : std_ulogic_vector(15 downto 0);
-	signal reg3_out : std_ulogic_vector(15 downto 0);
-	signal reg4_out : std_ulogic_vector(15 downto 0);
-	signal reg5_out : std_ulogic_vector(15 downto 0);
-	signal reg6_out : std_ulogic_vector(15 downto 0);
-	signal reg7_out : std_ulogic_vector(15 downto 0);
+	signal regA_out : std_logic_vector(15 downto 0);
+	signal regG_out : std_logic_vector(15 downto 0);
+	signal reg0_out : std_logic_vector(15 downto 0);
+	signal reg1_out : std_logic_vector(15 downto 0);
+	signal reg2_out : std_logic_vector(15 downto 0);
+	signal reg3_out : std_logic_vector(15 downto 0);
+	signal reg4_out : std_logic_vector(15 downto 0);
+	signal reg5_out : std_logic_vector(15 downto 0);
+	signal reg6_out : std_logic_vector(15 downto 0);
+	signal reg7_out : std_logic_vector(15 downto 0);
 
-	signal load_ir	: std_ulogic;
-	signal ir_out	: std_ulogic_vector( 8 downto 0);
+	signal load_ir	: std_logic;
+	signal ir_out	: std_logic_vector( 8 downto 0);
 
-	signal sub_sig	: std_ulogic;
-	signal overflow	: std_ulogic; -- unused, but part of the adder design
-	signal addsub_o	: std_ulogic_vector(15 downto 0);
+	signal sub_sig	: std_logic;
+	signal overflow	: std_logic; -- unused, but part of the adder design
+	signal addsub_o	: std_logic_vector(15 downto 0);
 
-	signal mul_sel	: std_ulogic_vector( 3 downto 0);
+	signal mux_sel	: std_logic_vector( 3 downto 0);
 
 	-- setup the states and state signals
 	type fsm is (A,B,C,D,E,F,G,H,I,J,K,L);
 	signal current, future : fsm;
 
 	component reg_16 is
-	port(	load	: in	std_ulogic;
-			input	: in	std_ulogic_vector(15 downto 0);
-			output	: out	std_ulogic_vector(15 downto 0));
+	port(	load	: in	std_logic;
+			input	: in	std_logic_vector(15 downto 0);
+			output	: out	std_logic_vector(15 downto 0));
 	end component reg_16;
 
 	component reg_ir is
-	port(	load	: in	std_ulogic;
-			input	: in	std_ulogic_vector(15 downto 0);
-			output	: out	std_ulogic_vector( 8 downto 0));
+	port(	load	: in	std_logic;
+			input	: in	std_logic_vector(15 downto 0);
+			output	: out	std_logic_vector( 8 downto 0));
 	end component reg_ir;
 
 	component addsub_16 is
-	port (	subcont	: in	std_ulogic;
-			carryo	: out	std_ulogic;
-			inputa	: in	std_ulogic_vector(15 downto 0);
-			inputb	: in	std_ulogic_vector(15 downto 0);
-			output	: out	std_ulogic_vector(15 downto 0));
+	port (	subcont	: in	std_logic;
+			carryo	: out	std_logic;
+			inputa	: in	std_logic_vector(15 downto 0);
+			inputb	: in	std_logic_vector(15 downto 0);
+			output	: out	std_logic_vector(15 downto 0));
 	end component addsub_16;
 
 begin
@@ -87,7 +87,7 @@ begin
 	end process cont_reset;
 
 	-- build the mux using simple WITH-SELECT logic
-	with mul_sel select DBUS <=
+	with mux_sel select DBUS <=
 		reg0_out when "0000",
 		reg1_out when "0001",
 		reg2_out when "0010",

@@ -8,16 +8,16 @@ use work.all;
 
 entity addsub_16 is
 	generic(constant N: integer := 16);
-	port(	subcont	: in	std_ulogic;
-			carryo	: out	std_ulogic;
-			inputa	: in	std_ulogic_vector(N-1 downto 0);
-			inputb	: in	std_ulogic_vector(N-1 downto 0);
-			output	: out	std_ulogic_vector(N-1 downto 0));
+	port(	subcont	: in	std_logic;
+			carryo	: out	std_logic;
+			inputa	: in	std_logic_vector(N-1 downto 0);
+			inputb	: in	std_logic_vector(N-1 downto 0);
+			output	: out	std_logic_vector(N-1 downto 0));
 end entity addsub_16;
 
 architecture b_addsub_16 of addsub_16 is
-	signal internal_carry : std_ulogic_vector(N   downto 0);
-	signal adjusted_value : std_ulogic_vector(N-1 downto 0);
+	signal internal_carry : std_logic_vector(N   downto 0);
+	signal adjusted_value : std_logic_vector(N-1 downto 0);
 begin
 	internal_carry(0) <= '1' when (subcont = '1') else '0';
 	carryo <= internal_carry(N);
