@@ -28,7 +28,6 @@ begin
 
 	test : process is
 	begin
-		run <= '1';
 		bus_16 <= "1111000011110000"; wait for 20 ns;
 		load_test <= '1'; wait for 5 ns;
 		bus_16 <= X"0000"; wait for 5 ns;

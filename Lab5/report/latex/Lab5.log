@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  28 APR 2014 14:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.1.28)  28 APR 2014 16:03
 entering extended mode
  %&-line parsing enabled.
 **Lab5.tex
@@ -667,7 +667,71 @@ Package color Info: Driver file: pdftex.def on input line 130.
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (./Lab5.aux)
+) (./Lab5.aux
+
+LaTeX Warning: Label `sub:design_piso' multiply defined.
+
+
+LaTeX Warning: Label `sub:test_piso' multiply defined.
+
+
+LaTeX Warning: Label `fig:register' multiply defined.
+
+
+LaTeX Warning: Label `sub:design_piso' multiply defined.
+
+
+LaTeX Warning: Label `sub:test_piso' multiply defined.
+
+
+LaTeX Warning: Label `sub:design_piso' multiply defined.
+
+
+LaTeX Warning: Label `sub:test_piso' multiply defined.
+
+
+LaTeX Warning: Label `sec:fsm_design' multiply defined.
+
+
+LaTeX Warning: Label `sub:design_piso' multiply defined.
+
+
+LaTeX Warning: Label `sub:test_piso' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+
+LaTeX Warning: Label `app:a' multiply defined.
+
+)
 \openout1 = `Lab5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
@@ -685,8 +749,7 @@ LaTeX Font Info:    ... okay on input line 120.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 120.
 
-
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 120.
@@ -767,20 +830,35 @@ File: system.png Graphic file (type png)
 
  <./system.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 225.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 227.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 225.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 245.
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 227.
+ <tb_reg.png, id=15, 411.03563pt x 39.89906pt>
+File: tb_reg.png Graphic file (type png)
+ <use tb_reg.png>
+<addsubtest.png, id=16, 331.99031pt x 65.49469pt>
+File: addsubtest.png Graphic file (type png)
+ <use addsubtest.png> [2
 
+ <./tb_reg.png (PNG copy)>] [3 <./addsubtest.png (PNG copy)>]
+<lab5atest.png, id=23, 571.38469pt x 307.90031pt>
+File: lab5atest.png Graphic file (type png)
+ <use lab5atest.png>
+<lab5atest_2.png, id=24, 515.67656pt x 309.40594pt>
+File: lab5atest_2.png Graphic file (type png)
+ <use lab5atest_2.png>
+[4 <./lab5atest.png (PNG copy)>] [5 <./lab5atest_2.png (PNG copy)>]
+<part2.png, id=32, 871.255pt x 459.7175pt>
+File: part2.png Graphic file (type png)
+ <use part2.png>
+<tb_lab5b.png, id=33, 696.35156pt x 103.88812pt>
+File: tb_lab5b.png Graphic file (type png)
+ <use tb_lab5b.png> [6
 
-LaTeX Warning: Reference `fig:rega' on page 2 undefined on input line 245.
-
-[2
-
-] [3] (./Lab5.bbl
+ <./part2.png (PNG copy)>] [7 <./tb_lab5b.png (PNG copy)>] (./Lab5.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 6.
@@ -824,46 +902,99 @@ Underfull \hbox (badness 1527) in paragraph at lines 4--7
 n/10.95 http : / / stackoverflow . com / questions / 17904514 /
  []
 
-) [4
-
-] [5
-
-
-] [6
-
-] [7
-
-] [8
+) [8
 
 ] [9
 
-] [10
+] [10] [11
 
-] [11
+] [12] [13] [14] [15] [16] [17] [18]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.699 ...pter*{\scshape Appendix A: addsub_16.vhd}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-] [12
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 699.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 699.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 699.
+! Extra }, or forgotten $.
+\ttlh@block ...ttl@calc \hspace {#3}\fi \fi #4{#8}
+                                                  \kern \z@ \strut \@@par \n...
+l.699 ...pter*{\scshape Appendix A: addsub_16.vhd}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.699 ...pter*{\scshape Appendix A: addsub_16.vhd}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.699 ...pter*{\scshape Appendix A: addsub_16.vhd}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[19
+
+] [20] [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
 
 ] (./Lab5.aux)
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5994 strings out of 495061
- 75890 string characters out of 1182621
- 153833 words of memory out of 3000000
- 9045 multiletter control sequences out of 15000+50000
- 62547 words of font info for 67 fonts, out of 3000000 for 9000
+ 6149 strings out of 495061
+ 77865 string characters out of 1182621
+ 201833 words of memory out of 3000000
+ 9187 multiletter control sequences out of 15000+50000
+ 73300 words of font info for 97 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,11n,43p,788b,1286s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,12n,43p,788b,1853s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/rathe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/r
 athe/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/share/texmf-te
-xlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/urw/tim
-es/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/
-share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Lab5.pdf (14 pages, 142217 bytes).
+xlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.p
+fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf
+-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Lab5.pdf (31 pages, 272722 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
+ 238 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
