@@ -62,35 +62,6 @@ begin
 		wait until rising_edge(donet);
 		clockm_r	<= '1'; -- start the memory clock
 
-		runt		<= '1'; wait until rising_edge(clkpt);
-		runt		<= '0'; -- toggle run to start the instruction
-
-		-- wait until rising_edge(clkpt); wait for 1 ns;
-
-		clockm_r	<= '0'; -- stop the memory clock
-		wait until rising_edge(donet);
-		clockm_r	<= '1'; -- start the memory clock
-
-
-		runt		<= '1'; wait until rising_edge(clkpt);
-		runt		<= '0'; -- toggle run to start the instruction
-
-		-- wait until rising_edge(clkpt); wait for 1 ns;
-
-		clockm_r	<= '0'; -- stop the memory clock
-		wait until rising_edge(donet);
-		clockm_r	<= '1'; -- start the memory clock
-
-		runt		<= '1'; wait until rising_edge(clkpt);
-		runt		<= '0'; -- toggle run to start the instruction
-
-		-- wait until rising_edge(clkpt); wait for 1 ns;
-
-		clockm_r	<= '0'; -- stop the memory clock
-		wait until rising_edge(donet);
-		clockm_r	<= '1'; -- start the memory clock
-
-
 		wait;
 
 	end process;
