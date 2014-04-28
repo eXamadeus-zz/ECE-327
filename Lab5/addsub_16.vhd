@@ -28,7 +28,7 @@ begin
 	adder : for I in 0 to N-1 generate
 		adjusted_value(I) <= inputb(I) xor subcont;
 		-- calculate value
-		output(I) <= when (
+		output(I) <= '1' when (
 			inputa(I) = '1'
 			xor adjusted_value(I) = '1'
 			xor internal_carry(I) = '1')
