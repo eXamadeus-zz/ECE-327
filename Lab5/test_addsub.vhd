@@ -33,7 +33,8 @@ begin
 		addsub <= '0';
 		busa_16 <= X"FFFF"; wait for 4 ns;
 		busb_16 <= X"0001"; wait for 4 ns;
-		busb_16 <= X"0002"; wait for 4 ns;
+		busa_16 <= X"FFF0"; wait for 4 ns;
+		busa_16 <= X"FFFF";
 		addsub <= '1'; wait for 4 ns;
 		busb_16 <= X"FFFF"; wait;
 	end process;

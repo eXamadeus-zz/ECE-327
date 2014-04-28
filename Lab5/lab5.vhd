@@ -1,22 +1,21 @@
------------------------
---  Lab 4 Main Code  --
------------------------
+----------------------------
+--  Lab 5 FSM Controller  --
+----------------------------
 
 library ieee,work;
 use ieee.std_logic_1164.all;
 use work.all;
 
-entity Lab4 is
-	port (
-		MULTIPLICAND	: in	std_logic_vector(31 downto 0);
-		MULTIPLIER		: in	std_logic_vector(31 downto 0);
-		START			: in	std_logic;
-		CLOCK			: in	std_logic;
-		BUSY			: out	std_logic;
-		PRODUCT			: out	std_logic_vector(63 downto 0));
-end entity Lab4;
+entity lab5 is
+	port (	CLOCK		: in std_ulogic;
+			RUN			: in std_ulogic;
+			RESET		: in std_ulogic;
+			DIN			: in std_ulogic_vector(15 downto 0);
+			DBUS		: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
+			DONE		: out std_ulogic := '0');
+end entity lab5;
 
-architecture behav of Lab4 is
+architecture behav of lab5 is
 	-- Schignuls
 	signal loadreg	: std_logic;
 	signal shiftreg	: std_logic;
