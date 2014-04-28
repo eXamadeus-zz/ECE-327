@@ -49,7 +49,7 @@ begin
 		-- wait until rising_edge(clkpt); wait for 1 ns;
 
 		clockm_r	<= '0'; -- stop the memory clock
-		wait until donet = '1';
+		wait until rising_edge(donet);
 		clockm_r	<= '1'; -- start the memory clock
 
 		runt		<= '1'; wait until rising_edge(clkpt);
@@ -59,7 +59,7 @@ begin
 		-- wait until rising_edge(clkpt); wait for 1 ns;
 
 		clockm_r	<= '0'; -- stop the memory clock
-		wait until donet = '1';
+		wait until rising_edge(donet);
 		clockm_r	<= '1'; -- start the memory clock
 
 		runt		<= '1'; wait until rising_edge(clkpt);
@@ -68,7 +68,7 @@ begin
 		-- wait until rising_edge(clkpt); wait for 1 ns;
 
 		clockm_r	<= '0'; -- stop the memory clock
-		wait until donet = '1';
+		wait until rising_edge(donet);
 		clockm_r	<= '1'; -- start the memory clock
 
 
@@ -78,7 +78,7 @@ begin
 		-- wait until rising_edge(clkpt); wait for 1 ns;
 
 		clockm_r	<= '0'; -- stop the memory clock
-		wait until donet = '1';
+		wait until rising_edge(donet);
 		clockm_r	<= '1'; -- start the memory clock
 
 		runt		<= '1'; wait until rising_edge(clkpt);
@@ -87,7 +87,7 @@ begin
 		-- wait until rising_edge(clkpt); wait for 1 ns;
 
 		clockm_r	<= '0'; -- stop the memory clock
-		wait until donet = '1';
+		wait until rising_edge(donet);
 		clockm_r	<= '1'; -- start the memory clock
 
 
