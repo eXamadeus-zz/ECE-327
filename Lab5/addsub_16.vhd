@@ -36,8 +36,8 @@ begin
 		-- calculate carry
 		internal_carry(I+1) <= '1' when (
 			(inputa(I) = '1' and adjusted_value(I) = '1')
-			or (internal_carry(I) = '1' and inputa(I) = '1')
-			or (adjusted_value(I) = '1' and internal_carry(I) = '1'))
+			or (adjusted_value(I) = '1' and internal_carry(I) = '1')
+			or (internal_carry(I) = '1' and inputa(I) = '1'))
 		else '0';
 	end generate;
 end architecture b_addsub_16;
