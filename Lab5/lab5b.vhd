@@ -1,19 +1,19 @@
-----------------------------
---  Lab 5 FSM Controller  --
-----------------------------
+--------------------------
+--  Lab 5 B Controller  --
+--------------------------
 
 library ieee,work;
 use ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 use work.all;
 
-entity lab5 is port (
-	CLOCK	: in std_logic;
-	RUN		: in std_logic;
-	RESET	: in std_logic;
-	DIN		: in std_logic_vector(15 downto 0);
-	DBUS	: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
-	DONE	: out std_logic := '0');
+entity lab5 is
+	port (	CLOCK		: in std_logic;
+			RUN			: in std_logic;
+			RESET		: in std_logic;
+			DIN			: in std_logic_vector(15 downto 0);
+			DBUS		: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
+			DONE		: out std_logic := '0');
 end entity lab5;
 
 architecture behav of lab5 is
