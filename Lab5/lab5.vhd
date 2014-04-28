@@ -45,7 +45,7 @@ architecture behav of lab5 is
 	signal load_ir	: std_logic;
 	signal ir_out	: std_logic_vector( 8 downto 0);
 
-	signal sub_sig	: std_logic := '0';
+	signal sub_sig	: std_logic;
 	signal overflow	: std_logic; -- unused, but part of the adder design
 	signal addsub_o	: std_logic_vector(15 downto 0);
 
@@ -108,6 +108,7 @@ begin
 					future <= A;
 					loadreg <= "0000000000"; -- clear all register load lines
 					load_ir <= '0';
+					sub_sig <= '0';
 				else
 					future <= B;
 					load_ir <= '1';
