@@ -99,7 +99,7 @@ begin
 		regG_out when "1000",
 		DIN when others;
 
-	fsm : process (current, RUN)
+	fsm_control : process (current, RUN)
 	begin
 		-- uggh what a nasty way to clear the registers, i'll try to clean this up...
 		-- loadreg0 <= '0';
