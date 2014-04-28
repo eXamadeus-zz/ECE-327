@@ -49,6 +49,7 @@ begin
 
 			wait until rising_edge(clkpt); wait for 1 ns;
 			wait until rising_edge(clkpt); wait for 1 ns;
+			wait until rising_edge(clkpt); wait for 1 ns;
 
 			clockm_r	<= '0'; -- stop the memory clock
 			wait until donet = '1';
