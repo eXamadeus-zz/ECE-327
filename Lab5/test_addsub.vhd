@@ -17,6 +17,9 @@ architecture b_test_addsub_16 of test_addsub_16 is
 		);
 	end component;
 
+	signal clockt	: std_logic;
+	signal clk_r	: std_logic := '1';
+
 	signal addsub	: std_ulogic;
 	signal carry	: std_ulogic;
 	signal busa_16	: std_ulogic_vector(15 downto 0) := (others => '0');
@@ -25,17 +28,19 @@ architecture b_test_addsub_16 of test_addsub_16 is
 
 begin
 
+	clk_gen(clockt, 500.000E6, 0 fs, clk_r);
+
 	labtest : addsub_16
 	port map (addsub, carry, busa_16, busb_16, out_test);
 
 	test : process is
 	begin
 		addsub <= '0';
-		busa_16 <= X"FFFF"; wait for 4 ns;
-		busb_16 <= X"0001"; wait for 4 ns;
-		busa_16 <= X"FFF0"; wait for 4 ns;
+		busa_16 <= X"FFFF"; wait until rising_edge(clockt);
+		busb_16 <= X"0001"; wait until rising_edge(clockt);
+		busa_16 <= X"FFF0"; wait until rising_edge(clockt);
 		busa_16 <= X"FF00";
-		addsub <= '1'; wait for 4 ns;
+		addsub <= '1'; wait until rising_edge(clockt);
 		busb_16 <= X"FF01"; wait;
 	end process;
 
