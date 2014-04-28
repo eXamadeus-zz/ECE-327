@@ -132,8 +132,10 @@ begin
 					when others => -- select DIN, store on bus
 						mux_sel <= "1111";
 				end case;
+				DONE	<= '0';
 				future	<= D;
 			when D =>
+				DONE	<= '0';
 				case ir_out(8 downto 7) is
 					-- mv or mvi
 					when "00" => -- store bus into register XXX and finish
@@ -145,6 +147,7 @@ begin
 						future <= E;
 				end case;
 			when E => -- clear all flags so we don't double load
+				DONE	<= '0';
 				loadreg <= "0000000000";
 				future <= F;
 			when F => -- since we know we're in a math inst,
@@ -155,19 +158,24 @@ begin
 				end if;
 				mux_sel(3) <= '0'; -- now load YYY onto DBUS
 				mux_sel(2 downto 0) <= ir_out(2 downto 0);
+				DONE	<= '0';
 				future <= G;
 			when G => -- store result in G
 				loadreg(9) <= '1';
+				DONE	<= '0';
 				future <= H;
 			when H => -- load G on DBUS
 				loadreg(9) <= '0';
 				mux_sel <= "1000";
+				DONE	<= '0';
 				future <= I;
 			when I => -- save DBUS to XXX
 				loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1';
 				future <= A;
+				DONE	<= '0';
 			when others =>
-				future <= A;				
+				future <= A;
+				DONE	<= '0';			
 		end case;
 	end process;
 

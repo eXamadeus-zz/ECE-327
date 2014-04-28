@@ -1,0 +1,12 @@
+
+State Machine - |lab5b_run|lab5b:Lab5Run|lab5:processor_block|current
+Name current.I current.H current.G current.F current.E current.D current.C current.B current.A 
+current.A 0 0 0 0 0 0 0 0 0 
+current.B 0 0 0 0 0 0 0 1 1 
+current.C 0 0 0 0 0 0 1 0 1 
+current.D 0 0 0 0 0 1 0 0 1 
+current.E 0 0 0 0 1 0 0 0 1 
+current.F 0 0 0 1 0 0 0 0 1 
+current.G 0 0 1 0 0 0 0 0 1 
+current.H 0 1 0 0 0 0 0 0 1 
+current.I 1 0 0 0 0 0 0 0 1 

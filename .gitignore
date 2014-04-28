@@ -37,3 +37,10 @@ Kevin/
 James/
 Lab5/work
 Lab5/*.wlf
+Lab5/Lab5_desc*
+Lab5/db
+Lab5/greybox_tmp
+Lab5/incremental_db
+Lab5/output_files
+Lab5/simulation
+Lab5/wlf*
