@@ -45,15 +45,15 @@ begin
 		wait until rising_edge(clockt); wait for 1 ns;
 		wait until rising_edge(clockt);
 
-		--move 0x0001 into register 0
+		-- mvi reg0, 0x0F0F
 		dint	<= "0010000000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
-		dint	<= "0000000000000001"; wait for 1 ns;
+		dint	<= X"0F0F"; wait for 1 ns;
 
 		wait until rising_edge(donet);
 
-		--move 0x000F into register 3
+		-- mvi reg3, 0x000F
 		dint	<= "0010110000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
@@ -61,22 +61,22 @@ begin
 		
 		wait until rising_edge(donet);
 
-		--move 0x0001 from register 0 to register 7
+		-- mv reg7, reg0
 		dint	<= "0001110000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 
 		wait until rising_edge(donet);
 
-		--add 0x0001 and 0x000F (reg 3 + reg 7 = reg 3)
-		dint	<= "0100111110000000";
+		-- add reg7, reg3
+		dint	<= "0101110110000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 
 		wait until rising_edge(donet);
 
-		--subtract 0x0001 from 0x0010 (reg 7 - reg 3 = reg 7)
-		dint	<= "0111110110000000";
+		-- sub reg7, reg0
+		dint	<= "0111110000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0'; wait;
 
