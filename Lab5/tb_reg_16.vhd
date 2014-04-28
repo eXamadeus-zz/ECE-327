@@ -22,12 +22,13 @@ architecture b_test_16 of test_16 is
 begin
 
 	labtest : reg_16
-	port map (load_test, clockt, bus_16, out_test);
+	port map (load_test, bus_16, out_test);
 
 	clk_gen(clockt, 50.000E6, 0 fs, run);
 
 	test : process is
 	begin
+		load_test <= '0';
 		run <= '1';
 		bus_16 <= "1111000011110000"; wait for 20 ns;
 		load_test <= '1'; wait for 5 ns;
