@@ -140,7 +140,7 @@ begin
 					when "00" => -- store bus into register XXX and finish
 						loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1'; -- please work
 						future <= A;
-						DONE <= '1';
+						-- DONE <= '1';
 					-- add or sub
 					when others => -- otherwise store DBUS on A and continue
 						loadreg(8) <= '1'; -- load regA
