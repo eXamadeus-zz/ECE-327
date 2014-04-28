@@ -113,6 +113,7 @@ begin
 		-- loadregA <= '0';
 		-- loadregG <= '0';
 		loadreg <= "0000000000"; -- clear all register load lines
+		load_ir <= '0';
 		-- ...but i'll probably forget and leave it like this
 		case current is
 		-- oh god, here we go
@@ -128,7 +129,7 @@ begin
 				future	<= C;
 				DONE	<= '0';
 			when C => -- finish load
-				load_ir	<= '0';
+				-- load_ir	<= '0';
 				future	<= D;
 			when D =>
 				case ir_out(8 downto 6) is -- figure out what type of inst
@@ -195,7 +196,7 @@ begin
 				loadreg(9) <= '1';
 				future <= I;
 			when I => -- load G on DBUS
-				loadreg(9) <= '0';
+				-- loadreg(9) <= '0';
 				mux_sel <= "1000";
 				future <= J;
 			when J => -- save DBUS to XXX
