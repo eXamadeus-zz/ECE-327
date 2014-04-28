@@ -42,20 +42,54 @@ begin
 
 		-- start running loop
 
-		for I in 1 to 5 loop
+		runt		<= '1'; wait until rising_edge(clkpt);
+		runt		<= '0'; -- toggle run to start the instruction
 
-			runt		<= '1'; wait until rising_edge(clkpt);
-			runt		<= '0'; -- toggle run to start the instruction
+		wait until rising_edge(clkpt); wait for 1 ns;
+		wait until rising_edge(clkpt); wait for 1 ns;
 
-			wait until rising_edge(clkpt); wait for 1 ns;
-			wait until rising_edge(clkpt); wait for 1 ns;
-			wait until rising_edge(clkpt); wait for 1 ns;
+		clockm_r	<= '0'; -- stop the memory clock
+		wait until donet = '1';
+		clockm_r	<= '1'; -- start the memory clock
 
-			clockm_r	<= '0'; -- stop the memory clock
-			wait until donet = '1';
-			clockm_r	<= '1'; -- start the memory clock
+		runt		<= '1'; wait until rising_edge(clkpt);
+		runt		<= '0'; -- toggle run to start the instruction
 
-		end loop;
+		wait until rising_edge(clkpt); wait for 1 ns;
+		wait until rising_edge(clkpt); wait for 1 ns;
+
+		clockm_r	<= '0'; -- stop the memory clock
+		wait until donet = '1';
+		clockm_r	<= '1'; -- start the memory clock
+
+		runt		<= '1'; wait until rising_edge(clkpt);
+		runt		<= '0'; -- toggle run to start the instruction
+
+		wait until rising_edge(clkpt); wait for 1 ns;
+
+		clockm_r	<= '0'; -- stop the memory clock
+		wait until donet = '1';
+		clockm_r	<= '1'; -- start the memory clock
+
+
+		runt		<= '1'; wait until rising_edge(clkpt);
+		runt		<= '0'; -- toggle run to start the instruction
+
+		wait until rising_edge(clkpt); wait for 1 ns;
+
+		clockm_r	<= '0'; -- stop the memory clock
+		wait until donet = '1';
+		clockm_r	<= '1'; -- start the memory clock
+
+		runt		<= '1'; wait until rising_edge(clkpt);
+		runt		<= '0'; -- toggle run to start the instruction
+
+		wait until rising_edge(clkpt); wait for 1 ns;
+
+		clockm_r	<= '0'; -- stop the memory clock
+		wait until donet = '1';
+		clockm_r	<= '1'; -- start the memory clock
+
 
 		wait;
 
