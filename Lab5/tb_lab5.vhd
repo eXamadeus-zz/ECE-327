@@ -12,8 +12,8 @@ architecture behav of tb_lab5 is
 				RUN			: in std_logic;
 				RESET		: in std_logic;
 				DIN			: in std_logic_vector(15 downto 0);
-				DBUS		: buffer std_logic_vector (15 downto 0) := "0000000000000000";	
-				DONE		: out std_logic := '0');
+				DBUS		: buffer std_logic_vector (15 downto 0);
+				DONE		: out std_logic);
 	end component lab5;
 
 	signal clockt	: std_logic;
