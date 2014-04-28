@@ -19,7 +19,7 @@ begin
 		if (reset = '0') then
 			count <= "00000";
 		elsif rising_edge(clock) then
-			count <= std_logic_vector(unsigned(counter) + 1);
+			count <= std_logic_vector(unsigned(count) + 1);
 		end if;
 	end process;
 
