@@ -141,7 +141,7 @@ begin
 							mux_sel(2 downto 0) <= ir_out(2 downto 0);
 						end if;
 					-- mvi
-					when "001" => -- select DIN, store on bus
+					when others => -- select DIN, store on bus
 						mux_sel <= "1111";
 				end case;
 				future	<= E;
@@ -202,6 +202,9 @@ begin
 				loadreg(natural(ir_out(5 downto 3))) <= '1';
 				future <= A;
 				DONE <= '1';
+			when others =>
+				future <= A;
+				DONE <= '1';				
 		end case;
 	end process;
 
