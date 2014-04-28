@@ -99,7 +99,7 @@ begin
 		regG_out when "1000",
 		DIN when others;
 
-	fsm : process (current, RUN)
+	fsm_control : process (current, RUN)
 	begin
 		-- uggh what a nasty way to clear the registers, i'll try to clean this up...
 		-- loadreg0 <= '0';
@@ -135,7 +135,7 @@ begin
 					-- mv, add, or sub
 					when "000"|"010"|"011" => -- select YYY from ir, store on bus
 						mux_sel(3) <= '0';
-						if if_out(7) = '1' then
+						if ir_out(7) = '1' then
 							mux_sel(2 downto 0) <= ir_out(5 downto 3);
 						else
 							mux_sel(2 downto 0) <= ir_out(2 downto 0);
