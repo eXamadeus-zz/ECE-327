@@ -36,7 +36,7 @@ begin
 
 		resett	<= '1';
 		runt	<= '0';
-		dint	<= "0000000000000000";
+		dint	<= X"0000";
 		wait for 1 ns; wait until rising_edge(clockt);
 		resett	<= '0';
 		wait until rising_edge(clockt);
