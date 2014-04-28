@@ -53,30 +53,30 @@ begin
 
 		wait until rising_edge(donet);
 
-		-- mvi reg3, 0x000F
-		dint	<= "0010110000000000";
+		-- mvi reg2, 0x000F
+		dint	<= "0010100000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 		dint	<= "0000000000001111";
 		
 		wait until rising_edge(donet);
 
-		-- mv reg7, reg0
-		dint	<= "0001110000000000";
+		-- mv reg5, reg0
+		dint	<= "0001010000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 
 		wait until rising_edge(donet);
 
-		-- add reg7, reg3
-		dint	<= "0101110110000000";
+		-- add reg5, reg2
+		dint	<= "0101010100000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 
 		wait until rising_edge(donet);
 
-		-- sub reg7, reg0
-		dint	<= "0111110000000000";
+		-- sub reg5, reg0
+		dint	<= "0111010000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0'; wait;
 
