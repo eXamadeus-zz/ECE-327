@@ -7,9 +7,9 @@ use ieee.std_logic_1164.all;
 use work.all;
 
 entity reg_16 is
-	port(	load	: in	std_ulogic;
-			input	: in	std_ulogic_vector(15 downto 0);
-			output	: out	std_ulogic_vector(15 downto 0));
+	port(	load	: in	std_logic;
+			input	: in	std_logic_vector(15 downto 0);
+			output	: out	std_logic_vector(15 downto 0));
 end entity reg_16;
 
 architecture b_reg_16 of reg_16 is
