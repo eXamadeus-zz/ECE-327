@@ -24,7 +24,7 @@ architecture behav of tb_lab5b is
 
 begin
 
-	labtest : lab5
+	labtest : lab5b
 	port map (clkmt, clkpt, resett, runt, dbust, donet);
 
 	clk_gen(clkmt, 500.000E6, 0 fs, clockm_r);

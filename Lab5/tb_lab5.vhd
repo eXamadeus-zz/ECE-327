@@ -18,6 +18,7 @@ architecture behav of tb_lab5 is
 
 	signal clockt	: std_logic;
 	signal clk_r	: std_logic := '1';
+	
 	signal runt		: std_logic := '0';
 	signal resett	: std_logic;
 	signal dint		: std_logic_vector(15 downto 0);
