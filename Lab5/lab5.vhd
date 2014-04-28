@@ -81,8 +81,8 @@ begin
 	begin
 		if RESET = '0'
 			then current <= A;
-			loadreg <= "0000000000"; -- clear all register load lines
-			load_ir <= '0';
+			-- loadreg <= "0000000000"; -- clear all register load lines
+			-- load_ir <= '0';
 		elsif rising_edge(CLOCK)
 			then current <= future;
 		end if;
