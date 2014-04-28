@@ -13,8 +13,8 @@ architecture b_test_16 of test_16 is
 				output	: out	std_logic_vector(15 downto 0));
 	end component;
 
-	signal run			: std_logic;
-	signal load_test	: std_logic;
+	signal run			: std_logic := '1';
+	signal load_test	: std_logic := '0';
 	signal clockt		: std_logic;
 	signal bus_16		: std_logic_vector(15 downto 0);
 	signal out_test		: std_logic_vector(15 downto 0);
@@ -28,7 +28,6 @@ begin
 
 	test : process is
 	begin
-		load_test <= '0';
 		run <= '1';
 		bus_16 <= "1111000011110000"; wait for 20 ns;
 		load_test <= '1'; wait for 5 ns;
