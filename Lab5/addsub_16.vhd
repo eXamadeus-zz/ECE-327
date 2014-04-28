@@ -30,8 +30,7 @@ begin
 		-- calculate value
 		if (inputa(I) = '1'
 			xor adjusted_value(I) = '1'
-			xor internal_carry(I) = '1')
-		then
+			xor internal_carry(I) = '1') then
 			output(I) <= '1';
 		else
 			output(I) <= '0';
@@ -39,8 +38,7 @@ begin
 		-- calculate carry
 		if ((inputa(I) = '1' and adjusted_value(I) = '1')
 			or (internal_carry(I) = '1' and inputa(I) = '1')
-			or (adjusted_value(I) = '1' and internal_carry(I) = '1'))
-		then
+			or (adjusted_value(I) = '1' and internal_carry(I) = '1')) then
 			internal_carry(I+1) <= '1';
 		else
 			internal_carry(I+1) <= '0';
