@@ -149,7 +149,7 @@ begin
 				case ir_out(8 downto 7) is
 					-- mv or mvi
 					when "00" => -- store bus into register XXX and finish
-						loadreg(unsigned(ir_out(5 downto 3))) <= 1; -- please work
+						loadreg(natural(ir_out(5 downto 3))) <= 1; -- please work
 						-- case ir_out(5 downto 3) is
 						-- 	when "000" =>
 						-- 		loadreg0 <= 1;
@@ -182,7 +182,7 @@ begin
 				future <= G;
 			when G =>
 				-- since we know we're in a math inst,
-				if load_ir(6) = '1' then -- we know were subtracting
+				if ir_out(6) = '1' then -- we know were subtracting
 					sub_sig <= '1';
 				else
 					sub_sig <= '0';
@@ -199,7 +199,7 @@ begin
 				mux_sel <= "1000";
 				future <= J;
 			when J => -- save DBUS to XXX
-				loadreg(unsigned(ir_out(5 downto 3))) <= '1';
+				loadreg(natural(ir_out(5 downto 3))) <= '1';
 				future <= A;
 				DONE <= '1';
 		end case;
