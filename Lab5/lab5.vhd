@@ -170,11 +170,8 @@ begin
 			when J => -- save DBUS to XXX
 				loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1';
 				future <= A;
-				DONE <= '1';
 			when others =>
-				loadreg <= "0000000000"; -- clear all register load lines
-				future <= A;
-				DONE <= '1';				
+				future <= A;				
 		end case;
 	end process;
 
