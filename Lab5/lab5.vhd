@@ -106,10 +106,11 @@ begin
 			when A => -- static state
 				if run = '0' then
 					future <= A;
+					loadreg <= "0000000000"; -- clear all register load lines
+					load_ir <= '0';
 				else
 					future <= B;
 					load_ir <= '1';
-					loadreg <= "0000000000"; -- clear all register load lines
 				end if;
 				DONE	<= '1';
 			when B => -- load instruction
