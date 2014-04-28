@@ -49,7 +49,7 @@ begin
 		dint	<= "0010000000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
-		dint	<= "0000000000000001";
+		dint	<= "0000000000000001"; wait for 1 ns;
 
 		wait until rising_edge(donet);
 
