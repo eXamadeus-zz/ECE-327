@@ -51,7 +51,7 @@ begin
 		runt	<= '0';
 		dint	<= "0000000000000001";
 
-		wait until rising_edge(DONE);
+		wait until rising_edge(donet);
 
 		--move 0x000F into register 3
 		dint	<= "0010110000000000";
@@ -59,21 +59,21 @@ begin
 		runt	<= '0';
 		dint	<= "0000000000001111";
 		
-		wait until rising_edge(DONE);
+		wait until rising_edge(donet);
 
 		--move 0x0001 from register 0 to register 7
 		dint	<= "0001110000000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 
-		wait until rising_edge(DONE);
+		wait until rising_edge(donet);
 
 		--add 0x0001 and 0x000F (register 7 and register 3)
 		dint	<= "0100111110000000";
 		runt	<= '1'; wait until rising_edge(clockt);
 		runt	<= '0';
 
-		wait until rising_edge(DONE);
+		wait until rising_edge(donet);
 
 		--subtract 0x0001 from 0x0010 (register 7 and register 3)
 		dint	<= "0110111110000000";
