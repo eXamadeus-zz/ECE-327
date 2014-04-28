@@ -149,7 +149,7 @@ begin
 				case ir_out(8 downto 7) is
 					-- mv or mvi
 					when "00" => -- store bus into register XXX and finish
-						loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= 1; -- please work
+						loadreg(to_integer(unsigned(ir_out(5 downto 3)))) <= '1'; -- please work
 						-- case ir_out(5 downto 3) is
 						-- 	when "000" =>
 						-- 		loadreg0 <= 1;
